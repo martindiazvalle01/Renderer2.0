@@ -1,0 +1,180 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"libs/tracy/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 228,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 252,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 254,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 256,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 267,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 275,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "lib",
+			"destination" : "lib64/Debug",
+			"paths" : 
+			[
+				"libs/tracy/libTracyClient.a"
+			],
+			"targetId" : "TracyClient::@b8143ccbb7a61fbd5574",
+			"targetIndex" : 28,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include/tracy/tracy",
+			"paths" : 
+			[
+				"libs/tracy/public/tracy/TracyC.h",
+				"libs/tracy/public/tracy/Tracy.hpp",
+				"libs/tracy/public/tracy/TracyCUDA.hpp",
+				"libs/tracy/public/tracy/TracyD3D11.hpp",
+				"libs/tracy/public/tracy/TracyD3D12.hpp",
+				"libs/tracy/public/tracy/TracyLua.hpp",
+				"libs/tracy/public/tracy/TracyMetal.hmm",
+				"libs/tracy/public/tracy/TracyOpenCL.hpp",
+				"libs/tracy/public/tracy/TracyOpenGL.hpp",
+				"libs/tracy/public/tracy/TracyVulkan.hpp"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "include/tracy/client",
+			"paths" : 
+			[
+				"libs/tracy/public/client/tracy_concurrentqueue.h",
+				"libs/tracy/public/client/tracy_rpmalloc.hpp",
+				"libs/tracy/public/client/tracy_SPSCQueue.h",
+				"libs/tracy/public/client/TracyKCore.hpp",
+				"libs/tracy/public/client/TracyArmCpuTable.hpp",
+				"libs/tracy/public/client/TracyCallstack.h",
+				"libs/tracy/public/client/TracyCallstack.hpp",
+				"libs/tracy/public/client/TracyCpuid.hpp",
+				"libs/tracy/public/client/TracyDebug.hpp",
+				"libs/tracy/public/client/TracyDxt1.hpp",
+				"libs/tracy/public/client/TracyFastVector.hpp",
+				"libs/tracy/public/client/TracyLock.hpp",
+				"libs/tracy/public/client/TracyMangle.hpp",
+				"libs/tracy/public/client/TracyProfiler.hpp",
+				"libs/tracy/public/client/TracyRingBuffer.hpp",
+				"libs/tracy/public/client/TracyScoped.hpp",
+				"libs/tracy/public/client/TracyStringHelpers.hpp",
+				"libs/tracy/public/client/TracySysPower.hpp",
+				"libs/tracy/public/client/TracySysTime.hpp",
+				"libs/tracy/public/client/TracySysTrace.hpp",
+				"libs/tracy/public/client/TracyThread.hpp"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "include/tracy/common",
+			"paths" : 
+			[
+				"libs/tracy/public/common/tracy_lz4.hpp",
+				"libs/tracy/public/common/tracy_lz4hc.hpp",
+				"libs/tracy/public/common/TracyAlign.hpp",
+				"libs/tracy/public/common/TracyAlloc.hpp",
+				"libs/tracy/public/common/TracyApi.h",
+				"libs/tracy/public/common/TracyColor.hpp",
+				"libs/tracy/public/common/TracyForceInline.hpp",
+				"libs/tracy/public/common/TracyFormat.h",
+				"libs/tracy/public/common/TracyMutex.hpp",
+				"libs/tracy/public/common/TracyProtocol.hpp",
+				"libs/tracy/public/common/TracyQueue.hpp",
+				"libs/tracy/public/common/TracySocket.hpp",
+				"libs/tracy/public/common/TracyStackFrames.hpp",
+				"libs/tracy/public/common/TracyString.hpp",
+				"libs/tracy/public/common/TracySystem.hpp",
+				"libs/tracy/public/common/TracyTaggedUserlandAddress.hpp",
+				"libs/tracy/public/common/TracyVersion.hpp",
+				"libs/tracy/public/common/TracyWinFamily.hpp",
+				"libs/tracy/public/common/TracyYield.hpp"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "lib64/cmake/Tracy",
+			"exportName" : "TracyConfig",
+			"exportTargets" : 
+			[
+				{
+					"id" : "TracyClient::@b8143ccbb7a61fbd5574",
+					"index" : 28
+				}
+			],
+			"paths" : 
+			[
+				"libs/tracy/CMakeFiles/Export/03be6827b9c140d3e0be22106d10ccb5/TracyTargets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "lib64/cmake/Tracy",
+			"paths" : 
+			[
+				"build/libs/tracy/TracyConfig.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "libs/tracy",
+		"source" : "libs/tracy"
+	}
+}

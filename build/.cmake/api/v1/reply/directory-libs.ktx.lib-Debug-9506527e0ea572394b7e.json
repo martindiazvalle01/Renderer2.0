@@ -1,0 +1,134 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"libs/ktx/lib/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 726,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 746,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 754,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 767,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "library",
+			"destination" : "lib64",
+			"paths" : 
+			[
+				"Debug/libktx.so.5.0.0",
+				"Debug/libktx.so.5"
+			],
+			"targetId" : "ktx::@aa04aacffcb741576eb2",
+			"targetIndex" : 36,
+			"targetInstallNamelink" : "skip",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "dev",
+			"destination" : "include",
+			"fileSetDirectories" : 
+			[
+				"libs/ktx/lib/include",
+				"libs/ktx/lib/../external/dfdutils/"
+			],
+			"fileSetName" : "public_headers",
+			"fileSetTarget" : 
+			{
+				"id" : "ktx::@aa04aacffcb741576eb2",
+				"index" : 36
+			},
+			"fileSetType" : "HEADERS",
+			"paths" : 
+			[
+				"libs/ktx/lib/include/ktx.h",
+				"libs/ktx/lib/include/ktxvulkan.h",
+				{
+					"from" : "libs/ktx/lib/../external/dfdutils/KHR/khr_df.h",
+					"to" : "KHR/khr_df.h"
+				}
+			],
+			"type" : "fileSet"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "library",
+			"destination" : "lib64",
+			"paths" : 
+			[
+				"Debug/libktx.so"
+			],
+			"targetId" : "ktx::@aa04aacffcb741576eb2",
+			"targetIndex" : 36,
+			"targetInstallNamelink" : "only",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "dev",
+			"destination" : "lib/cmake/ktx",
+			"exportName" : "KTXTargets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "ktx::@aa04aacffcb741576eb2",
+					"index" : 36
+				}
+			],
+			"paths" : 
+			[
+				"libs/ktx/lib/CMakeFiles/Export/eb899b7ebdca6f1dd2b833b33a58189b/KtxTargets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "dev",
+			"destination" : "lib/cmake/ktx",
+			"paths" : 
+			[
+				"libs/ktx/lib/cmake/KtxConfig.cmake",
+				"build/libs/ktx/lib/KtxConfigVersion.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "libs/ktx/lib",
+		"source" : "libs/ktx/lib"
+	}
+}

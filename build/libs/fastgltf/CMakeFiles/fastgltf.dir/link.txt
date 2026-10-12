@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -Wl,--dependency-file=CMakeFiles/fastgltf.dir/link.d -shared -Wl,-soname,libfastgltf.so.0.9.0 -o libfastgltf.so.0.9.0 CMakeFiles/fastgltf.dir/src/fastgltf.cpp.o CMakeFiles/fastgltf.dir/src/base64.cpp.o CMakeFiles/fastgltf.dir/src/io.cpp.o CMakeFiles/fastgltf.dir/deps/simdjson/simdjson.cpp.o

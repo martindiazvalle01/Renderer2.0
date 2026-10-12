@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "libs/ktx/interface/basisu_c_binding",
+		"source" : "libs/ktx/interface/basisu_c_binding"
+	}
+}

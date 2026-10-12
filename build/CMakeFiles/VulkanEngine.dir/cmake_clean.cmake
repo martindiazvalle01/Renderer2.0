@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/VulkanEngine.dir/link.d"
+  "CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/LogicalDevice.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/LogicalDevice.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/main.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/main.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/renderering_layers/FrameManager.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/renderering_layers/FrameManager.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/renderering_layers/swapchain/Swapchain.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/renderering_layers/swapchain/Swapchain.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o.d"
+  "CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.o"
+  "CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.o.d"
+  "VulkanEngine"
+  "VulkanEngine.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/VulkanEngine.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
