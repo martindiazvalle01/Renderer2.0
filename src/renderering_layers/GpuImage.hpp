@@ -1,5 +1,6 @@
 #include "vulkan/vulkan.hpp"
 #include <Allocator.hpp>
+#include <vulkan/vulkan_raii.hpp>
 
 
 //  Clase Wrapper para Guardar la Imagen que va a la GPU
@@ -59,6 +60,8 @@ public:
     }
 
     vk::Image get() const { return image; }
+    void set(vk::Image& image) {this->image = image;}
+    
 
 private:
     void destroy() {

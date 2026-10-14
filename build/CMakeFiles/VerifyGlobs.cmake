@@ -14,6 +14,7 @@ set(OLD_GLOB
   "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Surface.cpp"
   "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/main.cpp"
   "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/renderering_layers/FrameManagement/FrameManager.cpp"
+  "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/renderering_layers/RenderGraph.cpp"
   "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/renderering_layers/swapchain/Swapchain.cpp"
   "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/MaterialData.cpp"
   "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Mesh/MeshData.cpp"

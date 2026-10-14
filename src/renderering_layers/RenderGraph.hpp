@@ -31,6 +31,8 @@ class RenderGraph{
             // Recursos de GPU reales - rellenados durante la compilacion
             GpuImage image;    // clase que controla la imagen de en la GPU, esta contiene la localizacion de la asignacion de memoria
             vk::raii::ImageView view = nullptr; // Vista de la imagen accesible para el shader
+            
+
         };
 
         // Esta es la estructura la cual contiene la informacion de los render pass, se crearan varios passes como aparecen en los diagramas (Depth Pre-Pass, Shadow Pass)
@@ -43,7 +45,7 @@ class RenderGraph{
         };
 
         // Datos principales de almacenamiento para el sistema RenderGraph
-        std::unordered_map<std::string, GraphResource> graphResources; // Todos los recursos referenciados en el graph
+        std::unordered_map<std::string, GraphResource> graphResources = {}; // Todos los recursos referenciados en el graph
         std::vector<Pass> passes;                                      // Todos los passes de renderizado ordenados 
         std::vector<size_t> executionOrder;                            // Secuencia de compute optima para ejecucion
 
@@ -57,7 +59,9 @@ class RenderGraph{
         vk::ImageAspectFlags aspectFromFormat(vk::Format format);
     
     public:
-        void compile(vk::raii::Device& device,VmaAllocator allocator);
+        void Compile(vk::raii::Device& device,VmaAllocator allocator);
+
+        void Execute(vk::raii::CommandBuffer& commandBuffer, vk::Queue queue);
 
         //Interfaz de acceso al recuso para recuperar recursos compilados
         GraphResource* GetResource(const std::string& name){
@@ -65,4 +69,14 @@ class RenderGraph{
             return(it != graphResources.end()) ? & it-> second : nullptr; 
         }
 
+        void AddResource(const std::string& name, vk::Format format, vk::Extent2D extent,
+                    vk::ImageUsageFlags usage, vk::ImageLayout initialLayout,
+                    vk::ImageLayout finalLayout);
+        
+        void AddPass(const std::string& name,
+                const std::vector<std::string>& inputs,
+                const std::vector<std::string>& outputs,
+                std::function<void(vk::raii::CommandBuffer&)> executeFunc);
+
+        void setImportedImage(std::string& name, vk::Image& image, vk::raii::ImageView& imageView);
 };
