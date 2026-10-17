@@ -44,6 +44,13 @@ class RenderGraph{
                                                                     // esto representa el draw mesh en el diagrama, osea todo lo que es contenido especifico del pass
         };
 
+        //  Struct la cual contiene los flags de la etapa del pipeline y el tipo de acceso, se crearan 2 para el Src y el Dst
+        struct BarrierHalf{
+            vk::PipelineStageFlags stage;
+            vk::AccessFlags access;
+        };
+
+
         // Datos principales de almacenamiento para el sistema RenderGraph
         std::unordered_map<std::string, GraphResource> graphResources = {}; // Todos los recursos referenciados en el graph
         std::vector<Pass> passes;                                      // Todos los passes de renderizado ordenados 
@@ -57,7 +64,17 @@ class RenderGraph{
         std::vector<std::pair<size_t, size_t>> semaphoreSignalWaitPairs; //// (signaling pass, waiting pass)
 
         vk::ImageAspectFlags aspectFromFormat(vk::Format format);
-    
+        void TransitionResource(vk::raii::CommandBuffer& commandBuffer,
+                        GraphResource& res, vk::ImageLayout newLayout);
+        GraphResource& GetResourceChecked(const std::string& name);
+
+        //Rellena el struct que tiene el layout del src
+        BarrierHalf SrcHalf(vk::ImageLayout oldLayout);
+        //Rellena el struct que tiene el layout del dst
+        BarrierHalf DstHalf(vk::ImageLayout newLayout);
+
+        //Funcion que decide el tipo de layout dependiendo del formato
+        vk::ImageLayout LayoutForWrite(vk::Format format);
     public:
         void Compile(vk::raii::Device& device,VmaAllocator allocator);
 
@@ -79,4 +96,6 @@ class RenderGraph{
                 std::function<void(vk::raii::CommandBuffer&)> executeFunc);
 
         void setImportedImage(std::string& name, vk::Image& image, vk::raii::ImageView& imageView);
+
+        void TransitionImageLayout(vk::raii::CommandBuffer& commandBuffer, vk::Image image, vk::Format format, vk::ImageLayout oldLayout, vk::ImageLayout newLayout);
 };

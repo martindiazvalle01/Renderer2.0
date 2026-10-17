@@ -3,6 +3,7 @@
 #include <Allocator.hpp>
 #include <cstddef>
 #include <cstdint>
+#include <stdexcept>
 #include <unordered_map>
 #include <vulkan/vulkan_core.h>
 #include <vulkan/vulkan_raii.hpp>
@@ -192,14 +193,19 @@ void RenderGraph::AddPass(const std::string& name,
     passes.push_back(pass);
 }
 
+
 // Motor de ejecucion del renderGraph - Coordina la ejecucion de passes con sincronizacion automatica
 // Este metodo transforma el rendergraph compilado a trabajo real para la GPU
 void RenderGraph::Execute(vk::raii::CommandBuffer& commandBuffer, vk::Queue queue) {
     // Gestion de los estados de ejecucion para la sincronizacion dinamica
-    std::vector<vk::CommandBuffer> cmdBuffers;      //  Almacenamiento del command buffer
     std::vector<vk::Semaphore> waitSemaphores;      //  Dependencias de Sincronizacion para el pass actual
     std::vector<vk::PipelineStageFlags> waitStages; //  Etapas del pipeline en espera
     std::vector<vk::Semaphore> signalSemaphores;        //  Semaforos para señalar cuando pasar despues de cada Pass
+
+
+    //  Preparacion del commandBuffer y las transiciones de layout del recurso
+    //  Activa el comando para registrar y transicionar recursos a sus layouts apropiados
+    commandBuffer.begin({});
 
     // Pass de ejecucion ordenado con manejo de dependencias automatico
     // Ejecuta cada pass en el orden calculado que garantize la seguridad de las dependencias
@@ -229,35 +235,16 @@ void RenderGraph::Execute(vk::raii::CommandBuffer& commandBuffer, vk::Queue queu
             }
         }
 
-        //  Preparacion del commandBuffer y las transiciones de layout del recurso
-        //  Activa el comando para registrar y transicionar recursos a sus layouts apropiados
-        commandBuffer.begin({});
-
-        //Input de Transicion de recursos a layout leibles por el shader
-        for (const auto& input : pass.inputs){
-            auto& graphResource = graphResources[input];
-            
-            vk::ImageMemoryBarrier barrier;
-            barrier.setOldLayout(graphResource.initialLayout);
-            barrier.setNewLayout(vk::ImageLayout::eShaderReadOnlyOptimal);
-            // TODO: Revisar si hay que cambiar estos 2, se ven sospechosamente estaticos
-            barrier.setSrcQueueFamilyIndex(VK_QUEUE_FAMILY_IGNORED);
-            barrier.setDstQueueFamilyIndex(VK_QUEUE_FAMILY_IGNORED);
-            barrier.setImage(graphResource.image.get());
-            barrier.setSubresourceRange({aspectFromFormat(graphResource.format), 0, 1, 0, 1});
-            //  TODO: Revisar estos 2 tambien, se ven sospechosamente estaticos
-            barrier.setSrcAccessMask(vk::AccessFlagBits::eMemoryWrite);
-            barrier.setDstAccessMask(vk::AccessFlagBits::eShaderRead);
-
-            //Inserta la barrera de pipeline para una segura transicion de layout 
-
-            commandBuffer.pipelineBarrier(
-                vk::PipelineStageFlagBits::eAllCommands,        // Que espere a todo el trabajo previo
-                vk::PipelineStageFlagBits::eFragmentShader,     // Que active el acceso al fragment shader
-                vk::DependencyFlagBits::eByRegion,           // Dependencia local-region
-                0, nullptr,barrier);    //Solo la Barrera de Imagen
-
+        
+        
+        // Transiciona el layout de los recursos input
+        for(const auto& input : pass.inputs){
+            GraphResource& res = GetResourceChecked(input);
+            TransitionResource(commandBuffer, res, LayoutForWrite(res.format));
         }
+     
+
+        
         // Ejecucion de Passes, Ejecuta la logica de renderizado
         // llama la funcion de renderizado proveida por el usuario con un commandBuffer preparado
         pass.executeFunc(commandBuffer);
@@ -265,51 +252,139 @@ void RenderGraph::Execute(vk::raii::CommandBuffer& commandBuffer, vk::Queue queu
         // Transiciones del layout finales - prepara recursos para su uso subsecuente
         // Transiciona los recursos del output aa su layout final requerido
 
-        for( const auto& output : pass.outputs){
-            auto& graphResource = graphResources[output];
-
-            vk::ImageMemoryBarrier barrier;
-            //Raro que varios de estos sean estaticos. TODO: Revisar esto
-            barrier.setOldLayout(vk::ImageLayout::eColorAttachmentOptimal);
-            barrier.setNewLayout(graphResource.finalLayout);
-            barrier.setSrcQueueFamilyIndex(VK_QUEUE_FAMILY_IGNORED);
-            barrier.setDstQueueFamilyIndex(VK_QUEUE_FAMILY_IGNORED);
-            barrier.setImage(graphResource.image.get());
-            barrier.setSubresourceRange({aspectFromFormat(graphResource.format),0, 1, 0, 1});
-            barrier.setSrcAccessMask(vk::AccessFlagBits::eColorAttachmentWrite);        
-            barrier.setDstAccessMask(vk::AccessFlagBits::eMemoryWrite);
-
-            //  Inserta la barrera final para la transicion del layout
-            commandBuffer.pipelineBarrier(
-                vk::PipelineStageFlagBits::eColorAttachmentOutput, 
-                vk::PipelineStageFlagBits::eAllCommands,
-                vk::DependencyFlagBits::eByRegion,
-                0, nullptr, barrier
-            );
-        }
-
-        //  Presentacion de comandos con la sincronizacion
-        commandBuffer.end();
-
-        vk::SubmitInfo submitInfo;
-        // ni idea porque el static cast, en la documentacion de vulkan decia que lo usara asi
-        submitInfo.setSignalSemaphoreCount(static_cast<uint32_t>(waitSemaphores.size()));
-        submitInfo.setPWaitSemaphores(waitSemaphores.data());
-        submitInfo.setPWaitDstStageMask(waitStages.data());
-        submitInfo.setCommandBufferCount(1);
-        submitInfo.setPCommandBuffers(&*commandBuffer);
-        submitInfo.setSignalSemaphoreCount(static_cast<uint32_t>(signalSemaphores.size()));
-        submitInfo.setPSignalSemaphores(signalSemaphores.data());
-
-        vk::Result result = queue.submit(1,&submitInfo,nullptr);
-
-        //TODO: Pensar que hay que hacer aca si falla la ejecucion del rendergraph
-        if(result != vk::Result::eSuccess){
-            continue;
+        //Transiciona el layout de los recursos output
+        for(const auto& output : pass.outputs){
+            GraphResource& res = GetResourceChecked(output);
+            TransitionResource(commandBuffer, res, LayoutForWrite(res.format));
         }
         
     }
+    //  Presentacion de comandos con la sincronizacion
+    commandBuffer.end();
+
+    vk::SubmitInfo submitInfo;
+    // ni idea porque el static cast, en la documentacion de vulkan decia que lo usara asi
+    submitInfo.setWaitSemaphoreCount(static_cast<uint32_t>(waitSemaphores.size()));
+    submitInfo.setPWaitSemaphores(waitSemaphores.data());
+    submitInfo.setPWaitDstStageMask(waitStages.data());
+    submitInfo.setCommandBufferCount(1);
+    submitInfo.setPCommandBuffers(&*commandBuffer);
+    submitInfo.setSignalSemaphoreCount(static_cast<uint32_t>(signalSemaphores.size()));
+    submitInfo.setPSignalSemaphores(signalSemaphores.data());
+
+    vk::Result result = queue.submit(1,&submitInfo,nullptr);
+
+    //TODO: Pensar que hay que hacer aca si falla la ejecucion del rendergraph
+    if(result != vk::Result::eSuccess){
+    }
+}
+
+// Busca el recurso y falla con un mensaje claro si no existe (reemplaza a graphResources[nombre])
+RenderGraph::GraphResource& RenderGraph::GetResourceChecked(const std::string& name) {
+    auto it = graphResources.find(name);
+    if (it == graphResources.end()) {
+        throw std::runtime_error("RenderGraph: recurso no registrado: " + name);
+    }
+    return it->second;
+}
+
+// Lleva el recurso al layout pedido y actualiza el seguimiento
+void RenderGraph::TransitionResource(vk::raii::CommandBuffer& commandBuffer,
+                                     GraphResource& resource, vk::ImageLayout newLayout) {
+    // lectura -> lectura en el mismo layout: no hace falta barrera
+    if (resource.currentLayout == newLayout &&
+        newLayout == vk::ImageLayout::eShaderReadOnlyOptimal) {
+        return;
+    }
+
+    TransitionImageLayout(commandBuffer, resource.image.get(), resource.format,
+                          resource.currentLayout, newLayout);
+    resource.currentLayout = newLayout;   // el recurso "recuerda" en que layout quedo
+}
+
+//TODO: Cambiar todo esto para que sea con switch, o buscar alguna forma de que se vea más ordenado la parte de las asignaciones, 
+// como separar haciendo un if para el initial y que cada parte de la que empieze tenga una clase segun cual es el layout final 
+
+// Implementacion de la transicion del layout de la imagen
+void RenderGraph::TransitionImageLayout(vk::raii::CommandBuffer& commandBuffer, vk::Image image, vk::Format format, vk::ImageLayout oldLayout, vk::ImageLayout newLayout){
+    //Esto especifica el tipo de barrera que se usara para el viejo layout usando los datos del viejo layout
+    BarrierHalf srcHalf = SrcHalf(oldLayout);
+    //Esto especifica el tipo de barrera que se usara para el nuevo layout usando los datos del nuevo layout
+    BarrierHalf dstHalf = DstHalf(newLayout);
+
+    //  Configuracion basica de la estructura de la barrera de memoria de imagen
+    //  Esta barrera va a coordenar el acceso de memoria y transiciones de layouts
+    vk::ImageMemoryBarrier barrier;
+    barrier.setOldLayout(oldLayout);                                                                        // Estado actual del layout
+    barrier.setNewLayout(newLayout);                                                                        // Layout objetivo despues de la transicion
+    barrier.setSrcQueueFamilyIndex(VK_QUEUE_FAMILY_IGNORED);                                      // Ninguna family Queue es dueño de esta transferencia
+    barrier.setDstQueueFamilyIndex(VK_QUEUE_FAMILY_IGNORED);                                      // La misma familia queue con la que se inicio
+    barrier.setImage(image);
+    barrier.setSrcAccessMask(srcHalf.access);
+    barrier.setDstAccessMask(dstHalf.access);                                                                                     // Imagen objetivo para la transicion
+    barrier.setSubresourceRange({aspectFromFormat(format),0,1,0,1});      // Rango completo del color de la imagen
+
+
+    //  Ejecuta esta barera de pipeline con la configuracion de la sincronizacion
+    //  Esto junta el layout de transicion y la sincronizacion de memoria con el commandBuffer
+    commandBuffer.pipelineBarrier(srcHalf.stage,dstHalf.stage,vk::DependencyFlags{},
+                                 0, nullptr, barrier);
 }
 
 
+RenderGraph::BarrierHalf RenderGraph::SrcHalf(vk::ImageLayout oldLayout){
+    switch (oldLayout) {
+        case vk::ImageLayout::eUndefined:
+            return {vk::PipelineStageFlagBits::eTopOfPipe,vk::AccessFlagBits::eNone};
+            break;
+        
+        case vk::ImageLayout::eTransferDstOptimal:
+            return {vk::PipelineStageFlagBits::eTransfer,vk::AccessFlagBits::eTransferWrite};
+            break;
 
+        case vk::ImageLayout::eColorAttachmentOptimal:
+            return {vk::PipelineStageFlagBits::eColorAttachmentOutput, vk::AccessFlagBits::eColorAttachmentWrite};
+            break;
+        
+        case vk::ImageLayout::eShaderReadOnlyOptimal:
+            return {vk::PipelineStageFlagBits::eFragmentShader,vk::AccessFlagBits::eShaderRead};
+            break;
+        
+        case vk::ImageLayout::eDepthStencilAttachmentOptimal:
+            // el | es para indicar que puede ser cualquiera de los 2, osea guarda los 2
+            // esto es para que la barrera haga qe nada avance hasta que estas 2 stages esten finalizadas
+            return {vk::PipelineStageFlagBits::eEarlyFragmentTests | vk::PipelineStageFlagBits::eLateFragmentTests, vk::AccessFlagBits::eDepthStencilAttachmentWrite};
+            break;
+        default:
+            throw std::invalid_argument("SrcHalf: layout no soportado");
+    }
+}
+
+RenderGraph::BarrierHalf RenderGraph::DstHalf(vk::ImageLayout newLayout){
+    switch (newLayout) {
+        case vk::ImageLayout::eTransferDstOptimal:
+            return {vk::PipelineStageFlagBits::eTransfer,vk::AccessFlagBits::eTransferWrite};
+            break;
+        case vk::ImageLayout::eShaderReadOnlyOptimal:
+            return{vk::PipelineStageFlagBits::eFragmentShader,vk::AccessFlagBits::eShaderRead};
+            break;
+        case vk::ImageLayout::eColorAttachmentOptimal:
+            return {vk::PipelineStageFlagBits::eColorAttachmentOutput, vk::AccessFlagBits::eColorAttachmentWrite};
+        case vk::ImageLayout::eDepthAttachmentOptimal:
+            // el | es para indicar que puede ser cualquiera de los 2, osea guarda los 2
+            // esto es para que la barrera haga qe nada avance hasta que estas 2 stages esten finalizadas
+            return {vk::PipelineStageFlagBits::eEarlyFragmentTests | vk::PipelineStageFlagBits::eLateFragmentTests,
+                    vk::AccessFlagBits::eDepthStencilAttachmentRead | vk::AccessFlagBits::eDepthStencilAttachmentWrite};
+                    break;
+        default:
+            throw std::invalid_argument("DstHalf: layout no soportado");
+    
+    }
+}
+
+vk::ImageLayout RenderGraph::LayoutForWrite(vk::Format format){
+    auto aspect = aspectFromFormat(format);
+    bool isDepthStencil = aspect != vk::ImageAspectFlagBits::eColor;
+    return  isDepthStencil ? vk::ImageLayout::eDepthStencilAttachmentOptimal : vk::ImageLayout::eColorAttachmentOptimal;
+ 
+}
