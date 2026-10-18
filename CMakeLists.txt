@@ -140,8 +140,10 @@ target_include_directories(${PROJECT_NAME}  SYSTEM PRIVATE
     "src/resource_management_layer/texture"
     "src/resource_management_layer/Mesh"
     "src/Tests"
+    "src/rendering_layers"
     "src/rendering_layers/swapchain"
     "src/rendering_layers/FrameManagement"
+    "src/rendering_layers/Renderer"
     "libs/vma/include"
     "libs/tinygltf"
     ${STB_DIR}

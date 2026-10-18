@@ -1,6 +1,8 @@
+#include <vector>
 #include <vulkan/vulkan.h>
 #include <vulkan/vulkan_raii.hpp>
 #include "Instance.hpp"
+#include "vulkan/vulkan.hpp"
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_vulkan.h>
 
@@ -46,6 +48,14 @@ void Instance::create() {
     };
     createInfo.enabledLayerCount   = static_cast<uint32_t>(validationLayers.size());
     createInfo.ppEnabledLayerNames = validationLayers.data();
+
+    std::vector<vk::ValidationFeatureEnableEXT> enabledFeatures = {
+        vk::ValidationFeatureEnableEXT::eSynchronizationValidation
+    };
+    vk::ValidationFeaturesEXT validationFeatures{};
+    validationFeatures.setEnabledValidationFeatures(enabledFeatures);
+
+    createInfo.pNext = &validationFeatures;
 
     this->instance = vk::raii::Instance(context, createInfo);
 

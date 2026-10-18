@@ -1,0 +1,549 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "VulkanEngine"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"target_compile_options",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt",
+			"libs/tracy/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 125,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 154,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 54,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 180,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 135,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=c++23"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wpedantic"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wno-missing-field-initializers"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "DEBUG"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "FASTGLTF_DISABLE_CUSTOM_MEMORY_POOL=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "FASTGLTF_ENABLE_KHR_IMPLICIT_SHAPES=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "FASTGLTF_ENABLE_KHR_PHYSICS_RIGID_BODIES=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "FASTGLTF_USE_64BIT_FLOAT=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "FASTGLTF_USE_CUSTOM_SMALLVECTOR=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "FMT_SHARED"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "KTX_FEATURE_KTX1"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "KTX_FEATURE_KTX2"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "KTX_FEATURE_WRITE"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "SPDLOG_COMPILED_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "SPDLOG_SHARED_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "TRACY_CALLSTACK=10"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "TRACY_ENABLE"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "TRACY_ON_DEMAND"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "_DEBUG"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/spdlog/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/lib/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/lib/../external/dfdutils"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/slang/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/imgui"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/imgui/backends"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/imguizmo"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/fastgltf/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/fastgltf/deps/simdjson"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Single_GPU_Manager"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/texture"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Mesh"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/Tests"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/swapchain"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/FrameManagement"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/Renderer"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/vma/include"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/tinygltf"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/tracy/public"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2,
+					2
+				],
+				"standard" : "23"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "imgui::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "spdlog::@f9417c48a877073874e9"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "TracyClient::@b8143ccbb7a61fbd5574"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "meshoptimizer::@12daefafb22c15ac1f19"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "ktx::@aa04aacffcb741576eb2"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "fastgltf::@a97a14c05eed5a82e375"
+		}
+	],
+	"id" : "VulkanEngine::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-L/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/slang/lib",
+				"role" : "libraryPath"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/slang/lib:/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/spdlog:/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/Debug:/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/fastgltf",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/lib64/libvulkan.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "libs/spdlog/libspdlogd.so.1.17.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "libs/tracy/libTracyClient.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "libs/meshoptimizer/libmeshoptimizer.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "Debug/libktx.so.5.0.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "libimgui.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "libs/fastgltf/libfastgltf.so.0.9.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "-ldl",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/lib64/libSDL3.so.0.4.16",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/lib64/libvulkan.so",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "VulkanEngine",
+	"nameOnDisk" : "VulkanEngine",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Tests/ResourceManagementTests.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core_layers/Single_GPU_Core/Allocator.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core_layers/Single_GPU_Core/DebugMessenger.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core_layers/Single_GPU_Core/Instance.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core_layers/Single_GPU_Core/LogicalDevice.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core_layers/Single_GPU_Core/Surface.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/rendering_layers/FrameManagement/FrameManager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/rendering_layers/PipelineBuilder.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/rendering_layers/RenderGraph.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/rendering_layers/Renderer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/rendering_layers/swapchain/Swapchain.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/resource_management_layer/MaterialData.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/resource_management_layer/Mesh/MeshData.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/resource_management_layer/ResourceManager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/resource_management_layer/texture/TextureData.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
