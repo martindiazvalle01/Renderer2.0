@@ -23,7 +23,7 @@ void PipelineBuilder::clear()
     shaderStages.clear();
 }
 
-vk::Pipeline PipelineBuilder::buildPipeline(vk::Device& device){
+vk::Pipeline PipelineBuilder::buildPipeline(const vk::raii::Device& device){
     //Creamos el estado del viewport de nuestro viewport y de las tijeras
     // Por el momento solo se permitira un viewport y una tijera
 
@@ -78,12 +78,10 @@ vk::Pipeline PipelineBuilder::buildPipeline(vk::Device& device){
 
     auto newPipeline = device.createGraphicsPipeline(VK_NULL_HANDLE,pipelineInfo);
 
-    if (newPipeline.result != vk::Result::eSuccess){
-        throw("Error creando la Pipeline");
-    }
+    
 
 
-    return newPipeline.value;
+    return newPipeline;
 
     
 }

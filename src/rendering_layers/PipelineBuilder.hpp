@@ -10,7 +10,7 @@ class PipelineBuilder{
     public: 
 
         PipelineBuilder(){clear();}
-        vk::Pipeline buildPipeline(vk::Device& device);
+        vk::Pipeline buildPipeline(const vk::raii::Device& device);
         void setShaders(vk::ShaderModule vertexShader, vk::ShaderModule fragmentShader);
         void setInputTopology(vk::PrimitiveTopology topology);
         void setPolygonMode(vk::PolygonMode mode);
@@ -21,6 +21,35 @@ class PipelineBuilder{
         void setColorAttachmentFormat(vk::Format format);
         void setDepthFormat(vk::Format format);
         void disableDepthTest();
+
+        //Parte hecha con IA (Me dio flojera hacer los setters)
+        // --- Layout (necesario) ---
+        void setPipelineLayout(vk::PipelineLayout layout) { pipelineLayout = layout; }
+        vk::PipelineLayout getPipelineLayout() const { return pipelineLayout; }
+
+        // --- Shader stages ---
+        void setShaderStages(const std::vector<vk::PipelineShaderStageCreateInfo>& stages) { shaderStages = stages; }
+        const std::vector<vk::PipelineShaderStageCreateInfo>& getShaderStages() const { return shaderStages; }
+
+        // --- Input assembly ---
+        void setInputAssembly(const vk::PipelineInputAssemblyStateCreateInfo& v) { inputAssembly = v; }
+        const vk::PipelineInputAssemblyStateCreateInfo& getInputAssembly() const { return inputAssembly; }
+
+        // --- Rasterizer ---
+        void setRasterizer(const vk::PipelineRasterizationStateCreateInfo& v) { rasterizer = v; }
+        const vk::PipelineRasterizationStateCreateInfo& getRasterizer() const { return rasterizer; }
+
+        // --- Color blend attachment ---
+        void setColorBlendAttachment(const vk::PipelineColorBlendAttachmentState& v) { colorBlendAttachment = v; }
+        const vk::PipelineColorBlendAttachmentState& getColorBlendAttachment() const { return colorBlendAttachment; }
+
+        // --- Multisampling ---
+        void setMultisampling(const vk::PipelineMultisampleStateCreateInfo& v) { multisampling = v; }
+        const vk::PipelineMultisampleStateCreateInfo& getMultisampling() const { return multisampling; }
+
+        // --- Depth/stencil ---
+        void setDepthStencil(const vk::PipelineDepthStencilStateCreateInfo& v) { depthStencil = v; }
+        const vk::PipelineDepthStencilStateCreateInfo& getDepthStencil() const { return depthStencil; }
 
     private: 
         std::vector<vk::PipelineShaderStageCreateInfo> shaderStages;

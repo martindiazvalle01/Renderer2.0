@@ -2,7 +2,6 @@
 #include "vulkan/vulkan.hpp"
 #include <Allocator.hpp>
 #include <cstddef>
-#include <cstdint>
 #include <stdexcept>
 #include <unordered_map>
 #include <vulkan/vulkan_core.h>
@@ -158,7 +157,7 @@ vk::ImageAspectFlags RenderGraph::aspectFromFormat(vk::Format format) {
 
 void RenderGraph::AddResource(const std::string& name, vk::Format format, vk::Extent2D extent,
                     vk::ImageUsageFlags usage, vk::ImageLayout initialLayout,
-                    vk::ImageLayout finalLayout){
+                    vk::ImageLayout finalLayout, bool imported){
 
 
     GraphResource graphResource;
@@ -168,6 +167,7 @@ void RenderGraph::AddResource(const std::string& name, vk::Format format, vk::Ex
     graphResource.usage = usage;
     graphResource.initialLayout = initialLayout;
     graphResource.finalLayout = finalLayout;
+    graphResource.imported = imported;
 
     // Debido a que GPUImage no deja ser copiada, no podemos usar
     //renderGraphMap[key] = myResource;, por lo que hacemos simplemente un emplace move para mover la propiedad de la clase
@@ -176,12 +176,11 @@ void RenderGraph::AddResource(const std::string& name, vk::Format format, vk::Ex
 }
 
 // La imagen va a llegar importada de la swapchain
-void RenderGraph::setImportedImage(std::string& name, vk::Image& image, vk::raii::ImageView& imageView){
+void RenderGraph::setImportedImage(const std::string& name, vk::Image image, vk::ImageView view) {
     auto& res = GetResourceChecked(name);
     res.image.set(image);
-    res.view = std::move(imageView);
+    res.view = view;                          // sin ownership, no toca ownedView
     res.currentLayout = vk::ImageLayout::eUndefined;
-    res.imported = true;
 }
 
 // Interfaz de registro de passes para definir las operaciones de renderizado y sus dependiencias
@@ -202,52 +201,22 @@ void RenderGraph::AddPass(const std::string& name,
 
 // Motor de ejecucion del renderGraph - Coordina la ejecucion de passes con sincronizacion automatica
 // Este metodo transforma el rendergraph compilado a trabajo real para la GPU
-void RenderGraph::Execute(vk::raii::CommandBuffer& commandBuffer, vk::Queue queue) {
-    // Gestion de los estados de ejecucion para la sincronizacion dinamica
-    std::vector<vk::Semaphore> waitSemaphores;      //  Dependencias de Sincronizacion para el pass actual
-    std::vector<vk::PipelineStageFlags> waitStages; //  Etapas del pipeline en espera
-    std::vector<vk::Semaphore> signalSemaphores;        //  Semaforos para señalar cuando pasar despues de cada Pass
-
-
+void RenderGraph::Execute(vk::raii::CommandBuffer& commandBuffer) {
+    
     // Si el recurso no es persistente, se reinicia su layout cada frame
     for (auto& [name, res] : graphResources) {
         if (!res.persistent && !res.imported)
             res.currentLayout = vk::ImageLayout::eUndefined;
     }
 
-    //  Preparacion del commandBuffer y las transiciones de layout del recurso
-    //  Activa el comando para registrar y transicionar recursos a sus layouts apropiados
-    commandBuffer.begin({});
 
     // Pass de ejecucion ordenado con manejo de dependencias automatico
     // Ejecuta cada pass en el orden calculado que garantize la seguridad de las dependencias
 
     for(auto passIdx : executionOrder){
+        if (!passes[passIdx].enabled) continue;
         const auto& pass = passes[passIdx];
 
-        //  Configuracion de Sincronizacion - Agarra las dependencias para el pass actual
-        //  Determina lo que el pass debe esperar antes de ejecutarse
-        waitSemaphores.clear();
-        waitStages.clear();
-
-        for(size_t i = 0; i < semaphoreSignalWaitPairs.size(); i++){
-            if(semaphoreSignalWaitPairs[i].second == passIdx){
-                // Este pass depende de que se complete otro pass
-                waitSemaphores.push_back(*semaphores[i]);               // Espera a que se complete la dependencia
-                waitStages.push_back(vk::PipelineStageFlagBits::eColorAttachmentOutput);    // Espera al estado de la salida
-            }
-        }
-
-        // Recolecta semaforos a los cuales este pass vaa a ser una señal para passes dependientes(osea los passes a los que les debe avisar que termino)
-        signalSemaphores.clear();
-        for(size_t i = 0; i < semaphoreSignalWaitPairs.size(); i++){
-            if(semaphoreSignalWaitPairs[i].first == passIdx) {
-                // Otrso passes dependen en que se complete este pass
-                signalSemaphores.push_back(*semaphores[i]);
-            }
-        }
-
-        
         
         // Transiciona el layout de los recursos input
         for(const auto& input : pass.inputs){
@@ -255,9 +224,6 @@ void RenderGraph::Execute(vk::raii::CommandBuffer& commandBuffer, vk::Queue queu
             TransitionResource(commandBuffer, res, vk::ImageLayout::eShaderReadOnlyOptimal);
         }
      
-
-        // Transiciones del layout finales - prepara recursos para su uso subsecuente
-        // Transiciona los recursos del output aa su layout final requerido
 
         //Transiciona el layout de los recursos output
         for(const auto& output : pass.outputs){
@@ -276,24 +242,8 @@ void RenderGraph::Execute(vk::raii::CommandBuffer& commandBuffer, vk::Queue queu
             if (res.currentLayout == res.finalLayout) continue;             // ya está donde debe
             TransitionResource(commandBuffer, res, res.finalLayout);
     }
-    //  Presentacion de comandos con la sincronizacion
-    commandBuffer.end();
-
-    vk::SubmitInfo submitInfo;
-    // ni idea porque el static cast, en la documentacion de vulkan decia que lo usara asi
-    submitInfo.setWaitSemaphoreCount(static_cast<uint32_t>(waitSemaphores.size()));
-    submitInfo.setPWaitSemaphores(waitSemaphores.data());
-    submitInfo.setPWaitDstStageMask(waitStages.data());
-    submitInfo.setCommandBufferCount(1);
-    submitInfo.setPCommandBuffers(&*commandBuffer);
-    submitInfo.setSignalSemaphoreCount(static_cast<uint32_t>(signalSemaphores.size()));
-    submitInfo.setPSignalSemaphores(signalSemaphores.data());
-
-    vk::Result result = queue.submit(1,&submitInfo,nullptr);
-
-    //TODO: Pensar que hay que hacer aca si falla la ejecucion del rendergraph
-    if(result != vk::Result::eSuccess){
-    }
+    
+    
 }
 
 // Busca el recurso y falla con un mensaje claro si no existe (reemplaza a graphResources[nombre])
@@ -415,4 +365,5 @@ vk::ImageLayout RenderGraph::LayoutForWrite(vk::Format format){
     return  isDepthStencil ? vk::ImageLayout::eDepthStencilAttachmentOptimal : vk::ImageLayout::eColorAttachmentOptimal;
  
 }
+
 

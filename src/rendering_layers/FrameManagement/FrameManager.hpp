@@ -39,13 +39,17 @@ class FrameManager{
     public:
             FrameManager(const vk::raii::Device& device, uint32_t queueFamilyIndex);
 
+            vk::raii::CommandBuffer& currentCmd();
             
             // Se usa optional porque si retorna el index de la imagen significa que el codigo se ejecuto correctamente
             // Si no lo hizo y retorna std::nullopt significa que hay que rehacer la swapchain
-            std::optional<uint32_t> beginFrame(const vk::raii::Device& device,vk::raii::SwapchainKHR& swapchain);
+            std::optional<uint32_t> beginFrame(const vk::raii::Device& device,const vk::raii::SwapchainKHR& swapchain);
 
             bool submitFrame(const vk::raii::Queue& graphicsQueue,
-                                vk::raii::SwapchainKHR& swapchain, uint32_t imageIndex);
+                                const vk::raii::SwapchainKHR& swapchain, uint32_t imageIndex);
+
+
+           
 
 
 

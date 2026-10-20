@@ -1,0 +1,59 @@
+Date : 2026-10-20 00:09:53
+Directory : /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src
+Total : 25 files,  288 codes, 18 comments, 134 blanks, all 440 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         25 |        288 |         18 |        134 |        440 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                            | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                               |         25 |        288 |         18 |        134 |        440 |
+| core_layers                                                                                                     |          2 |         30 |          0 |          5 |         35 |
+| core_layers/Single_GPU_Core                                                                                     |          2 |         30 |          0 |          5 |         35 |
+| renderering_layers                                                                                              |          9 |       -703 |       -146 |       -222 |     -1,071 |
+| renderering_layers/FrameManagement                                                                              |          2 |       -150 |        -28 |        -50 |       -228 |
+| renderering_layers/Renderer                                                                                     |          5 |       -383 |       -106 |       -128 |       -617 |
+| renderering_layers/swapchain                                                                                    |          2 |       -170 |        -12 |        -44 |       -226 |
+| rendering_layers                                                                                                |         14 |        961 |        164 |        351 |      1,476 |
+| rendering_layers (Files)                                                                                        |         10 |        635 |        124 |        252 |      1,011 |
+| rendering_layers/FrameManagement                                                                                |          2 |        155 |         28 |         55 |        238 |
+| rendering_layers/swapchain                                                                                      |          2 |        171 |         12 |         44 |        227 |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                        | language | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Instance.cpp            | C++      |          8 |          0 |          2 |         10 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/RenderDevice.hpp        | C++      |         22 |          0 |          3 |         25 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/renderering_layers/FrameManagement/FrameManager.cpp | C++      |       -120 |        -22 |        -35 |       -177 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/renderering_layers/FrameManagement/FrameManager.hpp | C++      |        -30 |         -6 |        -15 |        -51 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/renderering_layers/Renderer/GpuImage.hpp            | C++      |        -53 |        -10 |        -13 |        -76 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/renderering_layers/Renderer/RenderGraph.cpp         | C++      |       -254 |        -81 |        -84 |       -419 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/renderering_layers/Renderer/RenderGraph.hpp         | C++      |        -65 |        -14 |        -27 |       -106 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/renderering_layers/Renderer/Renderer.cpp            | C++      |         -5 |         -1 |         -2 |         -8 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/renderering_layers/Renderer/Renderer.hpp            | C++      |         -6 |          0 |         -2 |         -8 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/renderering_layers/swapchain/Swapchain.cpp          | C++      |       -126 |         -9 |        -26 |       -161 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/renderering_layers/swapchain/Swapchain.hpp          | C++      |        -44 |         -3 |        -18 |        -65 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/FrameManagement/FrameManager.cpp   | C++      |        123 |         22 |         37 |        182 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/FrameManagement/FrameManager.hpp   | C++      |         32 |          6 |         18 |         56 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/GpuImage.hpp                       | C++      |         54 |         10 |         14 |         78 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/PipelineBuilder.cpp                | C++      |        107 |         12 |         51 |        170 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/PipelineBuilder.hpp                | C++      |         43 |         10 |         15 |         68 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/RenderGraph.cpp                    | C++      |        224 |         68 |         78 |        370 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/RenderGraph.hpp                    | C++      |         69 |         15 |         32 |        116 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/Renderer.cpp                       | C++      |         82 |          4 |         44 |        130 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/Renderer.hpp                       | C++      |         27 |          1 |          9 |         37 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/RendererConfig.hpp                 | C++      |          6 |          4 |          1 |         11 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/ShaderLoader.cpp                   | C++      |         17 |          0 |          6 |         23 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/ShaderLoader.hpp                   | C++      |          6 |          0 |          2 |          8 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/swapchain/Swapchain.cpp            | C++      |        126 |          9 |         26 |        161 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/swapchain/Swapchain.hpp            | C++      |         45 |          3 |         18 |         66 |
+| Total                                                                                                           |          |        288 |         18 |        134 |        440 |
++-----------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

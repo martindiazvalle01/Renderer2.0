@@ -30,9 +30,9 @@ class RenderGraph{
 
             // Recursos de GPU reales - rellenados durante la compilacion
             GpuImage image;    // clase que controla la imagen de en la GPU, esta contiene la localizacion de la asignacion de memoria
-            vk::raii::ImageView view = nullptr; // Vista de la imagen accesible para el shader
-            
-            bool imported;  //  Si la imagen viene desde swapchain
+            vk::ImageView view = nullptr; // Vista de la imagen accesible para el shader
+            vk::raii::ImageView importedView = nullptr;  // solo para recursos que crea Compile
+            bool imported = false;  //  Si la imagen viene desde swapchain
 
             bool persistent = false; // si el recurso no es persistente, se reinician los layouts por cada frame
 
@@ -84,26 +84,33 @@ class RenderGraph{
     public:
         void Compile(vk::raii::Device& device,VmaAllocator allocator);
 
-        void Execute(vk::raii::CommandBuffer& commandBuffer, vk::Queue queue);
-
+        void Execute(vk::raii::CommandBuffer& commandBuffer);
+        void submitFrame( vk::raii::Queue& graphicsQueue);
         //Interfaz de acceso al recuso para recuperar recursos compilados
         GraphResource* GetResource(const std::string& name){
             auto it = graphResources.find(name);
             return(it != graphResources.end()) ? & it-> second : nullptr; 
         }
 
+       
+
         void AddResource(const std::string& name, vk::Format format, vk::Extent2D extent,
                     vk::ImageUsageFlags usage, vk::ImageLayout initialLayout,
-                    vk::ImageLayout finalLayout);
+                    vk::ImageLayout finalLayout,bool imported = false);
         
         void AddPass(const std::string& name,
                 const std::vector<std::string>& inputs,
                 const std::vector<std::string>& outputs,
                 std::function<void(vk::raii::CommandBuffer&)> executeFunc);
 
-        void setImportedImage(std::string& name, vk::Image& image, vk::raii::ImageView& imageView);
+        void setImportedImage(const std::string& name, vk::Image image,  vk::ImageView imageView);
 
         void TransitionImageLayout(vk::raii::CommandBuffer& commandBuffer, vk::Image image, vk::Format format, vk::ImageLayout oldLayout, vk::ImageLayout newLayout);
 
         void RenderFrame(vk::raii::Device& device, vk::Queue graphicsQueue, vk::Queue presentQueue);
+
+
+
+
+        
 };

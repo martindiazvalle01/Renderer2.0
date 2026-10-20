@@ -54,7 +54,7 @@ void FrameManager::createTimelineSemaphore(const vk::raii::Device& device) {
 }
 
 //Esta funcion Realiza todo lo que debe ocurrir antes de grabar comandos de dibujo
-std::optional<uint32_t> FrameManager::beginFrame(const vk::raii::Device& device,vk::raii::SwapchainKHR& swapchain){
+std::optional<uint32_t> FrameManager::beginFrame(const vk::raii::Device& device,const vk::raii::SwapchainKHR& swapchain){
     uint64_t currentFrameIndex = frameCount % MaxFramesInFlight;
     FrameContext& fc = frames[currentFrameIndex];
 
@@ -64,6 +64,7 @@ std::optional<uint32_t> FrameManager::beginFrame(const vk::raii::Device& device,
         waitInfo.semaphoreCount = 1;
         waitInfo.pSemaphores    = &*timeline;  // puntero al handle crudo (osea el VKFRAMEBUFFER)
         waitInfo.pValues        = &fc.retireValue;
+        
 
         vk::Result result = device.waitSemaphores(waitInfo, UINT64_MAX);
         if (result != vk::Result::eSuccess) {
@@ -97,7 +98,7 @@ std::optional<uint32_t> FrameManager::beginFrame(const vk::raii::Device& device,
 
 
 bool FrameManager::submitFrame( const vk::raii::Queue& graphicsQueue,
-                                vk::raii::SwapchainKHR& swapchain,
+                                const vk::raii::SwapchainKHR& swapchain,
                                 uint32_t imageIndex) {
     uint64_t currentFrameIndex = frameCount % MaxFramesInFlight;
     FrameContext& fc = frames[currentFrameIndex];
@@ -108,7 +109,7 @@ bool FrameManager::submitFrame( const vk::raii::Queue& graphicsQueue,
     // Armamos la info de wait que esperar a que la imagen esté disponible
     vk::SemaphoreSubmitInfo waitInfo{};
     waitInfo.semaphore = *fc.imageAvailable;
-    waitInfo.stageMask = vk::PipelineStageFlagBits2::eColorAttachmentOutput;
+    waitInfo.stageMask = vk::PipelineStageFlagBits2::eAllCommands;
 
     // Le asignamos al nextValue el valor que el timeline va a tener cuando este frame termine
     uint64_t frameComplete = nextSubmitValue++;
@@ -120,7 +121,7 @@ bool FrameManager::submitFrame( const vk::raii::Queue& graphicsQueue,
     signalInfos[0].stageMask = vk::PipelineStageFlagBits2::eAllCommands;
 
     signalInfos[1].semaphore = *fc.renderFinished;
-    signalInfos[1].stageMask = vk::PipelineStageFlagBits2::eColorAttachmentOutput;
+    signalInfos[1].stageMask = vk::PipelineStageFlagBits2::eAllCommands;
 
     // Info del command buffer a subir
     vk::CommandBufferSubmitInfo cmdInfo{};
@@ -174,4 +175,8 @@ bool FrameManager::submitFrame( const vk::raii::Queue& graphicsQueue,
 // pero por si acaso se queda como funcion individual
 FrameManager::FrameManager(const vk::raii::Device& device, uint32_t queueFamilyIndex) {
     createContext(device, queueFamilyIndex);
+}
+
+vk::raii::CommandBuffer& FrameManager::currentCmd() {
+    return frames[frameCount % MaxFramesInFlight].cmd[0];
 }
