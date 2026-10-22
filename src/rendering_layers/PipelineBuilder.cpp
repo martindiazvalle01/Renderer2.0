@@ -23,7 +23,7 @@ void PipelineBuilder::clear()
     shaderStages.clear();
 }
 
-vk::Pipeline PipelineBuilder::buildPipeline(const vk::raii::Device& device){
+vk::raii::Pipeline PipelineBuilder::buildPipeline(const vk::raii::Device& device){
     //Creamos el estado del viewport de nuestro viewport y de las tijeras
     // Por el momento solo se permitira un viewport y una tijera
 
@@ -88,23 +88,24 @@ vk::Pipeline PipelineBuilder::buildPipeline(const vk::raii::Device& device){
 
 // TODO: Creo que esto se podria mejorar teniendo un struct y una funcion que rellene el struct con el archivo de ambos shader,
 //  para que asi se les pueda colocar nombres diferentes a cada shader, servira para debuggear
-void PipelineBuilder::setShaders(vk::ShaderModule vertexShader, vk::ShaderModule fragmentShader ){
+// PipelineBuilder.cpp
+void PipelineBuilder::setShaders(vk::ShaderModule vertexShader, vk::ShaderModule fragmentShader,
+                                 const char* vertexEntry, const char* fragmentEntry)
+{
     shaderStages.clear();
-    vk::PipelineShaderStageCreateInfo vertexStage;
 
-    vertexStage.stage  = vk::ShaderStageFlagBits::eVertex;
-    vertexStage.module = vertexShader;   // vk::ShaderModule
-    vertexStage.pName  = "main";
+    vk::PipelineShaderStageCreateInfo vertStage{};
+    vertStage.setStage(vk::ShaderStageFlagBits::eVertex);
+    vertStage.setModule(vertexShader);
+    vertStage.setPName(vertexEntry);
 
-    shaderStages.push_back(vertexStage);
+    vk::PipelineShaderStageCreateInfo fragStage{};
+    fragStage.setStage(vk::ShaderStageFlagBits::eFragment);
+    fragStage.setModule(fragmentShader);
+    fragStage.setPName(fragmentEntry);
 
-    vk::PipelineShaderStageCreateInfo fragmentStage;
-
-    fragmentStage.stage = vk::ShaderStageFlagBits::eFragment;
-    fragmentStage.module = fragmentShader;
-    fragmentStage.pName = "main";
-
-    shaderStages.push_back(fragmentStage);
+    shaderStages.push_back(vertStage);
+    shaderStages.push_back(fragStage);
 }
 
 
@@ -138,7 +139,8 @@ void PipelineBuilder::setMultisamplingNone(){
 
 void PipelineBuilder::disableBending(){
     //write mask en default
-    colorBlendAttachment.colorWriteMask = vk::ColorComponentFlagBits::eR | vk::ColorComponentFlagBits::eG | vk::ColorComponentFlagBits::eB | vk::ColorComponentFlagBits::eA;
+    colorBlendAttachment.colorWriteMask = vk::ColorComponentFlagBits::eR | vk::ColorComponentFlagBits::eG | vk::ColorComponentFlagBits::eB 
+                                        | vk::ColorComponentFlagBits::eA;
   
     colorBlendAttachment.blendEnable = vk::False;
 }

@@ -1,5 +1,6 @@
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles/imgui.dir
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles/VulkanEngine.dir
+/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles/shaders.dir
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles/package.dir
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles/package_source.dir
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles/edit_cache.dir

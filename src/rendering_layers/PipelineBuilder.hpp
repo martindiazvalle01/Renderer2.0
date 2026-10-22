@@ -10,8 +10,9 @@ class PipelineBuilder{
     public: 
 
         PipelineBuilder(){clear();}
-        vk::Pipeline buildPipeline(const vk::raii::Device& device);
-        void setShaders(vk::ShaderModule vertexShader, vk::ShaderModule fragmentShader);
+        vk::raii::Pipeline buildPipeline(const vk::raii::Device& device);
+        void setShaders(vk::ShaderModule vertexShader, vk::ShaderModule fragmentShader,
+                                 const char* vertexEntry, const char* fragmentEntry);
         void setInputTopology(vk::PrimitiveTopology topology);
         void setPolygonMode(vk::PolygonMode mode);
         void setCullMode(vk::CullModeFlags cullMode, vk::FrontFace frontFace);

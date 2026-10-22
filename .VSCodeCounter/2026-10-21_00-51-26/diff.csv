@@ -1,0 +1,17 @@
+"filename", "language", "C++", "comment", "blank", "total"
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/Tests/ResourceManagementTests.cpp", "C++", 0, -1, 1, 0
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/application_layer/mainLoop.cpp", "C++", 0, 0, 1, 1
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/RenderDevice.hpp", "C++", 1, 0, 0, 1
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/main.cpp", "C++", 44, 3, 8, 55
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/FrameManagement/FrameManager.cpp", "C++", 1, 6, 1, 8
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/FrameManagement/FrameManager.hpp", "C++", 4, 7, -4, 7
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/GpuImage.hpp", "C++", 5, 0, 0, 5
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/PipelineBuilder.cpp", "C++", 3, 1, -2, 2
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/PipelineBuilder.hpp", "C++", 1, 0, 0, 1
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/RenderGraph.cpp", "C++", 6, 2, 1, 9
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/RenderGraph.hpp", "C++", 1, 1, 0, 2
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/Renderer.cpp", "C++", 5, 4, 0, 9
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/Renderer.hpp", "C++", 0, 0, -1, -1
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/ShaderLoader.cpp", "C++", 10, 1, 1, 12
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/ShaderLoader.hpp", "C++", 1, 0, 0, 1
+"Total", "-", 82, 24, 6, 112

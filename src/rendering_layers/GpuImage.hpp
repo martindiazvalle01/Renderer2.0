@@ -62,7 +62,12 @@ public:
     }
 
     vk::Image get() const { return image; }
-    void set(vk::Image& image) {this->image = image;}
+    void set(vk::Image img) {
+    destroy();              // si había una propia, se libera bien
+    image      = img;
+    allocation = nullptr;   // sin allocation, destroy() no hace nada
+    allocator  = nullptr;
+}
     
 
 private:

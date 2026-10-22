@@ -186,26 +186,32 @@ endif()
 # =============================================================================
 # SHADERS (compilación automática con Slang)
 # =============================================================================
-file(GLOB SLANG_SHADERS ${CMAKE_SOURCE_DIR}/assets/shaders/*.slang)
+file(GLOB_RECURSE SLANG_SHADERS CONFIGURE_DEPENDS ${CMAKE_SOURCE_DIR}/assets/shaders/*.slang)
 
 find_program(SLANGC slangc PATHS ${LIBRARY_DIR}/slang/bin)
-
-if(SLANGC)
-    foreach(shader ${SLANG_SHADERS})
-        get_filename_component(name ${shader} NAME_WE)
-        add_custom_command(
-            OUTPUT ${CMAKE_SOURCE_DIR}/assets/shaders/${name}.spv
-            COMMAND ${SLANGC} ${shader}
-                -target spirv
-                -profile spirv_1_4
-                -fvk-use-entrypoint-name
-                -o ${CMAKE_SOURCE_DIR}/assets/shaders/${name}.spv
-            DEPENDS ${shader}
-            COMMENT "Compilando shader: ${name}.slang"
-        )
-        list(APPEND SPIRV_OUTPUTS ${CMAKE_SOURCE_DIR}/assets/shaders/${name}.spv)
-    endforeach()
-
-    add_custom_target(shaders ALL DEPENDS ${SPIRV_OUTPUTS})
-    add_dependencies(${PROJECT_NAME} shaders)
+if(NOT SLANGC)
+    message(FATAL_ERROR "No se encontro slangc (buscado en ${LIBRARY_DIR}/slang/bin y en el PATH)")
 endif()
+
+set(SPIRV_OUTPUTS "")
+foreach(shader ${SLANG_SHADERS})
+    get_filename_component(dir  ${shader} DIRECTORY)
+    get_filename_component(name ${shader} NAME_WE)
+    set(spv ${dir}/${name}.spv)
+
+    add_custom_command(
+        OUTPUT ${spv}
+        COMMAND ${SLANGC} ${shader}
+            -target spirv
+            -profile spirv_1_4
+            -fvk-use-entrypoint-name
+            -o ${spv}
+        DEPENDS ${shader}
+        COMMENT "Compilando shader: ${name}.slang"
+        VERBATIM
+    )
+    list(APPEND SPIRV_OUTPUTS ${spv})
+endforeach()
+
+add_custom_target(shaders ALL DEPENDS ${SPIRV_OUTPUTS})
+add_dependencies(${PROJECT_NAME} shaders)

@@ -62,6 +62,8 @@ class RenderGraph{
         std::vector<Pass> passes;                                      // Todos los passes de renderizado ordenados 
         std::vector<size_t> executionOrder;                            // Secuencia de compute optima para ejecucion
 
+        // Esto existe por si acaso me pasa de nuevo que se me olvida compilar antes de ejecutar
+        bool compiled = false;
 
         //Estos objetos se aseguran de la correcta ejecucion de la GPU sin barreras manuales
         // TODO: Esto por ahora es codigo muerto, no se usa, para cuando el Renderer este funcional hay que crear estos para 
@@ -82,7 +84,7 @@ class RenderGraph{
         //Funcion que decide el tipo de layout dependiendo del formato
         vk::ImageLayout LayoutForWrite(vk::Format format);
     public:
-        void Compile(vk::raii::Device& device,VmaAllocator allocator);
+        void Compile(const vk::raii::Device& device,VmaAllocator allocator);
 
         void Execute(vk::raii::CommandBuffer& commandBuffer);
         void submitFrame( vk::raii::Queue& graphicsQueue);

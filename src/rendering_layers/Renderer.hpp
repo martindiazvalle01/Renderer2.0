@@ -31,7 +31,6 @@ class Renderer{
         PipelineBuilder pipelineBuilder;
         ShaderLoader shaderLoader;
         // Variable de prueba, despues hay que cambiar y borrar
-        vk::Pipeline trianglePipeline;
+        vk::raii::Pipeline trianglePipeline{nullptr};
         
-
 };

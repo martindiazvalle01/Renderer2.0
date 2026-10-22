@@ -1,0 +1,82 @@
+Date : 2026-10-21 00:51:26
+Directory : /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src
+Total : 44 files,  1967 codes, 265 comments, 608 blanks, all 2840 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         44 |      1,967 |        265 |        608 |      2,840 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                  | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                     |         44 |      1,967 |        265 |        608 |      2,840 |
+| . (Files)                                                                                                                             |          1 |         53 |          3 |         13 |         69 |
+| Tests                                                                                                                                 |          2 |         66 |          7 |         14 |         87 |
+| application_layer                                                                                                                     |          1 |          0 |          0 |          1 |          1 |
+| core_layers                                                                                                                           |         13 |        392 |         19 |        107 |        518 |
+| core_layers/Single_GPU_Core                                                                                                           |         13 |        392 |         19 |        107 |        518 |
+| rendering_layers                                                                                                                      |         14 |        998 |        186 |        347 |      1,531 |
+| rendering_layers (Files)                                                                                                              |         10 |        667 |        133 |        251 |      1,051 |
+| rendering_layers/FrameManagement                                                                                                      |          2 |        160 |         41 |         52 |        253 |
+| rendering_layers/swapchain                                                                                                            |          2 |        171 |         12 |         44 |        227 |
+| resource_management_layer                                                                                                             |         13 |        458 |         50 |        126 |        634 |
+| resource_management_layer (Files)                                                                                                     |          7 |        257 |         25 |         71 |        353 |
+| resource_management_layer/Mesh                                                                                                        |          2 |        146 |         14 |         39 |        199 |
+| resource_management_layer/Single_GPU_Manager                                                                                          |          2 |          0 |          0 |          2 |          2 |
+| resource_management_layer/texture                                                                                                     |          2 |         55 |         11 |         14 |         80 |
++---------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                                              | language | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/Tests/ResourceManagementTests.cpp                                         | C++      |         64 |          7 |         14 |         85 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/Tests/ResourceManagementTests.hpp                                         | C++      |          2 |          0 |          0 |          2 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/application_layer/mainLoop.cpp                                            | C++      |          0 |          0 |          1 |          1 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Allocator.cpp                                 | C++      |         20 |          2 |          8 |         30 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Allocator.hpp                                 | C++      |         13 |          0 |          4 |         17 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/DebugMessenger.cpp                            | C++      |         26 |          0 |          3 |         29 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/DebugMessenger.hpp                            | C++      |         15 |          0 |          4 |         19 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Instance.cpp                                  | C++      |         43 |          1 |         19 |         63 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Instance.hpp                                  | C++      |         11 |          0 |          3 |         14 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/LogicalDevice.cpp                             | C++      |         71 |          9 |         22 |        102 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/LogicalDevice.hpp                             | C++      |         19 |          0 |          6 |         25 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp                    | C++      |         75 |          6 |         19 |        100 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.hpp                    | C++      |         11 |          0 |          2 |         13 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/RenderDevice.hpp                              | C++      |         57 |          0 |          6 |         63 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Surface.cpp                                   | C++      |         18 |          1 |          4 |         23 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Surface.hpp                                   | C++      |         13 |          0 |          7 |         20 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/main.cpp                                                                  | C++      |         53 |          3 |         13 |         69 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/FrameManagement/FrameManager.cpp                         | C++      |        124 |         28 |         38 |        190 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/FrameManagement/FrameManager.hpp                         | C++      |         36 |         13 |         14 |         63 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/GpuImage.hpp                                             | C++      |         59 |         10 |         14 |         83 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/PipelineBuilder.cpp                                      | C++      |        110 |         13 |         49 |        172 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/PipelineBuilder.hpp                                      | C++      |         44 |         10 |         15 |         69 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/RenderGraph.cpp                                          | C++      |        230 |         70 |         79 |        379 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/RenderGraph.hpp                                          | C++      |         70 |         16 |         32 |        118 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/Renderer.cpp                                             | C++      |         87 |          8 |         44 |        139 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/Renderer.hpp                                             | C++      |         27 |          1 |          8 |         36 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/RendererConfig.hpp                                       | C++      |          6 |          4 |          1 |         11 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/ShaderLoader.cpp                                         | C++      |         27 |          1 |          7 |         35 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/ShaderLoader.hpp                                         | C++      |          7 |          0 |          2 |          9 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/swapchain/Swapchain.cpp                                  | C++      |        126 |          9 |         26 |        161 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/swapchain/Swapchain.hpp                                  | C++      |         45 |          3 |         18 |         66 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/GltfSceneCache.hpp                              | C++      |         43 |          3 |         12 |         58 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/MaterialData.cpp                                | C++      |         79 |          4 |         16 |         99 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/MaterialData.hpp                                | C++      |         32 |          3 |          9 |         44 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Mesh/MeshData.cpp                               | C++      |        108 |         10 |         29 |        147 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Mesh/MeshData.hpp                               | C++      |         38 |          4 |         10 |         52 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Resource.hpp                                    | C++      |         23 |          4 |          8 |         35 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/ResourceManager.cpp                             | C++      |         14 |          0 |          4 |         18 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/ResourceManager.hpp                             | C++      |         58 |         11 |         20 |         89 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp | C++      |          0 |          0 |          1 |          1 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.hpp | C++      |          0 |          0 |          1 |          1 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Vertex.hpp                                      | C++      |          8 |          0 |          2 |         10 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/texture/TextureData.cpp                         | C++      |         29 |          4 |          5 |         38 |
+| /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/texture/TextureData.hpp                         | C++      |         26 |          7 |          9 |         42 |
+| Total                                                                                                                                 |          |      1,967 |        265 |        608 |      2,840 |
++---------------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

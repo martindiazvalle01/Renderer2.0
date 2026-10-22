@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+916c1233155bdfcc40aed851045217e1 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/assets/shaders/core/colored_triangle.spv
+d03f03b0903846f2ebb6f22d46eb2664 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/dfdutils/dfd2vk.inl
+c3fde61a59124d21214bedc86873caf5 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/dfdutils/vk2dfd.inl
+c4ab67bf8e5944fc813aab721420e747 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/lib/src/version.h

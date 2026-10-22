@@ -19,9 +19,12 @@ Renderer::Renderer(RenderDevice& coreLayer, const RendererConfig& config)
       frameManager(coreLayer.getLogicalDevice().get(),
                    coreLayer.getLogicalDevice().getGraphicsIndex())
 {
+    // Un renderFinished por imagen del swapchain
+    frameManager.ensureRenderFinishedSemaphores(coreLayer.context().device, swapchain.getImages().size());
     AddResources();
-    CreatePipelines(coreLayer.getLogicalDevice().get());
+    CreatePipelines(coreLayer.context().device);
     AddPasses();
+    
 }
 
 
@@ -54,7 +57,7 @@ void Renderer::AddPasses(){
         color.setImageLayout(vk::ImageLayout::eColorAttachmentOptimal);
         color.setLoadOp(vk::AttachmentLoadOp::eClear);
         color.setStoreOp(vk::AttachmentStoreOp::eStore);
-        color.setClearValue(vk::ClearColorValue{std::array<float, 4>{0.f, 0.f, 0.f, 1.f}});
+        color.setClearValue(vk::ClearColorValue{std::array<float, 4>{0.2f, 0.0f, 0.3f, 1.f}}); // morado
 
         vk::RenderingInfo info{};
         info.setRenderArea({{0, 0}, extent});
@@ -72,18 +75,22 @@ void Renderer::AddPasses(){
 
 
 void Renderer::CreatePipelines(const vk::raii::Device& device){
-    // un Shader de prueba 
-    vk::ShaderModule triangleFragShader = shaderLoader.createShaderModule("/shaders/colored_triangle.frag.spv", device);
-
-    vk::ShaderModule triangleVertShader = shaderLoader.createShaderModule("/shaders/colored_triangle.vert.spv", device);
+    // Un solo .spv con las dos etapas (vertexMain y fragmentMain).
+    // Se guarda como vk::raii::ShaderModule para que siga vivo hasta buildPipeline;
+    // se destruye solo al salir de la función, cuando el pipeline ya está creado.
+    vk::raii::ShaderModule triangleShader =
+        ShaderLoader::createShaderModule("assets/shaders/core/colored_triangle.spv", device);
 
     vk::PipelineLayoutCreateInfo layoutInfo{};
 
-    vk::raii::PipelineLayout trianglePipelineLayout(device,layoutInfo);
+    vk::raii::PipelineLayout trianglePipelineLayout(device, layoutInfo);
 
     pipelineBuilder.setPipelineLayout(trianglePipelineLayout);
 
-    pipelineBuilder.setShaders(triangleVertShader,triangleFragShader);
+    // Mismo módulo para las dos etapas, cada una con su entry point
+    pipelineBuilder.setShaders(*triangleShader, *triangleShader, "vertexMain", "fragmentMain");
+
+    pipelineBuilder.setPolygonMode(vk::PolygonMode::eFill);
 
     pipelineBuilder.setInputTopology(vk::PrimitiveTopology::eTriangleList);
 
@@ -92,13 +99,12 @@ void Renderer::CreatePipelines(const vk::raii::Device& device){
     pipelineBuilder.setMultisamplingNone();
 
     pipelineBuilder.disableBending();
-    
+
     pipelineBuilder.disableDepthTest();
 
     pipelineBuilder.setColorAttachmentFormat(swapchain.getFormat());
-    
-    trianglePipeline = pipelineBuilder.buildPipeline(device);
 
+    trianglePipeline = pipelineBuilder.buildPipeline(device);
 }
 
 
@@ -111,10 +117,12 @@ void Renderer::RenderFrame(RenderDevice& coreLayer,vk::Extent2D requestedExtent)
     if(!imageIndex){
         swapchain.recreate(coreLayer.context().device, coreLayer.context().physicalDevice, coreLayer.context().surface, 
                            coreLayer.context().graphicsIndex, coreLayer.context().presentIndex, requestedExtent);
+        frameManager.ensureRenderFinishedSemaphores(coreLayer.context().device, swapchain.getImages().size());
         return;
     }
     
     uint32_t index = *imageIndex;
+    renderGraph.Compile(coreLayer.context().device, coreLayer.context().allocator);
 
     renderGraph.setImportedImage("swapchain", swapchain.getImages()[index], *swapchain.getImageViews()[index]);
 
@@ -125,6 +133,7 @@ void Renderer::RenderFrame(RenderDevice& coreLayer,vk::Extent2D requestedExtent)
     if(!result){
         swapchain.recreate(coreLayer.context().device, coreLayer.context().physicalDevice, coreLayer.context().surface, 
                            coreLayer.context().graphicsIndex, coreLayer.context().presentIndex, requestedExtent);
+        frameManager.ensureRenderFinishedSemaphores(coreLayer.context().device, swapchain.getImages().size());
     }
     
 }

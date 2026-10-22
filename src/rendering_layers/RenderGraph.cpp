@@ -12,7 +12,7 @@
 
 //  Compilacion del RenderGraph,transforma descripciones declarativas a pipelines ejecutables
 //  Este metodo realiza analisis de dependencias, asignacion de recursos y planeacion de ejecucion
-void RenderGraph::Compile(vk::raii::Device& device,VmaAllocator allocator){
+void RenderGraph::Compile(const vk::raii::Device& device,VmaAllocator allocator){
     // Se limpian las ordenes de ejecucion por si se ejecuta más de una vez el compile no se dupliquen los passes
     executionOrder.clear();
 
@@ -133,6 +133,8 @@ void RenderGraph::Compile(vk::raii::Device& device,VmaAllocator allocator){
 
             graphResource.view = device.createImageView(viewInfo);
         }
+        compiled = true;
+
 }
 
 // Esto es para seleccionar el tipo de aspecto depenciendo del formato del pass (No estoy seguro de que esto funcione)
@@ -173,6 +175,9 @@ void RenderGraph::AddResource(const std::string& name, vk::Format format, vk::Ex
     //renderGraphMap[key] = myResource;, por lo que hacemos simplemente un emplace move para mover la propiedad de la clase
     graphResources.try_emplace(name,std::move(graphResource));
 
+    // el grafo cambió, hay que recompilar
+    compiled = false;
+
 }
 
 // La imagen va a llegar importada de la swapchain
@@ -196,13 +201,17 @@ void RenderGraph::AddPass(const std::string& name,
     pass.executeFunc = executeFunc;
 
     passes.push_back(pass);
+    // el grafo cambió, hay que recompilar
+    compiled = false;
 }
 
 
 // Motor de ejecucion del renderGraph - Coordina la ejecucion de passes con sincronizacion automatica
 // Este metodo transforma el rendergraph compilado a trabajo real para la GPU
 void RenderGraph::Execute(vk::raii::CommandBuffer& commandBuffer) {
-    
+    if (!compiled){
+        throw std::runtime_error("RenderGraph::Execute sin Compile() (o se modifico el grafo despues de compilar)");
+    }
     // Si el recurso no es persistente, se reinicia su layout cada frame
     for (auto& [name, res] : graphResources) {
         if (!res.persistent && !res.imported)

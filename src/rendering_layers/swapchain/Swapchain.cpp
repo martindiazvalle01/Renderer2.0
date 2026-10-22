@@ -148,8 +148,8 @@ void Swapchain::recreate(const vk::raii::Device& device,
 }
 
 
-Swapchain::Swapchain(const vk::raii::SurfaceKHR& surface, vk::raii::PhysicalDevice& physicalDevice,
-                    vk::raii::Device& device, vk::Extent2D requestedExtent,
+Swapchain::Swapchain(const vk::raii::SurfaceKHR& surface, const vk::raii::PhysicalDevice& physicalDevice,
+                    const vk::raii::Device& device, vk::Extent2D requestedExtent,
                     uint32_t graphicsIndex, uint32_t presentIndex) {
     querySurfaceCapabilities(physicalDevice, surface);
     chooseImageCount(surfaceCapabilities);

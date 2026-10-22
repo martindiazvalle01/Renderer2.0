@@ -1,5 +1,5 @@
 
-// test_resource_loading.cpp — un ejecutable aparte, o una función que llamás desde main() temporalmente
+
 #include <spdlog/spdlog.h>
 #include "ResourceManager.hpp"
 #include "GltfSceneCache.hpp"

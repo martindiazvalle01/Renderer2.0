@@ -39,11 +39,23 @@ std::vector<vk::raii::CommandBuffer> FrameManager::createCommandBuffer(const vk:
     return listaBuffers;
 
 }
-//Semaforos Binarios (0,1) que son para indicar que la imagen esta lista para usarse o si se termino de usar
+// Semaforo binario por frame: imageAvailable lo señaliza acquire y lo espera nuestro submit,
+// asi que el timeline del frame lo cubre y puede ir por frame
 void FrameManager::createFrameSemaphores(const vk::raii::Device& device, FrameContext& frame) {
     frame.imageAvailable = vk::raii::Semaphore(device, vk::SemaphoreCreateInfo{});
-    frame.renderFinished = vk::raii::Semaphore(device, vk::SemaphoreCreateInfo{});
+    // CAMBIO: renderFinished ya no se crea aqui
 }
+
+
+void FrameManager::ensureRenderFinishedSemaphores(const vk::raii::Device& device, size_t imageCount) {
+    // Solo se agregan, nunca se destruyen: alguno podria seguir esperandolo
+    // un present del swapchain anterior. Si el swapchain nuevo tiene menos
+    // imagenes, los que sobran simplemente quedan sin usar.
+    while (renderFinished.size() < imageCount) {
+        renderFinished.emplace_back(device, vk::SemaphoreCreateInfo{});
+    }
+}
+
 // Semaforo por tiempo el cual se usa de forma global para indicar que cosa termino en que tiempo
 void FrameManager::createTimelineSemaphore(const vk::raii::Device& device) {
     vk::StructureChain<vk::SemaphoreCreateInfo, vk::SemaphoreTypeCreateInfo> timelineChain{
@@ -73,16 +85,14 @@ std::optional<uint32_t> FrameManager::beginFrame(const vk::raii::Device& device,
     }
 
     
-     uint32_t imageIndex;
-     // Todo esto se puede mejorar haciendo que suboptimal se trate de forma diferente a outofdate
-     // Pero mejor dejarlo para despues, es algo simple que hace que no se pegue la pantalla por un frame cuando se cambia la resolucion
-     // Eso es tarea para Martin del futuro
+    uint32_t imageIndex;
     try {
         //Se coloca un nullPtr en el ultimo porque no hay fence y se usa UINT64_MAX porque no hay timeout
-        auto [result, idx] = swapchain.acquireNextImage(UINT64_MAX, *fc.imageAvailable, nullptr);
-        if (result == vk::Result::eSuboptimalKHR) {
-            return std::nullopt;  // pedimos que se recree la swapchain
-        }
+        [[maybe_unused]] auto [result, idx] = swapchain.acquireNextImage(UINT64_MAX, *fc.imageAvailable, nullptr);
+        // si acquire devuelve eSuboptimalKHR, igual nos entrega una imagen y va a
+        // señalizar imageAvailable. Antes se abandonaba el frame: el semaforo quedaba
+        // señalizado sin que nadie lo esperara y la imagen quedaba tomada para siempre.
+        // Ahora se dibuja normal: present tambien va a devolver suboptimal y ahi se recrea.
         imageIndex = idx;
     } catch (const vk::OutOfDateKHRError&) {
         return std::nullopt; // Atrapamos el error en lugar de dejar que pare la aplicacion
@@ -100,6 +110,7 @@ std::optional<uint32_t> FrameManager::beginFrame(const vk::raii::Device& device,
 bool FrameManager::submitFrame( const vk::raii::Queue& graphicsQueue,
                                 const vk::raii::SwapchainKHR& swapchain,
                                 uint32_t imageIndex) {
+                                    
     uint64_t currentFrameIndex = frameCount % MaxFramesInFlight;
     FrameContext& fc = frames[currentFrameIndex];
 
@@ -120,7 +131,7 @@ bool FrameManager::submitFrame( const vk::raii::Queue& graphicsQueue,
     signalInfos[0].value     = frameComplete;   // solo relevante para timeline semaphores
     signalInfos[0].stageMask = vk::PipelineStageFlagBits2::eAllCommands;
 
-    signalInfos[1].semaphore = *fc.renderFinished;
+    signalInfos[1].semaphore = *renderFinished[imageIndex];   // CAMBIO: por imagen, no por frame
     signalInfos[1].stageMask = vk::PipelineStageFlagBits2::eAllCommands;
 
     // Info del command buffer a subir
@@ -144,18 +155,16 @@ bool FrameManager::submitFrame( const vk::raii::Queue& graphicsQueue,
     // Armamos el presentInfo (osea la informacion actual del frame en tiempo presente)
     vk::PresentInfoKHR presentInfo{};
     presentInfo.waitSemaphoreCount = 1;
-    presentInfo.pWaitSemaphores    = &*fc.renderFinished;
+    presentInfo.pWaitSemaphores    = &*renderFinished[imageIndex];   // CAMBIO: el mismo que señalizo el submit
     presentInfo.swapchainCount     = 1;
     presentInfo.pSwapchains        = &*swapchain;
     presentInfo.pImageIndices      = &imageIndex;
 
-  
-  
     vk::Result presentResult;
     try {
         presentResult = graphicsQueue.presentKHR(presentInfo);
     } catch (const vk::OutOfDateKHRError&) {
-        frameCount++;  // el fram avanzó, solo el present falló
+        frameCount++;  // el frame avanzó, solo el present falló
         return false;
     }
 
@@ -163,7 +172,6 @@ bool FrameManager::submitFrame( const vk::raii::Queue& graphicsQueue,
         frameCount++;
         return false;  
     }
-
 
     // Avanzamos el contador de frame
     frameCount++;
