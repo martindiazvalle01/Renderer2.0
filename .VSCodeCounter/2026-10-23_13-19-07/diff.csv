@@ -1,0 +1,6 @@
+"filename", "language", "C++", "comment", "blank", "total"
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/LogicalDevice.cpp", "C++", 3, 2, 0, 5
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/MeshBufferManager.cpp", "C++", 57, 9, 23, 89
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/MeshBufferManager.hpp", "C++", 33, 1, 5, 39
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Vertex.hpp", "C++", 1, 0, 3, 4
+"Total", "-", 94, 12, 31, 137

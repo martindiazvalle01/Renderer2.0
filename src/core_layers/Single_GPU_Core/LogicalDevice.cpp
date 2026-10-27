@@ -1,4 +1,5 @@
 #include <vulkan/vulkan.h>
+#include <vulkan/vulkan.hpp>
 #include <vulkan/vulkan_core.h>
 #include <vulkan/vulkan_raii.hpp>
 
@@ -39,6 +40,10 @@ void LogicalDevice::create(const vk::raii::PhysicalDevice& physicalDevice, const
     v12.setDescriptorBindingPartiallyBound(VK_TRUE);
     //Permiten declarar arrays de descriptor sin especificar un tamaño fijo en tiempo de compilacion
     v12.setRuntimeDescriptorArray(VK_TRUE);
+    //Esto es simplemente para poder usar la variable vk::DeviceAddress
+    v12.setBufferDeviceAddress(VK_TRUE);
+    // Esto es para poder declarar el buffer reference con scalar, cosas de UV cuando estan en un vec2
+    v12.setScalarBlockLayout(VK_TRUE);
 
     v12.setTimelineSemaphore(VK_TRUE);
 

@@ -9,6 +9,7 @@
 #include "RenderDevice.hpp"
 #include "RendererConfig.hpp"
 #include "ShaderLoader.hpp"
+#include "MeshBufferManager.hpp"
 
 class Renderer{
     public:
@@ -24,6 +25,8 @@ class Renderer{
 
         vk::raii::ShaderModule createShaderModule(const std::string& filename, const vk::raii::Device& device);
 
+        void uploadMeshToGpu(std::span<uint32_t> indices, std::span<Vertex> vertices);
+
     private:
         RenderGraph renderGraph;
         Swapchain swapchain;
@@ -32,5 +35,6 @@ class Renderer{
         ShaderLoader shaderLoader;
         // Variable de prueba, despues hay que cambiar y borrar
         vk::raii::Pipeline trianglePipeline{nullptr};
+        MeshBufferManager meshBufferManager;
         
 };

@@ -1,6 +1,7 @@
 #include "Renderer.hpp"
 
 #include "vulkan/vulkan.hpp"
+#include <MeshBufferManager.hpp>
 #include <RenderGraph.hpp>
 #include <cstdint>
 #include <vulkan/vulkan_raii.hpp>
@@ -17,7 +18,8 @@ Renderer::Renderer(RenderDevice& coreLayer, const RendererConfig& config)
                 coreLayer.getLogicalDevice().getGraphicsIndex(),
                 coreLayer.getLogicalDevice().getPresentIndex()),
       frameManager(coreLayer.getLogicalDevice().get(),
-                   coreLayer.getLogicalDevice().getGraphicsIndex())
+                   coreLayer.getLogicalDevice().getGraphicsIndex()),
+      meshBufferManager(coreLayer.context().allocator,coreLayer.context().device,coreLayer.context().graphicsQueue,coreLayer.context().graphicsIndex)
 {
     // Un renderFinished por imagen del swapchain
     frameManager.ensureRenderFinishedSemaphores(coreLayer.context().device, swapchain.getImages().size());

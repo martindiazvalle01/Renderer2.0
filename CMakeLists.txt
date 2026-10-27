@@ -136,6 +136,7 @@ target_include_directories(${PROJECT_NAME}  SYSTEM PRIVATE
     "src"
     "src/core_layers/Single_GPU_Core"
     "src/resource_management_layer"
+    "src/resource_management_layer/GLTF"
     "src/resource_management_layer/Single_GPU_Manager"
     "src/resource_management_layer/texture"
     "src/resource_management_layer/Mesh"
