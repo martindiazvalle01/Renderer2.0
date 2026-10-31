@@ -13,7 +13,7 @@
 			"expression" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/*.cpp",
 			"paths" : 
 			[
-				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/Tests/ResourceManagementTests.cpp",
+				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/GltfImporter.cpp",
 				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/application_layer/mainLoop.cpp",
 				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Allocator.cpp",
 				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/DebugMessenger.cpp",
@@ -30,11 +30,6 @@
 				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/Renderer.cpp",
 				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/ShaderLoader.cpp",
 				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/swapchain/Swapchain.cpp",
-				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/GLTF/MaterialData.cpp",
-				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/GLTF/MeshData.cpp",
-				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/GLTF/ResourceManagerGLTF.cpp",
-				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Manager.cpp",
-				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/texture/TextureData.cpp",
 				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/scene_management_layer/Camera.cpp"
 			],
 			"recurse" : true

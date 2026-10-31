@@ -6,7 +6,7 @@
 #include <vulkan/vulkan_raii.hpp>
 #include <glm/glm.hpp>
 #include <Allocator.hpp>
-#include "Vertex.hpp"
+#include <ResourceLayer/structTypes.hpp>
 #include "QueueSubmitter.hpp"
 
 class MeshBufferManager{
