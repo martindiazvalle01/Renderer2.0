@@ -1,6 +1,8 @@
 #pragma once
+
 #include "ktx.h"
 #include "vulkan/vulkan.hpp"
+
 #include <cstdint>
 #include <filesystem>
 #include <glm/fwd.hpp>
@@ -68,7 +70,9 @@ enum struct AlphaMode {
     Opaque,       // sin transparencia
     Mask,         // alpha test (cutoff)
     Blend         // transparencia real
+    
 };
+
 
 struct Material{
     Handle<Texture> textura;
@@ -82,9 +86,12 @@ struct Material{
     float roughnessFactor     = 1.0f;
     glm::vec3 emissiveFactor  = {0,0,0};
     float emissiveStrength    = 1.0f;
+    float occlusionStrength   = 1.0f;
+    float normalScale         = 1.0f;
     //despues ire viendo que otros faltan
     bool doubleSided         = false;
     AlphaMode alphaMode = AlphaMode::Opaque;
+    float alphaCutoff   = 0;
 };
 
 struct Model{
@@ -112,9 +119,12 @@ struct MaterialData{
     float roughnessFactor     = 1.0f;
     glm::vec3 emissiveFactor  = {0,0,0};
     float emissiveStrength    = 1.0f;
+    float occlusionStrength   = 1.0f;
+    float normalScale         = 1.0f;
     //despues ire viendo que otros faltan
     bool doubleSided         = false;
     AlphaMode alphaMode = AlphaMode::Opaque;
+    float alphaCutoff   = 0;
 };
 
 
@@ -122,4 +132,13 @@ struct IntermediateStruct{
     std::vector<Mesh> meshes;
     std::vector<Texture> textures;
     std::vector<MaterialData> materials;
+};
+
+#include <AssetPool.hpp>
+// Este es el struct que contiene todos los asset pools
+// Estan asi porque en el asset loader entran como parametros para crear el asset
+struct AssetPools {
+    AssetPool<Mesh>&      meshesPool;
+    AssetPool<Material>&  materialsPool;
+    AssetPool<Texture>&   texturesPool;
 };
