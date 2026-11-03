@@ -8,6 +8,19 @@
 #include <glm/fwd.hpp>
 #include <glm/glm.hpp>
 #include <vector>
+#include <filesystem>
+#include <algorithm>
+
+//La clase que se usara para separar por tipo de archivo
+enum class AssetFormat { GLTF, GLB, FBX, Unknown };
+inline AssetFormat formatFromExtension(const std::filesystem::path& assetPath) {
+    std::string ext = assetPath.extension().string();
+    std::transform(ext.begin(), ext.end(), ext.begin(), ::tolower);
+    if (ext == ".gltf") return AssetFormat::GLTF;
+    if (ext == ".glb")  return AssetFormat::GLB;
+    if (ext == ".fbx")  return AssetFormat::FBX;
+    return AssetFormat::Unknown;
+}
 
 // Todos los struct que se usaran en este layer
 
@@ -75,7 +88,7 @@ enum struct AlphaMode {
 
 
 struct Material{
-    Handle<Texture> textura;
+    Handle<Texture> texture;
     Handle<Texture> normal;
     Handle<Texture> metallicRoughness;
     Handle<Texture> emissive;
@@ -134,11 +147,3 @@ struct IntermediateStruct{
     std::vector<MaterialData> materials;
 };
 
-#include <AssetPool.hpp>
-// Este es el struct que contiene todos los asset pools
-// Estan asi porque en el asset loader entran como parametros para crear el asset
-struct AssetPools {
-    AssetPool<Mesh>&      meshesPool;
-    AssetPool<Material>&  materialsPool;
-    AssetPool<Texture>&   texturesPool;
-};

@@ -4,7 +4,6 @@
 #include <glm/glm.hpp>
 #include "vulkan/vulkan.hpp"
 #include <vulkan/vulkan_raii.hpp>
-#include "Swapchain.hpp"
 #include "MeshBufferManager.hpp"
 
 class DescriptorManager{

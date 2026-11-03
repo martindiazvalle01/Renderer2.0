@@ -13,6 +13,7 @@
 			"expression" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/*.cpp",
 			"paths" : 
 			[
+				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/AssetManager.cpp",
 				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/GltfImporter.cpp",
 				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/application_layer/mainLoop.cpp",
 				"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Allocator.cpp",

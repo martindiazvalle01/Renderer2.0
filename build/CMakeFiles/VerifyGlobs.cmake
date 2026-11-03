@@ -15,6 +15,7 @@ endif()
 # PROJECT_SOURCES at CMakeLists.txt:124 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/*.cpp")
 set(OLD_GLOB
+  "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/AssetManager.cpp"
   "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/GltfImporter.cpp"
   "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/application_layer/mainLoop.cpp"
   "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Allocator.cpp"

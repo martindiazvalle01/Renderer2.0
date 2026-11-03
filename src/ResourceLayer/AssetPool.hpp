@@ -1,11 +1,9 @@
 #pragma once
 
-
+#include <ResourceLayer/structTypes.hpp>
 #include <cstdint>
 #include <vector>
 
-template<typename T> // Un fordward Declaration raro para que no de errores de include
-struct Handle;
 
 template<typename T>
 class AssetPool{
