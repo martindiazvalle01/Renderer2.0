@@ -30,9 +30,11 @@ Handle<Model> AssetManager::loadModel(const IntermediateStruct& data){
     meshes.reserve(data.meshes.size());
 
     for(auto& mesh : data.meshes){
-        meshes.push_back(loadMesh(std::move(mesh)));
+        meshes.push_back(loadMesh(mesh));
     }
 
+
+    model.meshes.swap(meshes);
 
     Handle<Model> out = modelPool.Create(std::move(model));
     return out;

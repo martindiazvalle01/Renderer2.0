@@ -11,6 +11,7 @@ class Allocator {
 public:
     void create(const Instance& instance, const vk::raii::PhysicalDevice& physicalDevice, const LogicalDevice& logicalDevice);
     VmaAllocator get() const { return allocator; }
+    ~Allocator() { vmaDestroyAllocator(allocator); }
 private:
     VmaAllocator allocator = nullptr;
 };

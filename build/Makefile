@@ -935,53 +935,77 @@ libs/imgui/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/libs/imgui/imgui_widgets.cpp.s
 .PHONY : libs/imgui/imgui_widgets.cpp.s
 
-src/Tests/ResourceManagementTests.o: src/Tests/ResourceManagementTests.cpp.o
-.PHONY : src/Tests/ResourceManagementTests.o
+src/ResourceLayer/AssetManager.o: src/ResourceLayer/AssetManager.cpp.o
+.PHONY : src/ResourceLayer/AssetManager.o
 
 # target to build an object file
-src/Tests/ResourceManagementTests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.o
-.PHONY : src/Tests/ResourceManagementTests.cpp.o
+src/ResourceLayer/AssetManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.o
+.PHONY : src/ResourceLayer/AssetManager.cpp.o
 
-src/Tests/ResourceManagementTests.i: src/Tests/ResourceManagementTests.cpp.i
-.PHONY : src/Tests/ResourceManagementTests.i
+src/ResourceLayer/AssetManager.i: src/ResourceLayer/AssetManager.cpp.i
+.PHONY : src/ResourceLayer/AssetManager.i
 
 # target to preprocess a source file
-src/Tests/ResourceManagementTests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.i
-.PHONY : src/Tests/ResourceManagementTests.cpp.i
+src/ResourceLayer/AssetManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.i
+.PHONY : src/ResourceLayer/AssetManager.cpp.i
 
-src/Tests/ResourceManagementTests.s: src/Tests/ResourceManagementTests.cpp.s
-.PHONY : src/Tests/ResourceManagementTests.s
+src/ResourceLayer/AssetManager.s: src/ResourceLayer/AssetManager.cpp.s
+.PHONY : src/ResourceLayer/AssetManager.s
 
 # target to generate assembly for a file
-src/Tests/ResourceManagementTests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.s
-.PHONY : src/Tests/ResourceManagementTests.cpp.s
+src/ResourceLayer/AssetManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.s
+.PHONY : src/ResourceLayer/AssetManager.cpp.s
 
-src/application_layer/mainLoop.o: src/application_layer/mainLoop.cpp.o
-.PHONY : src/application_layer/mainLoop.o
+src/ResourceLayer/GltfImporter.o: src/ResourceLayer/GltfImporter.cpp.o
+.PHONY : src/ResourceLayer/GltfImporter.o
 
 # target to build an object file
-src/application_layer/mainLoop.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.o
-.PHONY : src/application_layer/mainLoop.cpp.o
+src/ResourceLayer/GltfImporter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.o
+.PHONY : src/ResourceLayer/GltfImporter.cpp.o
 
-src/application_layer/mainLoop.i: src/application_layer/mainLoop.cpp.i
-.PHONY : src/application_layer/mainLoop.i
+src/ResourceLayer/GltfImporter.i: src/ResourceLayer/GltfImporter.cpp.i
+.PHONY : src/ResourceLayer/GltfImporter.i
 
 # target to preprocess a source file
-src/application_layer/mainLoop.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.i
-.PHONY : src/application_layer/mainLoop.cpp.i
+src/ResourceLayer/GltfImporter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.i
+.PHONY : src/ResourceLayer/GltfImporter.cpp.i
 
-src/application_layer/mainLoop.s: src/application_layer/mainLoop.cpp.s
-.PHONY : src/application_layer/mainLoop.s
+src/ResourceLayer/GltfImporter.s: src/ResourceLayer/GltfImporter.cpp.s
+.PHONY : src/ResourceLayer/GltfImporter.s
 
 # target to generate assembly for a file
-src/application_layer/mainLoop.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.s
-.PHONY : src/application_layer/mainLoop.cpp.s
+src/ResourceLayer/GltfImporter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.s
+.PHONY : src/ResourceLayer/GltfImporter.cpp.s
+
+src/application_layer/App.o: src/application_layer/App.cpp.o
+.PHONY : src/application_layer/App.o
+
+# target to build an object file
+src/application_layer/App.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.o
+.PHONY : src/application_layer/App.cpp.o
+
+src/application_layer/App.i: src/application_layer/App.cpp.i
+.PHONY : src/application_layer/App.i
+
+# target to preprocess a source file
+src/application_layer/App.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.i
+.PHONY : src/application_layer/App.cpp.i
+
+src/application_layer/App.s: src/application_layer/App.cpp.s
+.PHONY : src/application_layer/App.s
+
+# target to generate assembly for a file
+src/application_layer/App.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.s
+.PHONY : src/application_layer/App.cpp.s
 
 src/core_layers/Single_GPU_Core/Allocator.o: src/core_layers/Single_GPU_Core/Allocator.cpp.o
 .PHONY : src/core_layers/Single_GPU_Core/Allocator.o
@@ -1175,6 +1199,30 @@ src/rendering_layers/FrameManagement/FrameManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.s
 .PHONY : src/rendering_layers/FrameManagement/FrameManager.cpp.s
 
+src/rendering_layers/MeshBufferManager.o: src/rendering_layers/MeshBufferManager.cpp.o
+.PHONY : src/rendering_layers/MeshBufferManager.o
+
+# target to build an object file
+src/rendering_layers/MeshBufferManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.o
+.PHONY : src/rendering_layers/MeshBufferManager.cpp.o
+
+src/rendering_layers/MeshBufferManager.i: src/rendering_layers/MeshBufferManager.cpp.i
+.PHONY : src/rendering_layers/MeshBufferManager.i
+
+# target to preprocess a source file
+src/rendering_layers/MeshBufferManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.i
+.PHONY : src/rendering_layers/MeshBufferManager.cpp.i
+
+src/rendering_layers/MeshBufferManager.s: src/rendering_layers/MeshBufferManager.cpp.s
+.PHONY : src/rendering_layers/MeshBufferManager.s
+
+# target to generate assembly for a file
+src/rendering_layers/MeshBufferManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.s
+.PHONY : src/rendering_layers/MeshBufferManager.cpp.s
+
 src/rendering_layers/PipelineBuilder.o: src/rendering_layers/PipelineBuilder.cpp.o
 .PHONY : src/rendering_layers/PipelineBuilder.o
 
@@ -1247,6 +1295,30 @@ src/rendering_layers/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.s
 .PHONY : src/rendering_layers/Renderer.cpp.s
 
+src/rendering_layers/SceneDataManager.o: src/rendering_layers/SceneDataManager.cpp.o
+.PHONY : src/rendering_layers/SceneDataManager.o
+
+# target to build an object file
+src/rendering_layers/SceneDataManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.o
+.PHONY : src/rendering_layers/SceneDataManager.cpp.o
+
+src/rendering_layers/SceneDataManager.i: src/rendering_layers/SceneDataManager.cpp.i
+.PHONY : src/rendering_layers/SceneDataManager.i
+
+# target to preprocess a source file
+src/rendering_layers/SceneDataManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.i
+.PHONY : src/rendering_layers/SceneDataManager.cpp.i
+
+src/rendering_layers/SceneDataManager.s: src/rendering_layers/SceneDataManager.cpp.s
+.PHONY : src/rendering_layers/SceneDataManager.s
+
+# target to generate assembly for a file
+src/rendering_layers/SceneDataManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.s
+.PHONY : src/rendering_layers/SceneDataManager.cpp.s
+
 src/rendering_layers/ShaderLoader.o: src/rendering_layers/ShaderLoader.cpp.o
 .PHONY : src/rendering_layers/ShaderLoader.o
 
@@ -1295,125 +1367,29 @@ src/rendering_layers/swapchain/Swapchain.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.s
 .PHONY : src/rendering_layers/swapchain/Swapchain.cpp.s
 
-src/resource_management_layer/MaterialData.o: src/resource_management_layer/MaterialData.cpp.o
-.PHONY : src/resource_management_layer/MaterialData.o
+src/scene_management_layer/Camera.o: src/scene_management_layer/Camera.cpp.o
+.PHONY : src/scene_management_layer/Camera.o
 
 # target to build an object file
-src/resource_management_layer/MaterialData.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.o
-.PHONY : src/resource_management_layer/MaterialData.cpp.o
+src/scene_management_layer/Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.o
+.PHONY : src/scene_management_layer/Camera.cpp.o
 
-src/resource_management_layer/MaterialData.i: src/resource_management_layer/MaterialData.cpp.i
-.PHONY : src/resource_management_layer/MaterialData.i
-
-# target to preprocess a source file
-src/resource_management_layer/MaterialData.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.i
-.PHONY : src/resource_management_layer/MaterialData.cpp.i
-
-src/resource_management_layer/MaterialData.s: src/resource_management_layer/MaterialData.cpp.s
-.PHONY : src/resource_management_layer/MaterialData.s
-
-# target to generate assembly for a file
-src/resource_management_layer/MaterialData.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.s
-.PHONY : src/resource_management_layer/MaterialData.cpp.s
-
-src/resource_management_layer/Mesh/MeshData.o: src/resource_management_layer/Mesh/MeshData.cpp.o
-.PHONY : src/resource_management_layer/Mesh/MeshData.o
-
-# target to build an object file
-src/resource_management_layer/Mesh/MeshData.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.o
-.PHONY : src/resource_management_layer/Mesh/MeshData.cpp.o
-
-src/resource_management_layer/Mesh/MeshData.i: src/resource_management_layer/Mesh/MeshData.cpp.i
-.PHONY : src/resource_management_layer/Mesh/MeshData.i
+src/scene_management_layer/Camera.i: src/scene_management_layer/Camera.cpp.i
+.PHONY : src/scene_management_layer/Camera.i
 
 # target to preprocess a source file
-src/resource_management_layer/Mesh/MeshData.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.i
-.PHONY : src/resource_management_layer/Mesh/MeshData.cpp.i
+src/scene_management_layer/Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.i
+.PHONY : src/scene_management_layer/Camera.cpp.i
 
-src/resource_management_layer/Mesh/MeshData.s: src/resource_management_layer/Mesh/MeshData.cpp.s
-.PHONY : src/resource_management_layer/Mesh/MeshData.s
-
-# target to generate assembly for a file
-src/resource_management_layer/Mesh/MeshData.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.s
-.PHONY : src/resource_management_layer/Mesh/MeshData.cpp.s
-
-src/resource_management_layer/ResourceManager.o: src/resource_management_layer/ResourceManager.cpp.o
-.PHONY : src/resource_management_layer/ResourceManager.o
-
-# target to build an object file
-src/resource_management_layer/ResourceManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.o
-.PHONY : src/resource_management_layer/ResourceManager.cpp.o
-
-src/resource_management_layer/ResourceManager.i: src/resource_management_layer/ResourceManager.cpp.i
-.PHONY : src/resource_management_layer/ResourceManager.i
-
-# target to preprocess a source file
-src/resource_management_layer/ResourceManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.i
-.PHONY : src/resource_management_layer/ResourceManager.cpp.i
-
-src/resource_management_layer/ResourceManager.s: src/resource_management_layer/ResourceManager.cpp.s
-.PHONY : src/resource_management_layer/ResourceManager.s
+src/scene_management_layer/Camera.s: src/scene_management_layer/Camera.cpp.s
+.PHONY : src/scene_management_layer/Camera.s
 
 # target to generate assembly for a file
-src/resource_management_layer/ResourceManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.s
-.PHONY : src/resource_management_layer/ResourceManager.cpp.s
-
-src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.o: src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o
-.PHONY : src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.o
-
-# target to build an object file
-src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o
-.PHONY : src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o
-
-src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.i: src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.i
-.PHONY : src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.i
-
-# target to preprocess a source file
-src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.i
-.PHONY : src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.i
-
-src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.s: src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.s
-.PHONY : src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.s
-
-# target to generate assembly for a file
-src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.s
-.PHONY : src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.s
-
-src/resource_management_layer/texture/TextureData.o: src/resource_management_layer/texture/TextureData.cpp.o
-.PHONY : src/resource_management_layer/texture/TextureData.o
-
-# target to build an object file
-src/resource_management_layer/texture/TextureData.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.o
-.PHONY : src/resource_management_layer/texture/TextureData.cpp.o
-
-src/resource_management_layer/texture/TextureData.i: src/resource_management_layer/texture/TextureData.cpp.i
-.PHONY : src/resource_management_layer/texture/TextureData.i
-
-# target to preprocess a source file
-src/resource_management_layer/texture/TextureData.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.i
-.PHONY : src/resource_management_layer/texture/TextureData.cpp.i
-
-src/resource_management_layer/texture/TextureData.s: src/resource_management_layer/texture/TextureData.cpp.s
-.PHONY : src/resource_management_layer/texture/TextureData.s
-
-# target to generate assembly for a file
-src/resource_management_layer/texture/TextureData.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.s
-.PHONY : src/resource_management_layer/texture/TextureData.cpp.s
+src/scene_management_layer/Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.s
+.PHONY : src/scene_management_layer/Camera.cpp.s
 
 # Help Target
 help:
@@ -1495,12 +1471,15 @@ help:
 	@echo "... libs/imgui/imgui_widgets.o"
 	@echo "... libs/imgui/imgui_widgets.i"
 	@echo "... libs/imgui/imgui_widgets.s"
-	@echo "... src/Tests/ResourceManagementTests.o"
-	@echo "... src/Tests/ResourceManagementTests.i"
-	@echo "... src/Tests/ResourceManagementTests.s"
-	@echo "... src/application_layer/mainLoop.o"
-	@echo "... src/application_layer/mainLoop.i"
-	@echo "... src/application_layer/mainLoop.s"
+	@echo "... src/ResourceLayer/AssetManager.o"
+	@echo "... src/ResourceLayer/AssetManager.i"
+	@echo "... src/ResourceLayer/AssetManager.s"
+	@echo "... src/ResourceLayer/GltfImporter.o"
+	@echo "... src/ResourceLayer/GltfImporter.i"
+	@echo "... src/ResourceLayer/GltfImporter.s"
+	@echo "... src/application_layer/App.o"
+	@echo "... src/application_layer/App.i"
+	@echo "... src/application_layer/App.s"
 	@echo "... src/core_layers/Single_GPU_Core/Allocator.o"
 	@echo "... src/core_layers/Single_GPU_Core/Allocator.i"
 	@echo "... src/core_layers/Single_GPU_Core/Allocator.s"
@@ -1525,6 +1504,9 @@ help:
 	@echo "... src/rendering_layers/FrameManagement/FrameManager.o"
 	@echo "... src/rendering_layers/FrameManagement/FrameManager.i"
 	@echo "... src/rendering_layers/FrameManagement/FrameManager.s"
+	@echo "... src/rendering_layers/MeshBufferManager.o"
+	@echo "... src/rendering_layers/MeshBufferManager.i"
+	@echo "... src/rendering_layers/MeshBufferManager.s"
 	@echo "... src/rendering_layers/PipelineBuilder.o"
 	@echo "... src/rendering_layers/PipelineBuilder.i"
 	@echo "... src/rendering_layers/PipelineBuilder.s"
@@ -1534,27 +1516,18 @@ help:
 	@echo "... src/rendering_layers/Renderer.o"
 	@echo "... src/rendering_layers/Renderer.i"
 	@echo "... src/rendering_layers/Renderer.s"
+	@echo "... src/rendering_layers/SceneDataManager.o"
+	@echo "... src/rendering_layers/SceneDataManager.i"
+	@echo "... src/rendering_layers/SceneDataManager.s"
 	@echo "... src/rendering_layers/ShaderLoader.o"
 	@echo "... src/rendering_layers/ShaderLoader.i"
 	@echo "... src/rendering_layers/ShaderLoader.s"
 	@echo "... src/rendering_layers/swapchain/Swapchain.o"
 	@echo "... src/rendering_layers/swapchain/Swapchain.i"
 	@echo "... src/rendering_layers/swapchain/Swapchain.s"
-	@echo "... src/resource_management_layer/MaterialData.o"
-	@echo "... src/resource_management_layer/MaterialData.i"
-	@echo "... src/resource_management_layer/MaterialData.s"
-	@echo "... src/resource_management_layer/Mesh/MeshData.o"
-	@echo "... src/resource_management_layer/Mesh/MeshData.i"
-	@echo "... src/resource_management_layer/Mesh/MeshData.s"
-	@echo "... src/resource_management_layer/ResourceManager.o"
-	@echo "... src/resource_management_layer/ResourceManager.i"
-	@echo "... src/resource_management_layer/ResourceManager.s"
-	@echo "... src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.o"
-	@echo "... src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.i"
-	@echo "... src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.s"
-	@echo "... src/resource_management_layer/texture/TextureData.o"
-	@echo "... src/resource_management_layer/texture/TextureData.i"
-	@echo "... src/resource_management_layer/texture/TextureData.s"
+	@echo "... src/scene_management_layer/Camera.o"
+	@echo "... src/scene_management_layer/Camera.i"
+	@echo "... src/scene_management_layer/Camera.s"
 .PHONY : help
 
 

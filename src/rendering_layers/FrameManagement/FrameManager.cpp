@@ -43,7 +43,7 @@ std::vector<vk::raii::CommandBuffer> FrameManager::createCommandBuffer(const vk:
 // asi que el timeline del frame lo cubre y puede ir por frame
 void FrameManager::createFrameSemaphores(const vk::raii::Device& device, FrameContext& frame) {
     frame.imageAvailable = vk::raii::Semaphore(device, vk::SemaphoreCreateInfo{});
-    // CAMBIO: renderFinished ya no se crea aqui
+    
 }
 
 
@@ -181,10 +181,14 @@ bool FrameManager::submitFrame( const vk::raii::Queue& graphicsQueue,
 
 // El constructor de clase, no se si en algun momento necesite el create context para algo aparte del constructor
 // pero por si acaso se queda como funcion individual
-FrameManager::FrameManager(const vk::raii::Device& device, uint32_t queueFamilyIndex) {
+void FrameManager::init(const vk::raii::Device& device, uint32_t queueFamilyIndex) {
     createContext(device, queueFamilyIndex);
 }
 
 vk::raii::CommandBuffer& FrameManager::currentCmd() {
     return frames[frameCount % MaxFramesInFlight].cmd[0];
+}
+
+uint32_t FrameManager::currentFrameIndex() const {
+    return frameCount % MaxFramesInFlight;
 }

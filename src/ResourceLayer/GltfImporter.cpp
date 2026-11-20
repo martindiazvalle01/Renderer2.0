@@ -102,14 +102,8 @@ Texture GltfImporter::loadTexture(
     // 1. Obtener el índice de la imagen
     std::optional<std::size_t> imageIndex = texture.imageIndex;
 
-    // Si usas extensiones (basisu, webp, etc.) puedes añadirlas aquí:
-    if (!imageIndex) imageIndex = texture.basisuImageIndex;
-    if (!imageIndex) imageIndex = texture.webpImageIndex;
-    if (!imageIndex) imageIndex = texture.ddsImageIndex;
-    // etc.
-
     if (!imageIndex) {
-        // No hay imagen asociada
+        // No hay imagen 
         return out;
     }
 

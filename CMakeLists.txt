@@ -141,8 +141,12 @@ target_include_directories(${PROJECT_NAME}  SYSTEM PRIVATE
     "src/rendering_layers/swapchain"
     "src/rendering_layers/FrameManagement"
     "src/rendering_layers/Renderer"
+    "src/scene_management_layer"
+    "src/application_layer"
+    "src/Tests"
     "libs/vma/include"
     "libs/tinygltf"
+
     ${STB_DIR}
 
     

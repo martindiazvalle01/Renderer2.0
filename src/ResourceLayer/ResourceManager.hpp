@@ -1,5 +1,6 @@
 #pragma once
 #include "AssetManager.hpp"
+#include <AssetPool.hpp>
 #include <cstdio>
 #include <unordered_map>
 #include "structTypes.hpp"
@@ -8,6 +9,8 @@
 class ResourceManager{
     public:
         void load(const FileContext& context){
+            printf("cwd: %s\n", std::filesystem::current_path().c_str());
+printf("existe: %d\n", std::filesystem::exists(context.filePath));
             AssetFormat formato = formatFromExtension(context.filePath);
             IntermediateStruct structIntermedio;
 
@@ -29,8 +32,15 @@ class ResourceManager{
             Handle<Model> model = models[context.filePath];
             manager.unloadModel(model);
         }
+
+        Model& getModel(const FileContext& context){
+            Handle<Model> model = models[context.filePath];
+            return *manager.GetModelPool().Get(model);
+        }
         
 
+        AssetManager&       GetAssetManager()       { return manager; }
+        const AssetManager& GetAssetManager() const { return manager; }
         
 
     private:

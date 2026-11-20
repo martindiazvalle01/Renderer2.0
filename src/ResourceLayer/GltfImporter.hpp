@@ -7,6 +7,8 @@
 #include <string>
 #include <vector>
 #include <fastgltf/tools.hpp>
+#include <fastgltf/tools.hpp>
+#include <fastgltf/glm_element_traits.hpp>
 
 class GltfImporter{
     public:
@@ -19,9 +21,9 @@ class GltfImporter{
                 throw std::runtime_error("Fallo al cargar el archivo de datos GLTF.");
             }
 
-            auto result = parser.loadGltf(data.get(),context.filePath,fastgltf::Options::LoadExternalBuffers
-                                | fastgltf::Options::LoadExternalImages);
-
+            auto result = parser.loadGltf(data.get(), context.filePath.parent_path(),
+                              fastgltf::Options::LoadExternalBuffers
+                            | fastgltf::Options::LoadExternalImages);
             if(result.error() != fastgltf::Error::None){
                 spdlog::error("Error al parsear GLTF en '{}': {}", context.filePath.string(), fastgltf::getErrorMessage(result.error()));
                 throw std::runtime_error("Fallo crítico en el parser de fastgltf.");
@@ -89,5 +91,5 @@ class GltfImporter{
             fastgltf::copyFromAccessor<uint32_t>(asset, indexAccessor, destinationBuffer);
     
             return static_cast<uint32_t>(indexAccessor.count);
-}
+        }
 };

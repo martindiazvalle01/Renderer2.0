@@ -16,15 +16,14 @@ class FrameManager{
             vk::raii::CommandPool   pool{nullptr};
             std::vector<vk::raii::CommandBuffer> cmd; 
             vk::raii::Semaphore     imageAvailable{nullptr};  // Semaforo para cuando el sistema de presentacion (cosas del driver) termina de usar la imagen del swapchain, a lo que termine se puede empezar a dibujar
-            // CAMBIO: renderFinished ya no va aqui (ver mas abajo)
             uint64_t                retireValue = 0; // el valor del timeline que hay que esperar para reusar este slot
         };
 
         std::array<FrameContext, MaxFramesInFlight> frames;
 
-        // un renderFinished por IMAGEN del swapchain, no por frame.
+        // un renderFinished por IMAGEN del swapchain, no por frame
         // Lo espera el present, y el timeline no avisa cuando termino el present:
-        // solo sabemos que quedo libre cuando acquire vuelve a entregar esa misma imagen.
+        // solo sabemos que quedo libre cuando acquire vuelve a entregar esa misma imagen
         // Por eso se indexa con imageIndex.
         std::vector<vk::raii::Semaphore> renderFinished;
         
@@ -46,7 +45,7 @@ class FrameManager{
         void createContext(const vk::raii::Device& device, uint32_t queueFamilyIndex);
 
     public:
-            FrameManager(const vk::raii::Device& device, uint32_t queueFamilyIndex);
+            void init(const vk::raii::Device& device, uint32_t queueFamilyIndex);
 
             vk::raii::CommandBuffer& currentCmd();
             
@@ -57,7 +56,9 @@ class FrameManager{
             bool submitFrame(const vk::raii::Queue& graphicsQueue,
                                 const vk::raii::SwapchainKHR& swapchain, uint32_t imageIndex);
 
-            // CAMBIO: asegura que haya un renderFinished por cada imagen del swapchain.
+          
             // Llamar despues de crear el swapchain y despues de cada recreate.
             void ensureRenderFinishedSemaphores(const vk::raii::Device& device, size_t imageCount);
+
+            uint32_t currentFrameIndex() const; 
 };

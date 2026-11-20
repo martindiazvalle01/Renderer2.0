@@ -1,39 +1,46 @@
-// colored_triangle.slang
-// Versión Slang de colored_triangle.vert + colored_triangle.frag
-// (ambas etapas en un solo archivo, con dos entry points)
+struct Vertex {
+    float3 position;
+    float3 normal;
+    float4 tangent;
+    float2 uv0;
+    float2 uv1;
+    float4 color;
+    uint   boneIndices[2];   // 4 x uint16 = 8 bytes (padding por ahora)
+    float  boneWeights[4];
+};                           // 96 bytes: static_assert(sizeof(Vertex) == 96) en C++
 
-// Lo que el vertex shader le pasa al fragment shader
-struct VSOutput
-{
-    float4 position : SV_Position;                 // equivale a gl_Position
-    [[vk::location(0)]] float3 color : COLOR0;     // equivale a layout(location = 0) out/in vec3
+struct SceneData {
+    float4x4 viewProj;
+    float4   camPos;
 };
 
-// Posiciones de los 3 vértices del triángulo
-static const float3 positions[3] = {
-    float3( 1.0,  1.0, 0.0),
-    float3(-1.0,  1.0, 0.0),
-    float3( 0.0, -1.0, 0.0)
+struct PushConstants {
+    float4x4    model;
+    Vertex*     vertices;    // vertexAddress
+    SceneData*  scene;       // sceneAddress
 };
 
-// Colores de los 3 vértices
-static const float3 colors[3] = {
-    float3(1.0, 0.0, 0.0), // rojo
-    float3(0.0, 1.0, 0.0), // verde
-    float3(0.0, 0.0, 1.0)  // azul
+[[vk::push_constant]] ConstantBuffer<PushConstants> pc;
+
+struct VSOut {
+    float4 pos    : SV_Position;
+    float3 normal : NORMAL;
 };
 
 [shader("vertex")]
-VSOutput vertexMain(uint vertexIndex : SV_VulkanVertexID) // equivale a gl_VertexIndex
-{
-    VSOutput output;
-    output.position = float4(positions[vertexIndex], 1.0);
-    output.color    = colors[vertexIndex];
-    return output;
+VSOut vertexMain(uint vid : SV_VertexID) {
+    Vertex v = pc.vertices[vid];
+
+    float4 world = mul(pc.model, float4(v.position, 1.0));
+
+    VSOut o;
+    o.pos    = mul(pc.scene->viewProj, world);
+    o.normal = mul((float3x3)pc.model, v.normal);   // vale mientras no haya escala no uniforme
+    return o;
 }
 
 [shader("fragment")]
-float4 fragmentMain(VSOutput input) : SV_Target // equivale a layout(location = 0) out vec4
-{
-    return float4(input.color, 1.0);
+float4 fragmentMain(VSOut i) : SV_Target {
+    float3 n = normalize(i.normal);
+    return float4(n * 0.5 + 0.5, 1.0);
 }

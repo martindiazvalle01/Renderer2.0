@@ -1,31 +1,40 @@
 #include "Renderer.hpp"
-
 #include "vulkan/vulkan.hpp"
+#include <Camera.hpp>
 #include <MeshBufferManager.hpp>
 #include <RenderGraph.hpp>
 #include <cstdint>
+#include <glm/ext/matrix_clip_space.hpp>
+#include <glm/ext/matrix_transform.hpp>
+#include <glm/fwd.hpp>
 #include <vulkan/vulkan_raii.hpp>
 
 
 
 
 
-Renderer::Renderer(RenderDevice& coreLayer, const RendererConfig& config)
-    : swapchain(coreLayer.getSurface().get(),
+void Renderer::init(RenderDevice& coreLayer, const RendererConfig& config){
+
+    swapchain.init(coreLayer.getSurface().get(),
                 coreLayer.getPhysicalDevice(),
                 coreLayer.getLogicalDevice().get(),
                 config.extent,
                 coreLayer.getLogicalDevice().getGraphicsIndex(),
-                coreLayer.getLogicalDevice().getPresentIndex()),
-      frameManager(coreLayer.getLogicalDevice().get(),
-                   coreLayer.getLogicalDevice().getGraphicsIndex()),
-      meshBufferManager(coreLayer.context().allocator,coreLayer.context().device,coreLayer.context().graphicsQueue,coreLayer.context().graphicsIndex)
-{
+                coreLayer.getLogicalDevice().getPresentIndex());
+
+
+    frameManager.init(coreLayer.getLogicalDevice().get(),
+                   coreLayer.getLogicalDevice().getGraphicsIndex());
+
+    meshBufferManager.init(coreLayer.context().allocator,coreLayer.context().device,coreLayer.context().graphicsQueue,coreLayer.context().graphicsIndex);
     // Un renderFinished por imagen del swapchain
     frameManager.ensureRenderFinishedSemaphores(coreLayer.context().device, swapchain.getImages().size());
+    
     AddResources();
     CreatePipelines(coreLayer.context().device);
     AddPasses();
+    renderGraph.Compile(coreLayer.context().device, coreLayer.context().allocator);
+    sceneDataManager.init(meshBufferManager, coreLayer.context().device);
     
 }
 
@@ -42,14 +51,14 @@ void Renderer::AddResources(){
 
     renderGraph.AddResource("swapchain", swapchain.getFormat(), extent,
                   vk::ImageUsageFlagBits::eColorAttachment,
-                  vk::ImageLayout::eUndefined, vk::ImageLayout::ePresentSrcKHR);
+                  vk::ImageLayout::eUndefined, vk::ImageLayout::ePresentSrcKHR,true);
 
 
 }
 
 void Renderer::AddPasses(){
     //Por ahora este Pass es solo de prueba, no es el diseño final
-    renderGraph.AddPass("TrianglePass", {}, {"swapchain"},
+    renderGraph.AddPass("TrianglePass", {}, {"swapchain","depth"},
     [this](vk::raii::CommandBuffer& cmd) {
         vk::ImageView view = renderGraph.GetResource("swapchain")->view;
         auto extent = swapchain.getExtent();
@@ -66,13 +75,33 @@ void Renderer::AddPasses(){
         info.setLayerCount(1);
         info.setColorAttachments(color);
 
+        vk::RenderingAttachmentInfo depthInfo;
+        depthInfo.imageView = renderGraph.GetResource("depth")->view;
+        depthInfo.imageLayout = vk::ImageLayout::eDepthStencilAttachmentOptimal;  
+        depthInfo.setLoadOp(vk::AttachmentLoadOp::eClear);
+        depthInfo.setStoreOp(vk::AttachmentStoreOp::eDontCare);
+        depthInfo.clearValue = vk::ClearDepthStencilValue{1.0f,0};
+
+        info.setPDepthAttachment( &depthInfo);
+
         cmd.beginRendering(info);
         cmd.bindPipeline(vk::PipelineBindPoint::eGraphics, trianglePipeline);
         cmd.setViewport(0, vk::Viewport{0.f, 0.f, (float)extent.width, (float)extent.height, 0.f, 1.f});
         cmd.setScissor(0, vk::Rect2D{{0, 0}, extent});
-        cmd.draw(3, 1, 0, 0);
+
+        PushConstantsData pc{};
+        pc.modelMatrix   = glm::mat4(1.f);
+        pc.vertexAddress = meshBuffers.vertexBufferAddress;
+        pc.sceneAddress  = sceneDataManager.getAdress(currentIndex);
+        cmd.pushConstants<PushConstantsData>(*layout, vk::ShaderStageFlagBits::eVertex, 0, pc);
+
+
+        cmd.bindIndexBuffer(meshBuffers.indexBuffer.buffer, 0, vk::IndexType::eUint32);
+        cmd.drawIndexed(meshBuffers.indexCount, 1, 0, 0, 0);
         cmd.endRendering();
     });
+
+    
 }
 
 
@@ -85,7 +114,13 @@ void Renderer::CreatePipelines(const vk::raii::Device& device){
 
     vk::PipelineLayoutCreateInfo layoutInfo{};
 
+    //Esta es simplemente la info del tamaño de constantData y que stage lo va a usar, por ahora solo vertex
+    vk::PushConstantRange range{vk::ShaderStageFlagBits::eVertex, 0, sizeof(PushConstantsData)};
+    layoutInfo.setPushConstantRanges(range);
+
+
     vk::raii::PipelineLayout trianglePipelineLayout(device, layoutInfo);
+    
 
     pipelineBuilder.setPipelineLayout(trianglePipelineLayout);
 
@@ -102,15 +137,36 @@ void Renderer::CreatePipelines(const vk::raii::Device& device){
 
     pipelineBuilder.disableBending();
 
-    pipelineBuilder.disableDepthTest();
+    pipelineBuilder.setDepthFormat(vk::Format::eD32Sfloat);
+    vk::PipelineDepthStencilStateCreateInfo depthStencil{};
+    depthStencil.setDepthTestEnable(vk::True);
+    depthStencil.setDepthWriteEnable(vk::True);
+    depthStencil.setDepthCompareOp(vk::CompareOp::eLess);
+    depthStencil.setDepthBoundsTestEnable(vk::False);
+    depthStencil.setStencilTestEnable(vk::False);
+
+    pipelineBuilder.setDepthStencil(depthStencil);
 
     pipelineBuilder.setColorAttachmentFormat(swapchain.getFormat());
 
     trianglePipeline = pipelineBuilder.buildPipeline(device);
+    layout.swap(trianglePipelineLayout);
 }
 
+void Renderer::PushConstants(vk::raii::CommandBuffer& cmd, uint32_t frameIndex){
+    PushConstantsData pc{};
+    pc.modelMatrix = glm::mat4(1.f);
+    pc.vertexAddress = meshBuffers.vertexBufferAddress;
+    pc.sceneAddress = sceneDataManager.getAdress(frameIndex);
+ 
+    cmd.pushConstants<PushConstantsData>(*layout,
+                                     vk::ShaderStageFlagBits::eVertex,
+                                     0, pc);
+    pc.sceneAddress = 0;
+    pc.vertexAddress = 0;
+}
 
-void Renderer::RenderFrame(RenderDevice& coreLayer,vk::Extent2D requestedExtent){
+void Renderer::RenderFrame(RenderDevice& coreLayer,vk::Extent2D requestedExtent, Camera camera){
     
     // Empezamos el frame tomando el imageIndex
     auto imageIndex = frameManager.beginFrame(coreLayer.context().device, swapchain.get());
@@ -122,9 +178,24 @@ void Renderer::RenderFrame(RenderDevice& coreLayer,vk::Extent2D requestedExtent)
         frameManager.ensureRenderFinishedSemaphores(coreLayer.context().device, swapchain.getImages().size());
         return;
     }
-    
+
     uint32_t index = *imageIndex;
-    renderGraph.Compile(coreLayer.context().device, coreLayer.context().allocator);
+
+    currentIndex = index;
+
+
+  
+
+    float aspect = (float)requestedExtent.width / (float)requestedExtent.height;
+    glm::mat4 projectionMatrix = camera.getProjectionMatrix(aspect);
+    projectionMatrix[1][1] *= -1;
+    glm::mat4 viewProj = projectionMatrix * camera.getViewMatrix();
+  
+    updatePushConstants(viewProj, glm::vec4(camera.getPosition(), 1.f));
+    
+
+ 
+    
 
     renderGraph.setImportedImage("swapchain", swapchain.getImages()[index], *swapchain.getImageViews()[index]);
 
@@ -138,4 +209,17 @@ void Renderer::RenderFrame(RenderDevice& coreLayer,vk::Extent2D requestedExtent)
         frameManager.ensureRenderFinishedSemaphores(coreLayer.context().device, swapchain.getImages().size());
     }
     
+    
 }
+
+//Esta clase literalmente sube el mesh a la GPU y borra el 
+void Renderer::uploadMeshToGpu(std::span<uint32_t> indices, std::span<Vertex> vertices){
+    meshBuffers = meshBufferManager.uploadMesh(indices,vertices);
+    
+    
+}
+
+void Renderer::destroyMesh(){
+    meshBufferManager.destroyMesh(meshBuffers);
+}
+

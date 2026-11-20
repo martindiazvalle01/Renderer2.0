@@ -10,7 +10,7 @@
 class Swapchain{
 
     public:
-        Swapchain(const vk::raii::SurfaceKHR& surface,const vk::raii::PhysicalDevice& physicalDevice,const vk::raii::Device& device ,
+        void init(const vk::raii::SurfaceKHR& surface,const vk::raii::PhysicalDevice& physicalDevice,const vk::raii::Device& device ,
                     vk::Extent2D requestedExtent,uint32_t graphicsIndex, uint32_t presentIndex);
 
         void recreate(const vk::raii::Device& device,

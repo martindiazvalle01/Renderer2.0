@@ -1,6 +1,8 @@
 #pragma once
+#include <SceneDataManager.hpp>
 #include <PipelineBuilder.hpp>
 #include <ShaderLoader.hpp>
+#include <cstdint>
 #include <vulkan/vulkan_raii.hpp>
 #include "vulkan/vulkan.hpp"
 #include "RenderGraph.hpp"
@@ -10,12 +12,14 @@
 #include "RendererConfig.hpp"
 #include "ShaderLoader.hpp"
 #include "MeshBufferManager.hpp"
+#include "Camera.hpp"
+
 
 class Renderer{
     public:
-        void RenderFrame(RenderDevice& coreLayer,vk::Extent2D requestedExtent);
+        void RenderFrame(RenderDevice& coreLayer,vk::Extent2D requestedExtent, Camera camera);
 
-        Renderer(RenderDevice& coreLayer, const RendererConfig& config);
+        void init(RenderDevice& coreLayer, const RendererConfig& config);
 
         void AddResources();
 
@@ -26,6 +30,23 @@ class Renderer{
         vk::raii::ShaderModule createShaderModule(const std::string& filename, const vk::raii::Device& device);
 
         void uploadMeshToGpu(std::span<uint32_t> indices, std::span<Vertex> vertices);
+        void destroyMesh();
+        struct PushConstantsData{
+            glm::mat4 modelMatrix;
+            vk::DeviceAddress vertexAddress;
+            vk::DeviceAddress sceneAddress;
+        };
+
+        void PushConstants(vk::raii::CommandBuffer& cmd,uint32_t frameIndex);
+    ~Renderer(){
+        renderGraph = RenderGraph{};
+        
+    }
+
+    void updatePushConstants(glm::mat4 viewProj,glm::vec4 camPos){
+        SceneDataManager::SceneData data = sceneDataManager.makeScenedata(viewProj,camPos);
+        sceneDataManager.setSceneData(data, currentIndex);
+    }
 
     private:
         RenderGraph renderGraph;
@@ -35,6 +56,10 @@ class Renderer{
         ShaderLoader shaderLoader;
         // Variable de prueba, despues hay que cambiar y borrar
         vk::raii::Pipeline trianglePipeline{nullptr};
+        vk::raii::PipelineLayout layout{nullptr};
         MeshBufferManager meshBufferManager;
+        SceneDataManager sceneDataManager;
+        MeshBufferManager::GpuMeshBuffers meshBuffers;
+        uint32_t currentIndex = 0;
         
 };

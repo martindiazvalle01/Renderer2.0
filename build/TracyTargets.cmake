@@ -56,11 +56,11 @@ set_target_properties(Tracy::TracyClient PROPERTIES
   INTERFACE_LINK_LIBRARIES "Threads::Threads;dl"
 )
 
-# Import target "Tracy::TracyClient" for configuration "Debug"
-set_property(TARGET Tracy::TracyClient APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
+# Import target "Tracy::TracyClient" for configuration ""
+set_property(TARGET Tracy::TracyClient APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(Tracy::TracyClient PROPERTIES
-  IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "CXX"
-  IMPORTED_LOCATION_DEBUG "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/tracy/libTracyClient.a"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_NOCONFIG "CXX"
+  IMPORTED_LOCATION_NOCONFIG "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/tracy/libTracyClient.a"
   )
 
 # This file does not depend on other imported targets which have

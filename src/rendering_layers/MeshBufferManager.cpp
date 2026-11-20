@@ -1,7 +1,7 @@
 #include "MeshBufferManager.hpp"
 #include "vulkan/vulkan.hpp"
 #include <Allocator.hpp>
-#include <Vertex.hpp>
+
 #include <cstdint>
 #include <cstring>
 #include <span>
@@ -18,6 +18,7 @@ MeshBufferManager::GpuBuffer MeshBufferManager::createBuffer(uint64_t allocSize,
     bufferInfo.usage = usage;
 
     VmaAllocationCreateInfo vmaAllocInfo = {};
+    
     vmaAllocInfo.usage = memoryUsage;
     vmaAllocInfo.flags = flags;
 
@@ -46,9 +47,12 @@ void MeshBufferManager::destroyBuffer(GpuBuffer& buffer){
     buffer.allocation = nullptr;
 }
 
-MeshBufferManager::MeshBufferManager(VmaAllocator allocator, const vk::raii::Device& device,
-                  const vk::raii::Queue& queue, uint32_t queueFamilyIndex)
-    : allocator(allocator), device(device), queue(queue) , queueSubmitter(device,queue){
+void MeshBufferManager::init(VmaAllocator allocator, const vk::raii::Device& device,
+                             const vk::raii::Queue& queue, uint32_t queueFamilyIndex) {
+    this->allocator = allocator;
+    this->device = &device;
+    this->queue = &queue;
+    queueSubmitter.init(device, queue);   // o: queueSubmitter = QueueSubmitter(device, queue);
 
     vk::CommandPoolCreateInfo poolInfo{};
     poolInfo.flags = vk::CommandPoolCreateFlagBits::eTransient;
@@ -71,7 +75,7 @@ MeshBufferManager::GpuMeshBuffers MeshBufferManager::uploadMesh(std::span<uint32
     vk::BufferDeviceAddressInfo deviceAddressInfo;
     deviceAddressInfo.sType = vk::StructureType::eBufferDeviceAddressInfo;
     deviceAddressInfo.buffer = newSurface.vertexBuffer.buffer;
-    newSurface.vertexBufferAddress = device.getBufferAddress(deviceAddressInfo); 
+    newSurface.vertexBufferAddress = device->getBufferAddress(deviceAddressInfo); 
 
     // creamos el index buffer
     newSurface.indexBuffer = createBuffer(indexBufferSize, vk::BufferUsageFlagBits::eIndexBuffer | vk::BufferUsageFlagBits::eTransferDst, VMA_MEMORY_USAGE_GPU_ONLY);
@@ -98,4 +102,17 @@ MeshBufferManager::GpuMeshBuffers MeshBufferManager::uploadMesh(std::span<uint32
 
     return newSurface;
 
+}
+
+
+void MeshBufferManager::destroyMesh(GpuMeshBuffers& mesh) {
+    if (mesh.indexBuffer.buffer) {
+        vmaDestroyBuffer(allocator, mesh.indexBuffer.buffer, mesh.indexBuffer.allocation);
+        mesh.indexBuffer = {};
+    }
+    if (mesh.vertexBuffer.buffer) {
+        vmaDestroyBuffer(allocator, mesh.vertexBuffer.buffer, mesh.vertexBuffer.allocation);
+        mesh.vertexBuffer = {};
+    }
+    mesh.vertexBufferAddress = 0;
 }

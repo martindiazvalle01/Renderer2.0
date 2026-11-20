@@ -32,11 +32,11 @@ public:
 
     }
 
-    const Instance&       getInstance()       const { return instance; }
-    const Surface&        getSurface()        const { return surface; }
+    const Instance&       getInstance()                 const { return instance; }
+    const Surface&        getSurface()                  const { return surface; }
     const vk::raii::PhysicalDevice& getPhysicalDevice() const { return physicalDevice; }
-    const LogicalDevice&  getLogicalDevice()  const { return logicalDevice; }
-    const Allocator&      getAllocator()      const { return allocator; }
+    const LogicalDevice&  getLogicalDevice()            const { return logicalDevice; }
+    const Allocator&      getAllocator()                const { return allocator; }
     
     struct RenderContext {
         const vk::raii::Instance&       instance;
@@ -44,9 +44,9 @@ public:
         const vk::raii::PhysicalDevice& physicalDevice;
         const vk::raii::SurfaceKHR&     surface;
         const vk::raii::Queue&          graphicsQueue;
-        uint32_t graphicsIndex;
-        uint32_t presentIndex;
-        VmaAllocator allocator;
+        uint32_t                        graphicsIndex;
+        uint32_t                        presentIndex;
+        VmaAllocator                    allocator;
     };
     const RenderContext& context() const { return *renderContext; }
 

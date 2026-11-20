@@ -29,16 +29,18 @@ class MeshBufferManager{
 
         void destroyBuffer(GpuBuffer& buffer);
 
-        MeshBufferManager(VmaAllocator allocator, const vk::raii::Device& device,
-                  const vk::raii::Queue& queue, uint32_t queueFamilyIndex);
+        void init(VmaAllocator allocator, const vk::raii::Device& device,
+          const vk::raii::Queue& queue, uint32_t queueFamilyIndex);
 
         
         GpuMeshBuffers uploadMesh(std::span<uint32_t> indices, std::span<Vertex> vertices);
+        void destroyMesh(GpuMeshBuffers& mesh);
+
     private:
-        VmaAllocator allocator;
-        vk::raii::CommandPool uploadPool = nullptr;
-        const vk::raii::Device& device;
-        const vk::raii::Queue&  queue;
-        QueueSubmitter queueSubmitter;
+        VmaAllocator            allocator = nullptr;
+        const vk::raii::Device* device    = nullptr;
+        const vk::raii::Queue*  queue     = nullptr;
+        vk::raii::CommandPool   uploadPool{nullptr};
+        QueueSubmitter          queueSubmitter;
         
 };

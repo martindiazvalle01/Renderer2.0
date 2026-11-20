@@ -72,38 +72,52 @@ include CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/codegen:
 .PHONY : CMakeFiles/VulkanEngine.dir/codegen
 
-CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
-CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/Tests/ResourceManagementTests.cpp
-CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/Tests/ResourceManagementTests.cpp
+CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
+CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/AssetManager.cpp
+CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/AssetManager.cpp
 
-CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/Tests/ResourceManagementTests.cpp > CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.i
+CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/AssetManager.cpp > CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.i
 
-CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/Tests/ResourceManagementTests.cpp -o CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.s
+CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/AssetManager.cpp -o CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.s
 
-CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
-CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/application_layer/mainLoop.cpp
-CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/application_layer/mainLoop.cpp
+CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
+CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/GltfImporter.cpp
+CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/GltfImporter.cpp
 
-CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/application_layer/mainLoop.cpp > CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.i
+CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/GltfImporter.cpp > CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.i
 
-CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/application_layer/mainLoop.cpp -o CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.s
+CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/GltfImporter.cpp -o CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.s
+
+CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
+CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/application_layer/App.cpp
+CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/application_layer/App.cpp
+
+CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/application_layer/App.cpp > CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.i
+
+CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/application_layer/App.cpp -o CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.s
 
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Allocator.cpp
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Allocator.cpp
 
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.s: cma
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/DebugMessenger.cpp
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/DebugMessenger.cpp
 
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.s
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Instance.cpp
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Instance.cpp
 
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.s: cmak
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/LogicalDevice.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/LogicalDevice.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/LogicalDevice.cpp
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/LogicalDevice.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/LogicalDevice.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/LogicalDevice.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/LogicalDevice.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/LogicalDevice.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/LogicalDevice.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/LogicalDevice.cpp
 
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/LogicalDevice.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/LogicalDevice.cpp.s:
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp
 
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/PhysicalDeviceSelector.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/PhysicalDeviceSelect
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Surface.cpp
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/core_layers/Single_GPU_Core/Surface.cpp
 
 CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.s: cmake
 CMakeFiles/VulkanEngine.dir/src/main.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/src/main.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/main.cpp
 CMakeFiles/VulkanEngine.dir/src/main.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/VulkanEngine.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/VulkanEngine.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/main.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/main.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/main.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/main.cpp
 
 CMakeFiles/VulkanEngine.dir/src/main.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/VulkanEngine.dir/src/main.cpp.s: cmake_force
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/FrameManagement/FrameManager.cpp
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/FrameManagement/FrameManager.cpp
 
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.i: cmake_force
@@ -212,10 +226,24 @@ CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cp
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/FrameManagement/FrameManager.cpp -o CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.s
 
+CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
+CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/MeshBufferManager.cpp
+CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/MeshBufferManager.cpp
+
+CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/MeshBufferManager.cpp > CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.i
+
+CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/MeshBufferManager.cpp -o CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.s
+
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/PipelineBuilder.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/PipelineBuilder.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/PipelineBuilder.cpp
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/PipelineBuilder.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/PipelineBuilder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/PipelineBuilder.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/rendering_layers/PipelineBuilder.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/rendering_layers/PipelineBuilder.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/rendering_layers/PipelineBuilder.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/PipelineBuilder.cpp
 
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/PipelineBuilder.cpp.i: cmake_force
@@ -229,7 +257,7 @@ CMakeFiles/VulkanEngine.dir/src/rendering_layers/PipelineBuilder.cpp.s: cmake_fo
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/RenderGraph.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/RenderGraph.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/RenderGraph.cpp
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/RenderGraph.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/RenderGraph.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/RenderGraph.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/rendering_layers/RenderGraph.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/rendering_layers/RenderGraph.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/rendering_layers/RenderGraph.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/RenderGraph.cpp
 
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/RenderGraph.cpp.i: cmake_force
@@ -243,7 +271,7 @@ CMakeFiles/VulkanEngine.dir/src/rendering_layers/RenderGraph.cpp.s: cmake_force
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/Renderer.cpp
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/Renderer.cpp
 
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.i: cmake_force
@@ -254,10 +282,24 @@ CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/Renderer.cpp -o CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.s
 
+CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
+CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/SceneDataManager.cpp
+CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/SceneDataManager.cpp
+
+CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/SceneDataManager.cpp > CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.i
+
+CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/SceneDataManager.cpp -o CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.s
+
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/ShaderLoader.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/ShaderLoader.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/ShaderLoader.cpp
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/ShaderLoader.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/ShaderLoader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/ShaderLoader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/rendering_layers/ShaderLoader.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/rendering_layers/ShaderLoader.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/rendering_layers/ShaderLoader.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/ShaderLoader.cpp
 
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/ShaderLoader.cpp.i: cmake_force
@@ -271,7 +313,7 @@ CMakeFiles/VulkanEngine.dir/src/rendering_layers/ShaderLoader.cpp.s: cmake_force
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/swapchain/Swapchain.cpp
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/swapchain/Swapchain.cpp
 
 CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.i: cmake_force
@@ -282,80 +324,25 @@ CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.s: cmak
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/swapchain/Swapchain.cpp -o CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.s
 
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/MaterialData.cpp
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/MaterialData.cpp
+CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
+CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/scene_management_layer/Camera.cpp
+CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/scene_management_layer/Camera.cpp
 
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/MaterialData.cpp > CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.i
+CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/scene_management_layer/Camera.cpp > CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.i
 
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/MaterialData.cpp -o CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.s
-
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Mesh/MeshData.cpp
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Mesh/MeshData.cpp
-
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Mesh/MeshData.cpp > CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.i
-
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Mesh/MeshData.cpp -o CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.s
-
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/ResourceManager.cpp
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/ResourceManager.cpp
-
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/ResourceManager.cpp > CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.i
-
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/ResourceManager.cpp -o CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.s
-
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp
-
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp > CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.i
-
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp -o CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.s
-
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.o: CMakeFiles/VulkanEngine.dir/flags.make
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.o: /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/texture/TextureData.cpp
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.o: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.o -MF CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.o.d -o CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.o -c /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/texture/TextureData.cpp
-
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/texture/TextureData.cpp > CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.i
-
-CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/resource_management_layer/texture/TextureData.cpp -o CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.s
+CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/scene_management_layer/Camera.cpp -o CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.s
 
 # Object files for target VulkanEngine
 VulkanEngine_OBJECTS = \
-"CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.o" \
-"CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.o" \
+"CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.o" \
+"CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.o" \
+"CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.o" \
 "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.o" \
 "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.o" \
 "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.o" \
@@ -364,22 +351,21 @@ VulkanEngine_OBJECTS = \
 "CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.o" \
 "CMakeFiles/VulkanEngine.dir/src/main.cpp.o" \
 "CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.o" \
+"CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.o" \
 "CMakeFiles/VulkanEngine.dir/src/rendering_layers/PipelineBuilder.cpp.o" \
 "CMakeFiles/VulkanEngine.dir/src/rendering_layers/RenderGraph.cpp.o" \
 "CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.o" \
+"CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.o" \
 "CMakeFiles/VulkanEngine.dir/src/rendering_layers/ShaderLoader.cpp.o" \
 "CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.o" \
-"CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.o" \
-"CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.o" \
-"CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.o" \
-"CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o" \
-"CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.o"
+"CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.o"
 
 # External object files for target VulkanEngine
 VulkanEngine_EXTERNAL_OBJECTS =
 
-VulkanEngine: CMakeFiles/VulkanEngine.dir/src/Tests/ResourceManagementTests.cpp.o
-VulkanEngine: CMakeFiles/VulkanEngine.dir/src/application_layer/mainLoop.cpp.o
+VulkanEngine: CMakeFiles/VulkanEngine.dir/src/ResourceLayer/AssetManager.cpp.o
+VulkanEngine: CMakeFiles/VulkanEngine.dir/src/ResourceLayer/GltfImporter.cpp.o
+VulkanEngine: CMakeFiles/VulkanEngine.dir/src/application_layer/App.cpp.o
 VulkanEngine: CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Allocator.cpp.o
 VulkanEngine: CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/DebugMessenger.cpp.o
 VulkanEngine: CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Instance.cpp.o
@@ -388,16 +374,14 @@ VulkanEngine: CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Physic
 VulkanEngine: CMakeFiles/VulkanEngine.dir/src/core_layers/Single_GPU_Core/Surface.cpp.o
 VulkanEngine: CMakeFiles/VulkanEngine.dir/src/main.cpp.o
 VulkanEngine: CMakeFiles/VulkanEngine.dir/src/rendering_layers/FrameManagement/FrameManager.cpp.o
+VulkanEngine: CMakeFiles/VulkanEngine.dir/src/rendering_layers/MeshBufferManager.cpp.o
 VulkanEngine: CMakeFiles/VulkanEngine.dir/src/rendering_layers/PipelineBuilder.cpp.o
 VulkanEngine: CMakeFiles/VulkanEngine.dir/src/rendering_layers/RenderGraph.cpp.o
 VulkanEngine: CMakeFiles/VulkanEngine.dir/src/rendering_layers/Renderer.cpp.o
+VulkanEngine: CMakeFiles/VulkanEngine.dir/src/rendering_layers/SceneDataManager.cpp.o
 VulkanEngine: CMakeFiles/VulkanEngine.dir/src/rendering_layers/ShaderLoader.cpp.o
 VulkanEngine: CMakeFiles/VulkanEngine.dir/src/rendering_layers/swapchain/Swapchain.cpp.o
-VulkanEngine: CMakeFiles/VulkanEngine.dir/src/resource_management_layer/MaterialData.cpp.o
-VulkanEngine: CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Mesh/MeshData.cpp.o
-VulkanEngine: CMakeFiles/VulkanEngine.dir/src/resource_management_layer/ResourceManager.cpp.o
-VulkanEngine: CMakeFiles/VulkanEngine.dir/src/resource_management_layer/Single_GPU_Manager/SingleGPUResourceManager.cpp.o
-VulkanEngine: CMakeFiles/VulkanEngine.dir/src/resource_management_layer/texture/TextureData.cpp.o
+VulkanEngine: CMakeFiles/VulkanEngine.dir/src/scene_management_layer/Camera.cpp.o
 VulkanEngine: CMakeFiles/VulkanEngine.dir/build.make
 VulkanEngine: CMakeFiles/VulkanEngine.dir/compiler_depend.ts
 VulkanEngine: /lib64/libvulkan.so
@@ -410,7 +394,7 @@ VulkanEngine: libs/fastgltf/libfastgltf.so.0.9.0
 VulkanEngine: /usr/lib64/libSDL3.so.0.4.18
 VulkanEngine: /lib64/libvulkan.so
 VulkanEngine: CMakeFiles/VulkanEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable VulkanEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable VulkanEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VulkanEngine.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Enlazando carpeta de assets al directorio de build"
 	/usr/bin/cmake -E create_symlink /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/assets /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/assets

@@ -24,7 +24,7 @@ class PipelineBuilder{
         void disableDepthTest();
 
         //Parte hecha con IA (Me dio flojera hacer los setters)
-        // --- Layout (necesario) ---
+        // --- Layout  ---
         void setPipelineLayout(vk::PipelineLayout layout) { pipelineLayout = layout; }
         vk::PipelineLayout getPipelineLayout() const { return pipelineLayout; }
 

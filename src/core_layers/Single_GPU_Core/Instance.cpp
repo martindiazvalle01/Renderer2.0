@@ -7,10 +7,8 @@
 #include <SDL3/SDL_vulkan.h>
 
 void Instance::create() {
-
-    //Numero de extensiones de sdl
+    // Número de extensiones de SDL
     unsigned int sdlExtensionCount = 0;
-
     const char* const* sdlExtensions = SDL_Vulkan_GetInstanceExtensions(&sdlExtensionCount);
 
     if (sdlExtensions == nullptr) {
@@ -18,46 +16,57 @@ void Instance::create() {
     }
 
     std::vector<const char*> extensionNames;
-    extensionNames.reserve(sdlExtensionCount + 1);  // +1 para la extensión de debug
+    extensionNames.reserve(sdlExtensionCount + 1); // +1 para la extensión de debug
 
-   for (Uint32 i = 0; i < sdlExtensionCount; ++i) {
+    for (Uint32 i = 0; i < sdlExtensionCount; ++i) {
         extensionNames.push_back(sdlExtensions[i]);
     }
 
     extensionNames.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
 
-    
     const std::vector<const char*> validationLayers = {
         "VK_LAYER_KHRONOS_validation"
     };
  
-    constexpr vk::ApplicationInfo appInfo{"Mini Renderer",
-                                          VK_MAKE_VERSION(1, 0, 0),
-                                          "No Engine",
-                                          VK_MAKE_VERSION(1, 0, 0),
-                                          vk::ApiVersion14};
-
-
-
- 
-    vk::InstanceCreateInfo createInfo{
-        {},
-        &appInfo,
-        {},
-        extensionNames
+    constexpr vk::ApplicationInfo appInfo{
+        "Mini Renderer",
+        VK_MAKE_VERSION(1, 0, 0),
+        "No Engine",
+        VK_MAKE_VERSION(1, 0, 0),
+        vk::ApiVersion14
     };
-    createInfo.enabledLayerCount   = static_cast<uint32_t>(validationLayers.size());
-    createInfo.ppEnabledLayerNames = validationLayers.data();
 
+    // 1. Mantener activo Synchronization Validation
     std::vector<vk::ValidationFeatureEnableEXT> enabledFeatures = {
         vk::ValidationFeatureEnableEXT::eSynchronizationValidation
     };
     vk::ValidationFeaturesEXT validationFeatures{};
     validationFeatures.setEnabledValidationFeatures(enabledFeatures);
 
-    createInfo.pNext = &validationFeatures;
+    // 2. Configurar syncval_message_extra_properties con vk::LayerSettingEXT
+    const vk::Bool32 enableExtraProps = vk::True;
+    
+    vk::LayerSettingEXT layerSetting{};
+    layerSetting.pLayerName   = "VK_LAYER_KHRONOS_validation";
+    layerSetting.pSettingName = "syncval_message_extra_properties";
+    layerSetting.type         = vk::LayerSettingTypeEXT::eBool32;
+    layerSetting.valueCount   = 1;
+    layerSetting.pValues      = &enableExtraProps;
+
+    vk::LayerSettingsCreateInfoEXT layerSettingsCreateInfo{};
+    layerSettingsCreateInfo.setSettings(layerSetting);
+
+    // 3. Encadenar ambos structs en el pNext
+    layerSettingsCreateInfo.pNext = &validationFeatures;
+
+    // 4. Crear InstanceCreateInfo usando los helpers de C++
+    vk::InstanceCreateInfo createInfo{
+        {},
+        &appInfo,
+        validationLayers,
+        extensionNames,
+        &layerSettingsCreateInfo // Apunta al inicio de la cadena pNext
+    };
 
     this->instance = vk::raii::Instance(context, createInfo);
-
-
 }

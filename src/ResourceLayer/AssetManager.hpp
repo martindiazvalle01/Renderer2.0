@@ -11,6 +11,17 @@ class AssetManager{
         }
 
          
+        AssetPool<Model>&          GetModelPool()          { return modelPool; }
+        const AssetPool<Model>&    GetModelPool()    const { return modelPool; }
+
+        AssetPool<Mesh>&           GetMeshPool()           { return meshPool; }
+        const AssetPool<Mesh>&     GetMeshPool()     const { return meshPool; }
+
+        AssetPool<Material>&       GetMaterialPool()       { return materialPool; }
+        const AssetPool<Material>& GetMaterialPool() const { return materialPool; }
+
+        AssetPool<Texture>&        GetTexturePool()        { return texturePool; }
+        const AssetPool<Texture>&  GetTexturePool()  const { return texturePool; }
 
     private:
         AssetPool<Model>    modelPool;

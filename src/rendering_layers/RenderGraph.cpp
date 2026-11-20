@@ -131,7 +131,8 @@ void RenderGraph::Compile(const vk::raii::Device& device,VmaAllocator allocator)
             viewInfo.setSubresourceRange({aspectFromFormat(graphResource.format), 0, 1, 0 , 1}); // Full Image Access
 
 
-            graphResource.view = device.createImageView(viewInfo);
+            graphResource.importedView = device.createImageView(viewInfo);   // el RAII es el dueño y vive en el recurso
+            graphResource.view = *graphResource.importedView;                // handle crudo que lee el pass
         }
         compiled = true;
 
@@ -218,41 +219,34 @@ void RenderGraph::Execute(vk::raii::CommandBuffer& commandBuffer) {
             res.currentLayout = vk::ImageLayout::eUndefined;
     }
 
-
     // Pass de ejecucion ordenado con manejo de dependencias automatico
     // Ejecuta cada pass en el orden calculado que garantize la seguridad de las dependencias
-
     for(auto passIdx : executionOrder){
         if (!passes[passIdx].enabled) continue;
         const auto& pass = passes[passIdx];
 
-        
         // Transiciona el layout de los recursos input
         for(const auto& input : pass.inputs){
             GraphResource& res = GetResourceChecked(input);
             TransitionResource(commandBuffer, res, vk::ImageLayout::eShaderReadOnlyOptimal);
         }
-     
 
-        //Transiciona el layout de los recursos output
+        // Transiciona el layout de los recursos output
         for(const auto& output : pass.outputs){
             GraphResource& res = GetResourceChecked(output);
             TransitionResource(commandBuffer, res, LayoutForWrite(res.format));
         }
-        
-        // Ejecucion de Passes, Ejecuta la logica de renderizado
-        // llama la funcion de renderizado proveida por el usuario con un commandBuffer preparado
+
+        // Ejecucion de Passes, llama la funcion de renderizado proveida por el usuario
         pass.executeFunc(commandBuffer);
     }
 
     // Transiciona todos los recursos al layout final
     for (auto& [name, res] : graphResources) {
         if (res.finalLayout == vk::ImageLayout::eUndefined) continue;   // no se puede transicionar hacia Undefined
-            if (res.currentLayout == res.finalLayout) continue;             // ya está donde debe
-            TransitionResource(commandBuffer, res, res.finalLayout);
+        if (res.currentLayout == res.finalLayout) continue;             // ya está donde debe
+        TransitionResource(commandBuffer, res, res.finalLayout);
     }
-    
-    
 }
 
 // Busca el recurso y falla con un mensaje claro si no existe (reemplaza a graphResources[nombre])
@@ -284,7 +278,7 @@ void RenderGraph::TransitionResource(vk::raii::CommandBuffer& commandBuffer,
 // Implementacion de la transicion del layout de la imagen
 void RenderGraph::TransitionImageLayout(vk::raii::CommandBuffer& commandBuffer, vk::Image image, vk::Format format, vk::ImageLayout oldLayout, vk::ImageLayout newLayout){
     //Esto especifica el tipo de barrera que se usara para el viejo layout usando los datos del viejo layout
-    BarrierHalf srcHalf = SrcHalf(oldLayout);
+    BarrierHalf srcHalf = SrcHalf(LayoutForWrite(format));
     //Esto especifica el tipo de barrera que se usara para el nuevo layout usando los datos del nuevo layout
     BarrierHalf dstHalf = DstHalf(newLayout);
 
@@ -304,7 +298,7 @@ void RenderGraph::TransitionImageLayout(vk::raii::CommandBuffer& commandBuffer, 
     //  Ejecuta esta barera de pipeline con la configuracion de la sincronizacion
     //  Esto junta el layout de transicion y la sincronizacion de memoria con el commandBuffer
     commandBuffer.pipelineBarrier(srcHalf.stage,dstHalf.stage,vk::DependencyFlags{},
-                                 0, nullptr, barrier);
+                                 {}, {}, barrier);
 }
 
 
@@ -355,7 +349,7 @@ RenderGraph::BarrierHalf RenderGraph::DstHalf(vk::ImageLayout newLayout){
             // el | es para indicar que puede ser cualquiera de los 2, osea guarda los 2
             // esto es para que la barrera haga qe nada avance hasta que estas 2 stages esten finalizadas
             return {vk::PipelineStageFlagBits::eEarlyFragmentTests | vk::PipelineStageFlagBits::eLateFragmentTests,
-                    vk::AccessFlagBits::eDepthStencilAttachmentRead | vk::AccessFlagBits::eDepthStencilAttachmentWrite};
+                    vk::AccessFlagBits::eDepthStencilAttachmentRead | vk::AccessFlagBits::eDepthStencilAttachmentWrite };
                     break;
 
         case vk::ImageLayout::ePresentSrcKHR:

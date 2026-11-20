@@ -5,6 +5,7 @@
 
 #include "LogicalDevice.hpp"
 #include "Surface.hpp"
+#include "vulkan/vulkan.hpp"
 
 void LogicalDevice::create(const vk::raii::PhysicalDevice& physicalDevice, const Surface& surface)
 {
@@ -22,9 +23,15 @@ void LogicalDevice::create(const vk::raii::PhysicalDevice& physicalDevice, const
 
     //Features ordenadas por la version en la que fueron agregadas
     vk::StructureChain<vk::PhysicalDeviceFeatures2,
+                       vk::PhysicalDeviceVulkan11Features,
                        vk::PhysicalDeviceVulkan12Features,
                        vk::PhysicalDeviceVulkan13Features,
                        vk::PhysicalDeviceExtendedDynamicStateFeaturesEXT> featureChain;
+
+    //Features de Vulkan 1.1
+
+    auto& v11 = featureChain.get<vk::PhysicalDeviceVulkan11Features>();
+    v11.setShaderDrawParameters(VK_TRUE);
 
     //Features de Vulkan 1.2
     auto& v12 = featureChain.get<vk::PhysicalDeviceVulkan12Features>();
