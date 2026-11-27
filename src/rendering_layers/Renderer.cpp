@@ -1,7 +1,9 @@
 #include "Renderer.hpp"
 #include "vulkan/vulkan.hpp"
 #include <Camera.hpp>
+#include <DescriptorManager.hpp>
 #include <MeshBufferManager.hpp>
+#include <RenderDevice.hpp>
 #include <RenderGraph.hpp>
 #include <cstdint>
 #include <glm/ext/matrix_clip_space.hpp>
@@ -14,27 +16,29 @@
 
 
 void Renderer::init(RenderDevice& coreLayer, const RendererConfig& config){
+    RenderDevice::RenderContext context = coreLayer.context();
 
-    swapchain.init(coreLayer.getSurface().get(),
-                coreLayer.getPhysicalDevice(),
-                coreLayer.getLogicalDevice().get(),
+    swapchain.init(context.surface,
+                context.physicalDevice,
+                context.device,
                 config.extent,
-                coreLayer.getLogicalDevice().getGraphicsIndex(),
-                coreLayer.getLogicalDevice().getPresentIndex());
+                context.graphicsIndex,
+                context.presentIndex);
 
 
-    frameManager.init(coreLayer.getLogicalDevice().get(),
-                   coreLayer.getLogicalDevice().getGraphicsIndex());
+    frameManager.init(context.device,
+                   context.graphicsIndex);
 
-    meshBufferManager.init(coreLayer.context().allocator,coreLayer.context().device,coreLayer.context().graphicsQueue,coreLayer.context().graphicsIndex);
+    meshBufferManager.init(context.allocator,context.device,context.graphicsQueue,context.graphicsIndex);
     // Un renderFinished por imagen del swapchain
-    frameManager.ensureRenderFinishedSemaphores(coreLayer.context().device, swapchain.getImages().size());
-    
+    frameManager.ensureRenderFinishedSemaphores(context.device, swapchain.getImages().size());
+    assetTextureManager.init(context.device, context.graphicsQueue, context.graphicsIndex);
     AddResources();
-    CreatePipelines(coreLayer.context().device);
+    CreatePipelines(context.device);
     AddPasses();
-    renderGraph.Compile(coreLayer.context().device, coreLayer.context().allocator);
-    sceneDataManager.init(meshBufferManager, coreLayer.context().device);
+    renderGraph.Compile(context.device, context.allocator);
+    sceneDataManager.init(meshBufferManager, context.device);
+    
     
 }
 
@@ -68,7 +72,7 @@ void Renderer::AddPasses(){
         color.setImageLayout(vk::ImageLayout::eColorAttachmentOptimal);
         color.setLoadOp(vk::AttachmentLoadOp::eClear);
         color.setStoreOp(vk::AttachmentStoreOp::eStore);
-        color.setClearValue(vk::ClearColorValue{std::array<float, 4>{0.2f, 0.0f, 0.3f, 1.f}}); // morado
+        color.setClearValue(vk::ClearColorValue{std::array<float, 4>{0.0f, 0.0f, 0.0f, 1.f}}); 
 
         vk::RenderingInfo info{};
         info.setRenderArea({{0, 0}, extent});
@@ -86,6 +90,7 @@ void Renderer::AddPasses(){
 
         cmd.beginRendering(info);
         cmd.bindPipeline(vk::PipelineBindPoint::eGraphics, trianglePipeline);
+        cmd.bindDescriptorSets(vk::PipelineBindPoint::eGraphics, *layout,0, {*assetTextureManager.GetDescriptorSet()}, {});
         cmd.setViewport(0, vk::Viewport{0.f, 0.f, (float)extent.width, (float)extent.height, 0.f, 1.f});
         cmd.setScissor(0, vk::Rect2D{{0, 0}, extent});
 
@@ -93,7 +98,7 @@ void Renderer::AddPasses(){
         pc.modelMatrix   = glm::mat4(1.f);
         pc.vertexAddress = meshBuffers.vertexBufferAddress;
         pc.sceneAddress  = sceneDataManager.getAdress(currentIndex);
-        cmd.pushConstants<PushConstantsData>(*layout, vk::ShaderStageFlagBits::eVertex, 0, pc);
+        cmd.pushConstants<PushConstantsData>(*layout, vk::ShaderStageFlagBits::eVertex | vk::ShaderStageFlagBits::eFragment, 0, pc);
 
 
         cmd.bindIndexBuffer(meshBuffers.indexBuffer.buffer, 0, vk::IndexType::eUint32);
@@ -112,10 +117,12 @@ void Renderer::CreatePipelines(const vk::raii::Device& device){
     vk::raii::ShaderModule triangleShader =
         ShaderLoader::createShaderModule("assets/shaders/core/colored_triangle.spv", device);
 
+    vk::DescriptorSetLayout setLayouts[] = { assetTextureManager.GetLayout() };
     vk::PipelineLayoutCreateInfo layoutInfo{};
+    layoutInfo.setSetLayouts(setLayouts);
 
     //Esta es simplemente la info del tamaño de constantData y que stage lo va a usar, por ahora solo vertex
-    vk::PushConstantRange range{vk::ShaderStageFlagBits::eVertex, 0, sizeof(PushConstantsData)};
+    vk::PushConstantRange range{vk::ShaderStageFlagBits::eVertex| vk::ShaderStageFlagBits::eFragment, 0, sizeof(PushConstantsData)};
     layoutInfo.setPushConstantRanges(range);
 
 
@@ -158,9 +165,10 @@ void Renderer::PushConstants(vk::raii::CommandBuffer& cmd, uint32_t frameIndex){
     pc.modelMatrix = glm::mat4(1.f);
     pc.vertexAddress = meshBuffers.vertexBufferAddress;
     pc.sceneAddress = sceneDataManager.getAdress(frameIndex);
+    
  
     cmd.pushConstants<PushConstantsData>(*layout,
-                                     vk::ShaderStageFlagBits::eVertex,
+                                     vk::ShaderStageFlagBits::eVertex | vk::ShaderStageFlagBits::eFragment,
                                      0, pc);
     pc.sceneAddress = 0;
     pc.vertexAddress = 0;
@@ -183,18 +191,12 @@ void Renderer::RenderFrame(RenderDevice& coreLayer,vk::Extent2D requestedExtent,
 
     currentIndex = index;
 
-
-  
-
     float aspect = (float)requestedExtent.width / (float)requestedExtent.height;
     glm::mat4 projectionMatrix = camera.getProjectionMatrix(aspect);
     projectionMatrix[1][1] *= -1;
     glm::mat4 viewProj = projectionMatrix * camera.getViewMatrix();
   
     updatePushConstants(viewProj, glm::vec4(camera.getPosition(), 1.f));
-    
-
- 
     
 
     renderGraph.setImportedImage("swapchain", swapchain.getImages()[index], *swapchain.getImageViews()[index]);
@@ -223,3 +225,10 @@ void Renderer::destroyMesh(){
     meshBufferManager.destroyMesh(meshBuffers);
 }
 
+uint32_t Renderer::uploadTexture(VmaAllocator allocator,Texture& texture){
+    return assetTextureManager.StoreTexture(allocator,texture);
+}
+
+void Renderer::unloadTexture(uint32_t index){
+    assetTextureManager.UnloadTexture(index);
+}

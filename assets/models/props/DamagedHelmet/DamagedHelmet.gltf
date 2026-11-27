@@ -97,19 +97,19 @@
     ],
     "images" : [
         {
-            "uri" : "Default_albedo.jpg"
+            "uri" : "Default_albedo.ktx2"
         },
         {
-            "uri" : "Default_metalRoughness.jpg"
+            "uri" : "Default_metalRoughness.ktx2"
         },
         {
-            "uri" : "Default_emissive.jpg"
+            "uri" : "Default_emissive.ktx2"
         },
         {
-            "uri" : "Default_AO.jpg"
+            "uri" : "Default_AO.ktx2"
         },
         {
-            "uri" : "Default_normal.jpg"
+            "uri" : "Default_normal.ktx2"
         }
     ],
     "materials" : [

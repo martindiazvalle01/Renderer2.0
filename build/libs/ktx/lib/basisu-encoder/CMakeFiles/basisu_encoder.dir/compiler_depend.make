@@ -30,7 +30,6 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/3rdparty/andro
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -201,9 +200,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/3rdparty/tinye
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -478,9 +475,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_astc_hd
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -806,9 +801,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_astc_hd
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -1135,9 +1128,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_astc_ld
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -1471,9 +1462,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_astc_ld
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -1808,9 +1797,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_backend
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -2140,9 +2127,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_basis_f
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -2466,9 +2451,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_bc7enc.
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -2809,9 +2792,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_comp.cp
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -3155,9 +3136,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_enc.cpp
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -3484,9 +3463,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_etc.cpp
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -3816,9 +3793,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_fronten
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -4150,9 +4125,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_gpu_tex
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -4482,9 +4455,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_kernels
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -4813,9 +4784,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_opencl.
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -5140,9 +5109,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_pvrtc1_
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -5460,9 +5427,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_resampl
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -5742,9 +5707,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_resampl
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -6028,9 +5991,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_ssim.cp
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -6358,9 +6319,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_uastc_e
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -6690,9 +6649,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/basisu_uastc_h
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -6979,9 +6936,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/jpgd.cpp.o: /h
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -7123,9 +7078,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/encoder/pvpngreader.cp
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -7425,9 +7378,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/transcoder/basisu_tran
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -7692,9 +7643,7 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/zstd/zstd.c.o: /home/m
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -8002,15 +7951,9 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/zstd/zstd.c.o: /home/m
 
 /usr/include/c++/15/streambuf:
 
-/usr/include/c++/15/ctime:
+/usr/include/c++/15/bits/refwrap.h:
 
-/usr/include/c++/15/stdlib.h:
-
-/usr/include/c++/15/ratio:
-
-/usr/include/c++/15/atomic:
-
-/usr/include/c++/15/stdexcept:
+/usr/include/bits/floatn.h:
 
 /usr/include/bits/mathcalls.h:
 
@@ -8075,6 +8018,12 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/zstd/zstd.c.o: /home/m
 /usr/include/c++/15/bits/stl_uninitialized.h:
 
 /usr/include/bits/types/mbstate_t.h:
+
+/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/basis_universal/encoder/basisu_uastc_hdr_4x4_enc.cpp:
+
+/usr/include/c++/15/bits/deque.tcc:
+
+/usr/include/c++/15/bits/stl_tempbuf.h:
 
 /usr/include/c++/15/bits/stl_iterator_base_funcs.h:
 
@@ -8146,19 +8095,15 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/zstd/zstd.c.o: /home/m
 
 /usr/include/c++/15/tr1/legendre_function.tcc:
 
+/usr/include/c++/15/type_traits:
+
+/usr/include/bits/fenv.h:
+
 /usr/include/c++/15/bits/locale_classes.tcc:
 
 /usr/include/c++/15/tr1/riemann_zeta.tcc:
 
 /usr/include/sys/types.h:
-
-/usr/include/c++/15/bits/refwrap.h:
-
-/usr/include/bits/floatn.h:
-
-/usr/include/bits/fenv.h:
-
-/usr/include/c++/15/type_traits:
 
 /usr/include/bits/pthreadtypes-arch.h:
 
@@ -8282,14 +8227,6 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/zstd/zstd.c.o: /home/m
 
 /usr/include/bits/types/__locale_t.h:
 
-/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/basis_universal/encoder/basisu_uastc_hdr_4x4_enc.cpp:
-
-/usr/include/c++/15/bits/deque.tcc:
-
-/usr/include/c++/15/bits/stl_tempbuf.h:
-
-/usr/include/bits/stdlib-bsearch.h:
-
 /usr/include/c++/15/bits/stl_relops.h:
 
 /usr/include/c++/15/bits/stl_algobase.h:
@@ -8360,10 +8297,6 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/zstd/zstd.c.o: /home/m
 
 /usr/include/bits/types/time_t.h:
 
-/usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h:
-
-/usr/include/bits/struct_stat.h:
-
 /usr/include/bits/typesizes.h:
 
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/basis_universal/transcoder/basisu_etc1_mods.inl:
@@ -8395,6 +8328,10 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/zstd/zstd.c.o: /home/m
 /usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h:
 
 /usr/include/bits/mman-shared.h:
+
+/usr/include/bits/struct_stat.h:
+
+/usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h:
 
 /usr/include/c++/15/bits/functexcept.h:
 
@@ -8529,8 +8466,6 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/zstd/zstd.c.o: /home/m
 /usr/include/c++/15/bits/char_traits.h:
 
 /usr/include/bits/statx-generic.h:
-
-/usr/include/bits/stdio.h:
 
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/basis_universal/encoder/jpgd.cpp:
 
@@ -8671,3 +8606,13 @@ libs/ktx/lib/basisu-encoder/CMakeFiles/basisu_encoder.dir/zstd/zstd.c.o: /home/m
 /usr/include/c++/15/bits/memory_resource.h:
 
 /usr/include/c++/15/set:
+
+/usr/include/c++/15/ratio:
+
+/usr/include/c++/15/atomic:
+
+/usr/include/c++/15/stdexcept:
+
+/usr/include/c++/15/ctime:
+
+/usr/include/c++/15/stdlib.h:

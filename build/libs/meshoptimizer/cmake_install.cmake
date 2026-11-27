@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -39,7 +39,7 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/llvm-objdump")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "meshoptimizer" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -68,8 +68,8 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "meshoptimizer" OR NOT CMAKE_INSTALL_COMPONE
     unset(_cmake_export_file_changed)
   endif()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib64/cmake/meshoptimizer" TYPE FILE FILES "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/meshoptimizer/CMakeFiles/Export/24e1f82d1b5bf01632e04e6a7ae9f13d/meshoptimizerTargets.cmake")
-  if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib64/cmake/meshoptimizer" TYPE FILE FILES "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/meshoptimizer/CMakeFiles/Export/24e1f82d1b5bf01632e04e6a7ae9f13d/meshoptimizerTargets-noconfig.cmake")
+  if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib64/cmake/meshoptimizer" TYPE FILE FILES "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/meshoptimizer/CMakeFiles/Export/24e1f82d1b5bf01632e04e6a7ae9f13d/meshoptimizerTargets-debug.cmake")
   endif()
 endif()
 

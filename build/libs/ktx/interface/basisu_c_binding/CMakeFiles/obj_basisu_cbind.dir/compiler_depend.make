@@ -58,9 +58,7 @@ libs/ktx/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -332,8 +330,6 @@ libs/ktx/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c
 
 /usr/include/gnu/stubs-64.h:
 
-/usr/include/features-time64.h:
-
 /usr/include/c++/15/bits/locale_classes.tcc:
 
 /usr/include/c++/15/bits/formatfwd.h:
@@ -363,10 +359,6 @@ libs/ktx/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c
 /usr/include/c++/15/streambuf:
 
 /usr/include/c++/15/bits/algorithmfwd.h:
-
-/usr/include/errno.h:
-
-/usr/include/c++/15/cstddef:
 
 /usr/include/c++/15/bits/version.h:
 
@@ -458,14 +450,6 @@ libs/ktx/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c
 
 /usr/include/bits/struct_mutex.h:
 
-/usr/include/memory.h:
-
-/usr/include/c++/15/x86_64-redhat-linux/bits/atomic_word.h:
-
-/usr/include/bits/stdlib-bsearch.h:
-
-/usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h:
-
 /usr/include/bits/endianness.h:
 
 /usr/include/bits/libm-simd-decl-stubs.h:
@@ -493,6 +477,8 @@ libs/ktx/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c
 /usr/include/c++/15/bits/streambuf.tcc:
 
 /usr/include/bits/atomic_wide_counter.h:
+
+/usr/include/c++/15/bits/invoke.h:
 
 /usr/include/c++/15/bits/stream_iterator.h:
 
@@ -538,6 +524,8 @@ libs/ktx/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c
 
 /usr/include/asm-generic/posix_types.h:
 
+/usr/include/c++/15/bits/ios_base.h:
+
 /usr/include/bits/types/locale_t.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h:
@@ -547,6 +535,10 @@ libs/ktx/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c
 /usr/include/c++/15/bits/locale_classes.h:
 
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/basis_universal/transcoder/basisu.h:
+
+/usr/include/memory.h:
+
+/usr/include/c++/15/x86_64-redhat-linux/bits/atomic_word.h:
 
 /usr/include/c++/15/bits/functional_hash.h:
 
@@ -632,8 +624,6 @@ libs/ktx/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c
 
 /usr/include/bits/math-vector.h:
 
-/usr/include/bits/stdio.h:
-
 /usr/include/sched.h:
 
 /usr/include/bits/fp-fast.h:
@@ -687,10 +677,6 @@ libs/ktx/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c
 /usr/include/bits/types/struct_timeval.h:
 
 /usr/include/c++/15/bits/ranges_cmp.h:
-
-/usr/include/c++/15/bits/invoke.h:
-
-/usr/include/c++/15/bits/ios_base.h:
 
 /usr/include/c++/15/bits/max_size_type.h:
 
@@ -790,6 +776,8 @@ libs/ktx/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c
 
 /usr/include/c++/15/bits/uniform_int_dist.h:
 
+/usr/include/features-time64.h:
+
 /usr/include/c++/15/bits/uses_allocator_args.h:
 
 /usr/include/c++/15/bits/vector.tcc:
@@ -887,3 +875,9 @@ libs/ktx/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c
 /usr/include/c++/15/unordered_map:
 
 /usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h:
+
+/usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h:
+
+/usr/include/c++/15/cstddef:
+
+/usr/include/errno.h:

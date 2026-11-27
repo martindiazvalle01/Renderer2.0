@@ -29,6 +29,15 @@ void App::init(SDL_Window* window){
         
     }
 
+    for(auto& hMaterial : modelo.materials){
+        Material* material = resourceManager.GetAssetManager().GetMaterialPool().Get(hMaterial);
+        renderer.uploadTexture(coreLayer.context().allocator,*resourceManager.GetAssetManager().GetTexturePool().Get(material->texture));
+        renderer.uploadTexture(coreLayer.context().allocator,*resourceManager.GetAssetManager().GetTexturePool().Get(material->emissive));
+        renderer.uploadTexture(coreLayer.context().allocator,*resourceManager.GetAssetManager().GetTexturePool().Get(material->metallicRoughness));
+        renderer.uploadTexture(coreLayer.context().allocator,*resourceManager.GetAssetManager().GetTexturePool().Get(material->normal));
+        renderer.uploadTexture(coreLayer.context().allocator,*resourceManager.GetAssetManager().GetTexturePool().Get(material->occlusion));
+    }
+
     
 }
 

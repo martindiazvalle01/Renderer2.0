@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "../../../libktx.pdb"
-  "../../../libktx.so"
-  "../../../libktx.so.5"
-  "../../../libktx.so.5.0.0"
+  "../../../Debug/libktx.pdb"
+  "../../../Debug/libktx.so"
+  "../../../Debug/libktx.so.5"
+  "../../../Debug/libktx.so.5.0.0"
   ".5"
   "CMakeFiles/ktx.dir/link.d"
   "CMakeFiles/ktx.dir/__/external/etcdec/etcdec.cxx.o"

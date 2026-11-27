@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/imgui -I/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/imgui/backends -I/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/imguizmo
 
-CXX_FLAGS = -std=c++23
+CXX_FLAGS = -g -std=c++23
 

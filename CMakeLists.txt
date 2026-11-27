@@ -144,6 +144,7 @@ target_include_directories(${PROJECT_NAME}  SYSTEM PRIVATE
     "src/scene_management_layer"
     "src/application_layer"
     "src/Tests"
+    "src/application_layer"
     "libs/vma/include"
     "libs/tinygltf"
 

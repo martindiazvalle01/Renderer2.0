@@ -35,9 +35,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_aver
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -279,9 +277,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_bloc
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -523,9 +519,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_colo
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -767,9 +761,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_colo
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -1014,9 +1006,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_comp
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -1258,9 +1248,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_comp
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -1502,9 +1490,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_deco
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -1767,9 +1753,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_entr
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -2082,9 +2066,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_find
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -2326,9 +2308,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_idea
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -2570,9 +2550,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_imag
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -2814,9 +2792,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_inte
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -3059,9 +3035,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_math
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -3277,9 +3251,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_part
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -3521,9 +3493,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_perc
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -3765,9 +3735,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_pick
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -4009,9 +3977,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_quan
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -4253,9 +4219,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_symb
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -4497,9 +4461,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -4743,9 +4705,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -5068,9 +5028,7 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
 
 /usr/include/asm/bitsperlong.h:
 
-/usr/include/asm-generic/int-ll64.h:
-
-/usr/include/asm-generic/errno.h:
+/usr/lib/gcc/x86_64-redhat-linux/15/include/keylockerintrin.h:
 
 /usr/include/sys/types.h:
 
@@ -5089,8 +5047,6 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
 /usr/include/c++/15/x86_64-redhat-linux/bits/cpu_defines.h:
 
 /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h:
-
-/usr/include/bits/stdlib-bsearch.h:
 
 /usr/include/bits/floatn.h:
 
@@ -5128,6 +5084,10 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
 
 /usr/include/c++/15/bits/utility.h:
 
+/usr/include/c++/15/bits/stl_tempbuf.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/15/include/vpclmulqdqintrin.h:
+
 /usr/include/c++/15/bits/stl_pair.h:
 
 /usr/include/c++/15/bits/stl_iterator_base_funcs.h:
@@ -5147,6 +5107,12 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
 /usr/include/c++/15/bits/std_abs.h:
 
 /usr/include/c++/15/debug/debug.h:
+
+/usr/include/c++/15/bits/stl_construct.h:
+
+/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/astc-encoder/Source/astcenc_diagnostic_trace.cpp:
+
+/usr/include/c++/15/bits/ptr_traits.h:
 
 /usr/include/c++/15/type_traits:
 
@@ -5204,6 +5170,8 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/avx512fp16vlintrin.h:
 
+/usr/lib/gcc/x86_64-redhat-linux/15/include/amxavx512intrin.h:
+
 /usr/lib/gcc/x86_64-redhat-linux/15/include/vaesintrin.h:
 
 /usr/include/asm-generic/types.h:
@@ -5226,21 +5194,13 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
 
 /usr/include/gnu/stubs.h:
 
-/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/astc-encoder/Source/astcenc_diagnostic_trace.cpp:
-
-/usr/include/c++/15/bits/ptr_traits.h:
-
-/usr/include/c++/15/bits/stl_construct.h:
-
-/usr/include/bits/stdio.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/15/include/serializeintrin.h:
-
 /usr/include/bits/long-double.h:
 
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/astc-encoder/Source/astcenc_percentile_tables.cpp:
 
 /usr/include/bits/fp-logb.h:
+
+/usr/include/asm-generic/errno.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/amxint8intrin.h:
 
@@ -5257,6 +5217,8 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
 /usr/include/bits/types/clockid_t.h:
 
 /usr/include/bits/mathcalls-macros.h:
+
+/usr/include/asm-generic/int-ll64.h:
 
 /usr/include/bits/types/clock_t.h:
 
@@ -5350,6 +5312,10 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
 
 /usr/include/c++/15/bits/stl_iterator.h:
 
+/usr/lib/gcc/x86_64-redhat-linux/15/include/xmmintrin.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/15/include/avx512ifmavlintrin.h:
+
 /usr/include/alloca.h:
 
 /usr/include/assert.h:
@@ -5378,21 +5344,11 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
 
 /usr/include/bits/types/__mbstate_t.h:
 
-/usr/include/c++/15/bits/stl_tempbuf.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/15/include/vpclmulqdqintrin.h:
-
 /usr/include/bits/types/sigset_t.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/avx10_2-512mediaintrin.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/sha512intrin.h:
-
-/usr/include/bits/types/time_t.h:
-
-/usr/include/c++/15/bits/uses_allocator.h:
-
-/usr/include/bits/struct_rwlock.h:
 
 /usr/include/bits/thread-shared-types.h:
 
@@ -5430,13 +5386,11 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
 
 /usr/include/c++/15/bits/stl_relops.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/15/include/keylockerintrin.h:
+/usr/include/c++/15/bits/uses_allocator.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/15/include/amxavx512intrin.h:
+/usr/include/bits/struct_rwlock.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/15/include/avx512ifmavlintrin.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/15/include/xmmintrin.h:
+/usr/include/bits/types/time_t.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/amxmovrsintrin.h:
 
@@ -5596,9 +5550,9 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/immintrin.h:
 
-/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/astc-encoder/Source/astcenc.h:
-
 /usr/lib/gcc/x86_64-redhat-linux/15/include/adxintrin.h:
+
+/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/astc-encoder/Source/astcenc.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/lzcntintrin.h:
 
@@ -5629,6 +5583,8 @@ libs/ktx/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weig
 /usr/lib/gcc/x86_64-redhat-linux/15/include/prfchwintrin.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/smmintrin.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/15/include/serializeintrin.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/sgxintrin.h:
 

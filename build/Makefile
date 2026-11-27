@@ -1175,6 +1175,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/rendering_layers/AssetTextureManager.o: src/rendering_layers/AssetTextureManager.cpp.o
+.PHONY : src/rendering_layers/AssetTextureManager.o
+
+# target to build an object file
+src/rendering_layers/AssetTextureManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/AssetTextureManager.cpp.o
+.PHONY : src/rendering_layers/AssetTextureManager.cpp.o
+
+src/rendering_layers/AssetTextureManager.i: src/rendering_layers/AssetTextureManager.cpp.i
+.PHONY : src/rendering_layers/AssetTextureManager.i
+
+# target to preprocess a source file
+src/rendering_layers/AssetTextureManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/AssetTextureManager.cpp.i
+.PHONY : src/rendering_layers/AssetTextureManager.cpp.i
+
+src/rendering_layers/AssetTextureManager.s: src/rendering_layers/AssetTextureManager.cpp.s
+.PHONY : src/rendering_layers/AssetTextureManager.s
+
+# target to generate assembly for a file
+src/rendering_layers/AssetTextureManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/AssetTextureManager.cpp.s
+.PHONY : src/rendering_layers/AssetTextureManager.cpp.s
+
+src/rendering_layers/DescriptorManager.o: src/rendering_layers/DescriptorManager.cpp.o
+.PHONY : src/rendering_layers/DescriptorManager.o
+
+# target to build an object file
+src/rendering_layers/DescriptorManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/DescriptorManager.cpp.o
+.PHONY : src/rendering_layers/DescriptorManager.cpp.o
+
+src/rendering_layers/DescriptorManager.i: src/rendering_layers/DescriptorManager.cpp.i
+.PHONY : src/rendering_layers/DescriptorManager.i
+
+# target to preprocess a source file
+src/rendering_layers/DescriptorManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/DescriptorManager.cpp.i
+.PHONY : src/rendering_layers/DescriptorManager.cpp.i
+
+src/rendering_layers/DescriptorManager.s: src/rendering_layers/DescriptorManager.cpp.s
+.PHONY : src/rendering_layers/DescriptorManager.s
+
+# target to generate assembly for a file
+src/rendering_layers/DescriptorManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VulkanEngine.dir/build.make CMakeFiles/VulkanEngine.dir/src/rendering_layers/DescriptorManager.cpp.s
+.PHONY : src/rendering_layers/DescriptorManager.cpp.s
+
 src/rendering_layers/FrameManagement/FrameManager.o: src/rendering_layers/FrameManagement/FrameManager.cpp.o
 .PHONY : src/rendering_layers/FrameManagement/FrameManager.o
 
@@ -1501,6 +1549,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/rendering_layers/AssetTextureManager.o"
+	@echo "... src/rendering_layers/AssetTextureManager.i"
+	@echo "... src/rendering_layers/AssetTextureManager.s"
+	@echo "... src/rendering_layers/DescriptorManager.o"
+	@echo "... src/rendering_layers/DescriptorManager.i"
+	@echo "... src/rendering_layers/DescriptorManager.s"
 	@echo "... src/rendering_layers/FrameManagement/FrameManager.o"
 	@echo "... src/rendering_layers/FrameManagement/FrameManager.i"
 	@echo "... src/rendering_layers/FrameManagement/FrameManager.s"

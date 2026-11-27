@@ -14,7 +14,8 @@ class GltfImporter{
     public:
         // Esta es la funcion principal la unica que debe ser public 
         IntermediateStruct Import(const FileContext& context){
-            fastgltf::Parser parser;
+            // Esa extension se supo
+            fastgltf::Parser parser(fastgltf::Extensions::KHR_texture_basisu);
             auto data = fastgltf::GltfDataBuffer::FromPath(context.filePath);
             if(data.error() != fastgltf::Error::None) { 
                 spdlog::error("Error al cargar GLTF desde '{}': {}", context.filePath.string(), fastgltf::getErrorMessage(data.error()));   

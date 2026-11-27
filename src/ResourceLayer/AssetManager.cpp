@@ -3,7 +3,7 @@
 #include <utility>
 #include <vector>
 
-Handle<Model> AssetManager::loadModel(const IntermediateStruct& data){
+Handle<Model> AssetManager::loadModel(IntermediateStruct&& data){
     Model model;
 
     //Creacion de Texturas
@@ -11,7 +11,7 @@ Handle<Model> AssetManager::loadModel(const IntermediateStruct& data){
     textures.reserve(data.textures.size());
 
     for (auto& texture : data.textures){
-        textures.push_back(GetOrCreateTexture(texture));
+        textures.push_back(GetOrCreateTexture(std::move(texture)));
     }
 
     //Creacion de Materiales
@@ -40,10 +40,18 @@ Handle<Model> AssetManager::loadModel(const IntermediateStruct& data){
     return out;
 }
 
-Handle<Texture> AssetManager::GetOrCreateTexture(const Texture& data){
-    //Creamos una clave unica
+Handle<Texture> AssetManager::GetOrCreateTexture(Texture&& data){
 
+    // Si filePath está vacío (ej. textura embebida en GLB o fallback), evita colisionar en ""
+    if (!data.filePath.empty()) {
+        auto it = textureCache.find(data.filePath);
+        if (it != textureCache.end()) {
+            return it->second; // data se destruye limpio al salir y libera su ktxTex duplicado
+        }
+    }
+    //Creamos una clave unica
     std::string key = data.filePath;
+    Handle<Texture> out = texturePool.Create(std::move(data)); // Mueve ktxTex y deja data.ktxTex = nullptr
     
     // Revisamos si ya existe 
     auto it = textureCache.find(key);
@@ -51,17 +59,8 @@ Handle<Texture> AssetManager::GetOrCreateTexture(const Texture& data){
     if(it != textureCache.end()){
         return it->second;
     }
-    // Tengo que crear esto porque el const da error en el std::move y el for each siempre retorna la variable con un const
-    Texture texture;
-    texture.format = data.format;
-    texture.width  = data.width;
-    texture.height = data.height;
-    texture.mips   = data.mips;
-    texture.filePath = data.filePath;
-    texture.ktxTex = data.ktxTex;
-    // Si no existe, la creamos
 
-    Handle<Texture> out = texturePool.Create(std::move(texture));
+    
     textureCache[key] = out;
     return out;
 }

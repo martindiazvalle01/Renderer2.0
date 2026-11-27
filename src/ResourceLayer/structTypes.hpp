@@ -73,10 +73,24 @@ struct Mesh {
 
 struct Texture{
     // Aqui me pregunto que más podria tener, porque los datos para subirlos a la GPU estan en el rendering layer
-    vk::Format format;
-    uint32_t width, height, mips;
     std::string filePath;
     ktxTexture2* ktxTex = nullptr;
+
+    // Cosas raras, que sin esto no funciona la textura default
+    Texture() = default;
+    Texture(const Texture&) = delete;
+    Texture& operator=(const Texture&) = delete;
+
+    Texture(Texture&& o) noexcept : ktxTex(o.ktxTex) { o.ktxTex = nullptr; }
+    Texture& operator=(Texture&& o) noexcept {
+        if (this != &o) {
+            if (ktxTex) ktxTexture_Destroy(ktxTexture(ktxTex));
+            ktxTex = o.ktxTex; o.ktxTex = nullptr;
+        }
+        return *this;
+    }
+    ~Texture() { if (ktxTex) ktxTexture_Destroy(ktxTexture(ktxTex)); }
+    
 };
 
 enum struct AlphaMode {

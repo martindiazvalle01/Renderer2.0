@@ -5,7 +5,7 @@
 class AssetManager{
 
     public:
-        Handle<Model> loadModel(const IntermediateStruct& data);
+        Handle<Model> loadModel(IntermediateStruct&& data);
         void unloadModel(Handle<Model> model){
             modelPool.Release(model);
         }
@@ -30,7 +30,7 @@ class AssetManager{
         AssetPool<Texture>  texturePool;
 
         std::unordered_map<std::string, Handle<Texture>>  textureCache;
-        Handle<Texture> GetOrCreateTexture(const Texture& data);
+        Handle<Texture> GetOrCreateTexture(Texture&& data);
         Handle<Material>   loadMaterial(const MaterialData& materialData,std::vector<Handle<Texture>> textures);
         Handle<Mesh>     loadMesh(Mesh meshData);
 

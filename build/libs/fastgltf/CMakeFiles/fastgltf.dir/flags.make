@@ -6,5 +6,5 @@ CXX_DEFINES = -DFASTGLTF_DISABLE_CUSTOM_MEMORY_POOL=0 -DFASTGLTF_ENABLE_KHR_IMPL
 
 CXX_INCLUDES = -I/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/fastgltf/include -I/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/fastgltf/deps/simdjson
 
-CXX_FLAGS = -std=c++23 -fPIC -Wall -Wno-unknown-pragmas -flax-vector-conversions -fpermissive
+CXX_FLAGS = -g -std=c++23 -fPIC -Wall -Wno-unknown-pragmas -flax-vector-conversions -fpermissive -finline-functions
 

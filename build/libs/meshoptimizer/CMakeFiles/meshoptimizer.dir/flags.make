@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = 
 
-CXX_FLAGS = -std=c++23 -Wall -Wextra -Wshadow -Wno-missing-field-initializers
+CXX_FLAGS = -g -std=c++23 -Wall -Wextra -Wshadow -Wno-missing-field-initializers
 

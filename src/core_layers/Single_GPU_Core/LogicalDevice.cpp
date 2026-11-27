@@ -52,6 +52,9 @@ void LogicalDevice::create(const vk::raii::PhysicalDevice& physicalDevice, const
     // Esto es para poder declarar el buffer reference con scalar, cosas de UV cuando estan en un vec2
     v12.setScalarBlockLayout(VK_TRUE);
 
+    v12.setDescriptorBindingSampledImageUpdateAfterBind(VK_TRUE);
+    v12.setShaderSampledImageArrayNonUniformIndexing(VK_TRUE);
+    
     v12.setTimelineSemaphore(VK_TRUE);
 
     auto& v13 = featureChain.get<vk::PhysicalDeviceVulkan13Features>();

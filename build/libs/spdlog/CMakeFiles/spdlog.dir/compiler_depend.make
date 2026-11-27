@@ -2554,6 +2554,47 @@ libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o: /home/martindiaz/Docum
   /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h \
   /usr/lib/gcc/x86_64-redhat-linux/15/include/syslimits.h
 
+libs/spdlog/libspdlogd.so: /lib64/ld-linux-x86-64.so.2 \
+  /lib64/libc.so.6 \
+  /lib64/libgcc_s.so.1 \
+  /lib64/libm.so.6 \
+  /lib64/libmvec.so.1 \
+  /usr/lib64/crti.o \
+  /usr/lib64/crtn.o \
+  /usr/lib64/libc.so \
+  /usr/lib64/libm.so \
+  /usr/lib/gcc/x86_64-redhat-linux/15/crtbeginS.o \
+  /usr/lib/gcc/x86_64-redhat-linux/15/crtendS.o \
+  /usr/lib/gcc/x86_64-redhat-linux/15/libgcc.a \
+  /usr/lib/gcc/x86_64-redhat-linux/15/libgcc_s.so \
+  /usr/lib/gcc/x86_64-redhat-linux/15/libstdc++.so \
+  /usr/lib64/libc_nonshared.a \
+  libs/spdlog/CMakeFiles/spdlog.dir/src/async.cpp.o \
+  libs/spdlog/CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o \
+  libs/spdlog/CMakeFiles/spdlog.dir/src/cfg.cpp.o \
+  libs/spdlog/CMakeFiles/spdlog.dir/src/color_sinks.cpp.o \
+  libs/spdlog/CMakeFiles/spdlog.dir/src/file_sinks.cpp.o \
+  libs/spdlog/CMakeFiles/spdlog.dir/src/spdlog.cpp.o \
+  libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o
+
+
+libs/spdlog/CMakeFiles/spdlog.dir/src/cfg.cpp.o:
+
+libs/spdlog/CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o:
+
+libs/spdlog/CMakeFiles/spdlog.dir/src/async.cpp.o:
+
+/usr/lib/gcc/x86_64-redhat-linux/15/libstdc++.so:
+
+/usr/lib/gcc/x86_64-redhat-linux/15/libgcc.a:
+
+/lib64/libmvec.so.1:
+
+/lib64/libgcc_s.so.1:
+
+/lib64/libc.so.6:
+
+/lib64/ld-linux-x86-64.so.2:
 
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/spdlog/include/spdlog/sinks/stdout_sinks.h:
 
@@ -2655,6 +2696,8 @@ libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o: /home/martindiaz/Docum
 
 /usr/include/endian.h:
 
+/usr/lib64/libc.so:
+
 /usr/include/ctype.h:
 
 /usr/include/c++/15/x86_64-redhat-linux/bits/messages_members.h:
@@ -2674,6 +2717,8 @@ libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o: /home/martindiaz/Docum
 /usr/include/c++/15/x86_64-redhat-linux/bits/atomic_word.h:
 
 /usr/include/c++/15/vector:
+
+/usr/lib/gcc/x86_64-redhat-linux/15/crtendS.o:
 
 /usr/include/c++/15/utility:
 
@@ -2753,11 +2798,17 @@ libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o: /home/martindiaz/Docum
 
 /usr/include/c++/15/initializer_list:
 
+libs/spdlog/CMakeFiles/spdlog.dir/src/file_sinks.cpp.o:
+
 /usr/include/c++/15/functional:
 
 /usr/include/c++/15/format:
 
 /usr/include/c++/15/ext/type_traits.h:
+
+libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o:
+
+/usr/lib64/libc_nonshared.a:
 
 /usr/include/c++/15/ext/numeric_traits.h:
 
@@ -2787,6 +2838,8 @@ libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o: /home/martindiaz/Docum
 
 /usr/include/bits/xopen_lim.h:
 
+/usr/lib64/crti.o:
+
 /usr/include/stdio.h:
 
 /usr/include/bits/wordsize.h:
@@ -2794,6 +2847,8 @@ libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o: /home/martindiaz/Docum
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/spdlog/include/spdlog/async_logger-inl.h:
 
 /usr/include/bits/timesize.h:
+
+libs/spdlog/CMakeFiles/spdlog.dir/src/spdlog.cpp.o:
 
 /usr/include/linux/falloc.h:
 
@@ -2981,6 +3036,8 @@ libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o: /home/martindiaz/Docum
 
 /usr/include/c++/15/bits/atomic_timed_wait.h:
 
+libs/spdlog/CMakeFiles/spdlog.dir/src/color_sinks.cpp.o:
+
 /usr/include/c++/15/bits/refwrap.h:
 
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/spdlog/include/spdlog/details/circular_q.h:
@@ -3072,6 +3129,8 @@ libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o: /home/martindiaz/Docum
 /usr/include/c++/15/bits/cxxabi_init_exception.h:
 
 /usr/include/bits/types/__fpos64_t.h:
+
+/usr/lib64/libm.so:
 
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/spdlog/include/spdlog/fmt/bundled/format.h:
 
@@ -3245,6 +3304,8 @@ libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o: /home/martindiaz/Docum
 
 /usr/include/c++/15/bits/functional_hash.h:
 
+/lib64/libm.so.6:
+
 /usr/include/bits/fcntl.h:
 
 /usr/include/c++/15/algorithm:
@@ -3270,6 +3331,8 @@ libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o: /home/martindiaz/Docum
 /usr/include/c++/15/bits/uses_allocator.h:
 
 /usr/include/c++/15/bits/invoke.h:
+
+/usr/lib64/crtn.o:
 
 /usr/include/c++/15/bits/ios_base.h:
 
@@ -3345,6 +3408,8 @@ libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o: /home/martindiaz/Docum
 
 /usr/include/c++/15/bits/shared_ptr.h:
 
+/usr/lib/gcc/x86_64-redhat-linux/15/crtbeginS.o:
+
 /usr/include/c++/15/bits/erase_if.h:
 
 /usr/include/c++/15/bits/stringfwd.h:
@@ -3380,6 +3445,8 @@ libs/spdlog/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o: /home/martindiaz/Docum
 /usr/include/c++/15/charconv:
 
 /usr/include/c++/15/bits/stl_algo.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/15/libgcc_s.so:
 
 /usr/include/bits/fcntl-linux.h:
 

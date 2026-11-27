@@ -1,4 +1,5 @@
 #pragma once
+#include <AssetTextureManager.hpp>
 #include <SceneDataManager.hpp>
 #include <PipelineBuilder.hpp>
 #include <ShaderLoader.hpp>
@@ -35,6 +36,11 @@ class Renderer{
             glm::mat4 modelMatrix;
             vk::DeviceAddress vertexAddress;
             vk::DeviceAddress sceneAddress;
+            uint32_t baseColorTex;
+            uint32_t normalTex;
+            uint32_t metallicRoughnessTex;
+            uint32_t emissiveTex;
+            uint32_t occlusionTex;
         };
 
         void PushConstants(vk::raii::CommandBuffer& cmd,uint32_t frameIndex);
@@ -48,6 +54,8 @@ class Renderer{
         sceneDataManager.setSceneData(data, currentIndex);
     }
 
+    uint32_t uploadTexture(VmaAllocator allocator,Texture& texture);
+    void     unloadTexture(uint32_t index);
     private:
         RenderGraph renderGraph;
         Swapchain swapchain;
@@ -61,5 +69,7 @@ class Renderer{
         SceneDataManager sceneDataManager;
         MeshBufferManager::GpuMeshBuffers meshBuffers;
         uint32_t currentIndex = 0;
+        AssetTexutureManager assetTextureManager;
+
         
 };

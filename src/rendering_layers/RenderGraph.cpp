@@ -278,7 +278,7 @@ void RenderGraph::TransitionResource(vk::raii::CommandBuffer& commandBuffer,
 // Implementacion de la transicion del layout de la imagen
 void RenderGraph::TransitionImageLayout(vk::raii::CommandBuffer& commandBuffer, vk::Image image, vk::Format format, vk::ImageLayout oldLayout, vk::ImageLayout newLayout){
     //Esto especifica el tipo de barrera que se usara para el viejo layout usando los datos del viejo layout
-    BarrierHalf srcHalf = SrcHalf(LayoutForWrite(format));
+    BarrierHalf srcHalf = SrcHalf(oldLayout);
     //Esto especifica el tipo de barrera que se usara para el nuevo layout usando los datos del nuevo layout
     BarrierHalf dstHalf = DstHalf(newLayout);
 
@@ -305,7 +305,7 @@ void RenderGraph::TransitionImageLayout(vk::raii::CommandBuffer& commandBuffer, 
 RenderGraph::BarrierHalf RenderGraph::SrcHalf(vk::ImageLayout oldLayout){
     switch (oldLayout) {
         case vk::ImageLayout::eUndefined:
-            return {vk::PipelineStageFlagBits::eTopOfPipe,vk::AccessFlagBits::eNone};
+            return {vk::PipelineStageFlagBits::eAllCommands, vk::AccessFlagBits::eMemoryWrite};
             break;
         
         case vk::ImageLayout::eTransferDstOptimal:
@@ -320,6 +320,9 @@ RenderGraph::BarrierHalf RenderGraph::SrcHalf(vk::ImageLayout oldLayout){
             return {vk::PipelineStageFlagBits::eFragmentShader,vk::AccessFlagBits::eShaderRead};
             break;
         
+        case vk::ImageLayout::ePresentSrcKHR:
+            return {vk::PipelineStageFlagBits::eBottomOfPipe, vk::AccessFlagBits{}};
+            break;
         case vk::ImageLayout::eDepthStencilAttachmentOptimal:
             // el | es para indicar que puede ser cualquiera de los 2, osea guarda los 2
             // esto es para que la barrera haga qe nada avance hasta que estas 2 stages esten finalizadas

@@ -1,0 +1,133 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "Clang",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/meshoptimizer",
+	"dir-cur-src" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer",
+	"dir-top-bld" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build",
+	"dir-top-src" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0",
+	"exports" : 
+	[
+		{
+			"cxx-module-info-dir" : "",
+			"destination" : "lib64/cmake/meshoptimizer",
+			"export-name" : "meshoptimizer",
+			"export-prefix" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/meshoptimizer/CMakeFiles/Export/24e1f82d1b5bf01632e04e6a7ae9f13d",
+			"filesystem-export-name" : "meshoptimizer",
+			"install" : true,
+			"namespace" : "meshoptimizer::"
+		}
+	],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/meshoptimizer/CMakeFiles/meshoptimizer.dir",
+	"sources" : 
+	{
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/allocator.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/allocator.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/clusterizer.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/clusterizer.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/indexanalyzer.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/indexanalyzer.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/indexcodec.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/indexcodec.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/indexgenerator.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/indexgenerator.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/meshletcodec.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/meshletcodec.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/meshletutils.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/meshletutils.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/opacitymap.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/opacitymap.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/overdrawoptimizer.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/overdrawoptimizer.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/partition.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/partition.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/quantization.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/quantization.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/rasterizer.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/rasterizer.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/simplifier.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/simplifier.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/spatialorder.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/spatialorder.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/stripifier.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/stripifier.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/tangentspace.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/tangentspace.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/vcacheoptimizer.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/vcacheoptimizer.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/vertexcodec.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/vertexcodec.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/vertexfilter.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/vertexfilter.cpp"
+		},
+		"libs/meshoptimizer/CMakeFiles/meshoptimizer.dir/src/vfetchoptimizer.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/meshoptimizer/src/vfetchoptimizer.cpp"
+		}
+	}
+}

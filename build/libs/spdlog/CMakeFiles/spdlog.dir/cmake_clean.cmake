@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  ".1.17"
+  "CMakeFiles/spdlog.dir/link.d"
   "CMakeFiles/spdlog.dir/src/async.cpp.o"
   "CMakeFiles/spdlog.dir/src/async.cpp.o.d"
   "CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o"
@@ -13,8 +15,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/spdlog.dir/src/spdlog.cpp.o.d"
   "CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o"
   "CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o.d"
-  "libspdlog.a"
-  "libspdlog.pdb"
+  "libspdlogd.pdb"
+  "libspdlogd.so"
+  "libspdlogd.so.1.17"
+  "libspdlogd.so.1.17.0"
 )
 
 # Per-language clean rules from dependency scanning.

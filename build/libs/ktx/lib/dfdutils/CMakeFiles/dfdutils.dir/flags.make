@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/dfdutils -I/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/dfdutils/.
 
-C_FLAGS = -std=gnu99 -fPIC -Wall -Wextra -O3 -ffp-contract=off
+C_FLAGS = -g -std=gnu99 -fPIC -Wall -Wextra -O0 -g -ffp-contract=off
 

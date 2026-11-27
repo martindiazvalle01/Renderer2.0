@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/utils
 
-CXX_FLAGS = -std=c++23 -fvisibility=hidden -Wall -Wextra -O3 -ffp-contract=off
+CXX_FLAGS = -g -std=c++23 -fvisibility=hidden -Wall -Wextra -O0 -g -ffp-contract=off
 

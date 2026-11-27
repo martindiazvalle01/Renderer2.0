@@ -3,6 +3,7 @@
 #include <mutex>
 #include <stdexcept>
 
+// Clase  Hecha para subir command buffers a la commandPool
 class QueueSubmitter {
 public:
     QueueSubmitter() = default;

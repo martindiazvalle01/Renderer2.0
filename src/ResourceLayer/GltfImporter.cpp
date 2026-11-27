@@ -187,9 +187,10 @@ std::optional<std::span<const std::byte>> GltfImporter::getImageBytes(
 
 bool GltfImporter::loadKtx2(Texture& out, 
               const std::string& filePath,                    // puede estar vacío
-              std::span<const std::byte> bytes)          // puede estar vacío
-{
-    KTX_error_code result = KTX_SUCCESS;
+              std::span<const std::byte> bytes){          // puede estar vacío
+
+    out.ktxTex = nullptr;
+    KTX_error_code result = KTX_INVALID_VALUE;
 
     if (!filePath.empty()) {
         // Caso 1: archivo externo 
@@ -212,13 +213,19 @@ bool GltfImporter::loadKtx2(Texture& out,
     }
 
     if (result != KTX_SUCCESS) {
-        spdlog::warn("No se pudo cargar textura, usando fallback blanco");
+        spdlog::warn("No se pudo cargar textura, usando fallback blanco"),ktxErrorString(result);
         result = ktxTexture2_CreateFromNamedFile(
             "assets/textures/common/builtin_white.ktx2",
             KTX_TEXTURE_CREATE_LOAD_IMAGE_DATA_BIT,
             &out.ktxTex);
+        
 
-        if (result != KTX_SUCCESS) return false;
+        if (result != KTX_SUCCESS) {
+            spdlog::error("FALLO FALLBACK: {}", ktxErrorString(result));
+            out.ktxTex = nullptr;
+            return false;
+        }
+        spdlog::info("Fallback blanco cargado OK");
     }
 
     // Transcoding 
@@ -233,10 +240,8 @@ bool GltfImporter::loadKtx2(Texture& out,
     }
 
   
-    out.width  = out.ktxTex->baseWidth;
-    out.height = out.ktxTex->baseHeight;
-    out.mips   = out.ktxTex->numLevels;
 
+ 
     return true;
 }
 

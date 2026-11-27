@@ -10,7 +10,7 @@ class ResourceManager{
     public:
         void load(const FileContext& context){
             printf("cwd: %s\n", std::filesystem::current_path().c_str());
-printf("existe: %d\n", std::filesystem::exists(context.filePath));
+            printf("existe: %d\n", std::filesystem::exists(context.filePath));
             AssetFormat formato = formatFromExtension(context.filePath);
             IntermediateStruct structIntermedio;
 
@@ -23,7 +23,8 @@ printf("existe: %d\n", std::filesystem::exists(context.filePath));
                     printf("Formato no compatible");
                     return;
             }
-            models[context.filePath] = manager.loadModel(structIntermedio);
+            
+            models[context.filePath] = manager.loadModel(std::move(structIntermedio));
         }
 
         

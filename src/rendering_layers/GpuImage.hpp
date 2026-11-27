@@ -62,6 +62,7 @@ public:
     }
 
     vk::Image get() const { return image; }
+    VmaAllocation getAllocation() const {return allocation;}
     void set(vk::Image img) {
     destroy();              // si había una propia, se libera bien
     image      = img;

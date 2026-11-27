@@ -1,0 +1,122 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"libs/fastgltf/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 145,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 150,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 155,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 164,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include/fastgltf",
+			"paths" : 
+			[
+				"libs/fastgltf/include/fastgltf/base64.hpp",
+				"libs/fastgltf/include/fastgltf/core.hpp",
+				"libs/fastgltf/include/fastgltf/dxmath_element_traits.hpp",
+				"libs/fastgltf/include/fastgltf/glm_element_traits.hpp",
+				"libs/fastgltf/include/fastgltf/tools.hpp",
+				"libs/fastgltf/include/fastgltf/types.hpp",
+				"libs/fastgltf/include/fastgltf/util.hpp",
+				"libs/fastgltf/include/fastgltf/math.hpp"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib64/cmake/fastgltf",
+			"paths" : 
+			[
+				"build/libs/fastgltf/fastgltfConfigVersion.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib64",
+			"paths" : 
+			[
+				"libs/fastgltf/libfastgltf.so.0.9.0"
+			],
+			"targetId" : "fastgltf::@a97a14c05eed5a82e375",
+			"targetIndex" : 34,
+			"targetInstallNamelink" : "skip",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib64",
+			"paths" : 
+			[
+				"libs/fastgltf/libfastgltf.so"
+			],
+			"targetId" : "fastgltf::@a97a14c05eed5a82e375",
+			"targetIndex" : 34,
+			"targetInstallNamelink" : "only",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib64/cmake/fastgltf",
+			"exportName" : "fastgltf-targets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "fastgltf::@a97a14c05eed5a82e375",
+					"index" : 34
+				}
+			],
+			"paths" : 
+			[
+				"libs/fastgltf/CMakeFiles/Export/c035722a445746e0ffbe78ace837f037/fastgltfConfig.cmake"
+			],
+			"type" : "export"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "libs/fastgltf",
+		"source" : "libs/fastgltf"
+	}
+}

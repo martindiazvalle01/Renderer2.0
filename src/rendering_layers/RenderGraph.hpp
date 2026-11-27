@@ -110,9 +110,5 @@ class RenderGraph{
         void TransitionImageLayout(vk::raii::CommandBuffer& commandBuffer, vk::Image image, vk::Format format, vk::ImageLayout oldLayout, vk::ImageLayout newLayout);
 
         void RenderFrame(vk::raii::Device& device, vk::Queue graphicsQueue, vk::Queue presentQueue);
-
-
-
-
         
 };

@@ -1,0 +1,10 @@
+"filename", "language", "C++", "comment", "blank", "total"
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/GltfImporter.hpp", "C++", 0, 1, 0, 1
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/Storage.hpp", "C++", -8, 0, -5, -13
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/ResourceLayer/structTypes.hpp", "C++", 0, 0, 1, 1
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/AssetTextureManager.cpp", "C++", 40, 0, 20, 60
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/AssetTextureManager.hpp", "C++", 18, 0, 5, 23
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/GpuImage.hpp", "C++", 1, 0, 0, 1
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/RenderGraph.cpp", "C++", 3, 0, 0, 3
+"/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/src/rendering_layers/RenderGraph.hpp", "C++", 0, 0, -4, -4
+"Total", "-", 54, 1, 17, 72

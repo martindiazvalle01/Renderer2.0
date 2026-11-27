@@ -49,7 +49,6 @@ libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/createdfd.c.o: /home/martindiaz/Do
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -130,7 +129,6 @@ libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/interpretdfd.c.o: /home/martindiaz
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
   /usr/include/bits/time64.h \
   /usr/include/bits/timesize.h \
@@ -171,7 +169,6 @@ libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/printdfd.c.o: /home/martindiaz/Doc
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
   /usr/include/bits/time64.h \
   /usr/include/bits/timesize.h \
@@ -223,9 +220,7 @@ libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/queries.c.o: /home/martindiaz/Docu
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-least.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/stdlib-bsearch.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
@@ -308,6 +303,8 @@ libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/vk2dfd.c.o: /home/martindiaz/Docum
 
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/dfdutils/printdfd.c:
 
+/usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h:
+
 /usr/include/bits/types/struct_FILE.h:
 
 /usr/include/bits/types/__mbstate_t.h:
@@ -316,8 +313,6 @@ libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/vk2dfd.c.o: /home/martindiaz/Docum
 
 /usr/include/bits/types/FILE.h:
 
-/usr/include/bits/stdio.h:
-
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/dfdutils/interpretdfd.c:
 
 /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/libs/ktx/external/dfdutils/dfd2vk.c:
@@ -325,8 +320,6 @@ libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/vk2dfd.c.o: /home/martindiaz/Docum
 /usr/include/sys/types.h:
 
 /usr/include/sys/select.h:
-
-/usr/include/strings.h:
 
 /usr/include/alloca.h:
 
@@ -396,6 +389,8 @@ libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/vk2dfd.c.o: /home/martindiaz/Docum
 
 /usr/include/bits/libc-header-start.h:
 
+/usr/include/strings.h:
+
 /usr/include/bits/long-double.h:
 
 /usr/include/bits/wchar.h:
@@ -417,10 +412,6 @@ libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/vk2dfd.c.o: /home/martindiaz/Docum
 /usr/include/stdc-predef.h:
 
 /usr/include/bits/pthreadtypes-arch.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h:
-
-/usr/include/bits/stdlib-bsearch.h:
 
 /usr/include/bits/types/__FILE.h:
 

@@ -16,8 +16,13 @@ struct SceneData {
 
 struct PushConstants {
     float4x4    model;
-    Vertex*     vertices;    // vertexAddress
-    SceneData*  scene;       // sceneAddress
+    Vertex*     vertices;
+    SceneData*  scene;
+    uint baseColorTex;
+    uint normalTex;
+    uint metallicRoughnessTex;
+    uint emissiveTex;
+    uint occlusionTex;
 };
 
 [[vk::push_constant]] ConstantBuffer<PushConstants> pc;
@@ -25,7 +30,10 @@ struct PushConstants {
 struct VSOut {
     float4 pos    : SV_Position;
     float3 normal : NORMAL;
+    float2 uv     : TEXCOORD0;
 };
+[[vk::binding(0, 0)]] Sampler2D textures[];
+
 
 [shader("vertex")]
 VSOut vertexMain(uint vid : SV_VertexID) {
@@ -34,6 +42,7 @@ VSOut vertexMain(uint vid : SV_VertexID) {
     float4 world = mul(pc.model, float4(v.position, 1.0));
 
     VSOut o;
+    o.uv = v.uv0;
     o.pos    = mul(pc.scene->viewProj, world);
     o.normal = mul((float3x3)pc.model, v.normal);   // vale mientras no haya escala no uniforme
     return o;
@@ -41,6 +50,11 @@ VSOut vertexMain(uint vid : SV_VertexID) {
 
 [shader("fragment")]
 float4 fragmentMain(VSOut i) : SV_Target {
-    float3 n = normalize(i.normal);
-    return float4(n * 0.5 + 0.5, 1.0);
+    uint idx = pc.baseColorTex;
+    if      (i.uv.x < 0.2) idx = pc.baseColorTex;
+    else if (i.uv.x < 0.4) idx = pc.normalTex;
+    else if (i.uv.x < 0.6) idx = pc.metallicRoughnessTex;
+    else if (i.uv.x < 0.8) idx = pc.emissiveTex;
+    else                   idx = pc.occlusionTex;
+    return textures[NonUniformResourceIndex(idx)].Sample(i.uv);
 }

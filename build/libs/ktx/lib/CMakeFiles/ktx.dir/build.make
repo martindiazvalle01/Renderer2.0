@@ -490,57 +490,57 @@ ktx_EXTERNAL_OBJECTS = \
 "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/vk2dfd.c.o" \
 "/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/dfd2vk.c.o"
 
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/astc_codec.cpp.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/basis_transcode.cpp.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/miniz_wrapper.cpp.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/checkheader.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/etcunpack.cxx.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/filestream.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/glformat_str.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/hashlist.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/info.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/memstream.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/strings.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/swap.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/texture.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/texture2.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/vkformat_check.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/vkformat_check_variant.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/vkformat_str.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/vkformat_typesize.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/__/external/etcdec/etcdec.cxx.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/gl_funcs.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/glloader.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/basis_encode.cpp.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/writer1.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/writer2.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/texture1.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/vk_funcs.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/vkloader.c.o
-libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/createdfd.c.o
-libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/colourspaces.c.o
-libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/interpretdfd.c.o
-libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/printdfd.c.o
-libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/queries.c.o
-libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/vk2dfd.c.o
-libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/dfd2vk.c.o
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/build.make
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/compiler_depend.ts
-libktx.so.5.0.0: libs/ktx/lib/basisu-encoder/libbasisu_encoder.a
-libktx.so.5.0.0: libs/ktx/lib/astc-encoder/Source/libastcenc-avx2-static.a
-libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX shared library ../../../libktx.so"
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/astc_codec.cpp.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/basis_transcode.cpp.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/miniz_wrapper.cpp.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/checkheader.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/etcunpack.cxx.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/filestream.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/glformat_str.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/hashlist.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/info.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/memstream.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/strings.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/swap.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/texture.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/texture2.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/vkformat_check.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/vkformat_check_variant.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/vkformat_str.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/vkformat_typesize.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/__/external/etcdec/etcdec.cxx.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/gl_funcs.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/glloader.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/basis_encode.cpp.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/writer1.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/writer2.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/texture1.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/vk_funcs.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/src/vkloader.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/createdfd.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/colourspaces.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/interpretdfd.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/printdfd.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/queries.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/vk2dfd.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/dfdutils/CMakeFiles/dfdutils.dir/dfd2vk.c.o
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/build.make
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/compiler_depend.ts
+Debug/libktx.so.5.0.0: libs/ktx/lib/basisu-encoder/libbasisu_encoder.a
+Debug/libktx.so.5.0.0: libs/ktx/lib/astc-encoder/Source/libastcenc-avx2-static.a
+Debug/libktx.so.5.0.0: libs/ktx/lib/CMakeFiles/ktx.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX shared library ../../../Debug/libktx.so"
 	cd /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/ktx/lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ktx.dir/link.txt --verbose=$(VERBOSE)
-	cd /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/ktx/lib && $(CMAKE_COMMAND) -E cmake_symlink_library ../../../libktx.so.5.0.0 ../../../libktx.so.5 ../../../libktx.so
+	cd /home/martindiaz/Documentos/ProyectosVulkan/Renderer2.0/build/libs/ktx/lib && $(CMAKE_COMMAND) -E cmake_symlink_library ../../../Debug/libktx.so.5.0.0 ../../../Debug/libktx.so.5 ../../../Debug/libktx.so
 
-libktx.so.5: libktx.so.5.0.0
-	@$(CMAKE_COMMAND) -E touch_nocreate libktx.so.5
+Debug/libktx.so.5: Debug/libktx.so.5.0.0
+	@$(CMAKE_COMMAND) -E touch_nocreate Debug/libktx.so.5
 
-libktx.so: libktx.so.5.0.0
-	@$(CMAKE_COMMAND) -E touch_nocreate libktx.so
+Debug/libktx.so: Debug/libktx.so.5.0.0
+	@$(CMAKE_COMMAND) -E touch_nocreate Debug/libktx.so
 
 # Rule to build all files generated by this target.
-libs/ktx/lib/CMakeFiles/ktx.dir/build: libktx.so
+libs/ktx/lib/CMakeFiles/ktx.dir/build: Debug/libktx.so
 .PHONY : libs/ktx/lib/CMakeFiles/ktx.dir/build
 
 libs/ktx/lib/CMakeFiles/ktx.dir/clean:
